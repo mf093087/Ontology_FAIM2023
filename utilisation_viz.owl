@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#"
+     xml:base="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Capacity_utilisation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Resource_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Capacity_utilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Capacity_utilisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Utilisation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Control_units -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Control_units">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Customer_returns -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Customer_returns">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Employee_turnover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Employee_turnover">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#First_pass_yeild -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#First_pass_yeild">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_accuracy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_accuracy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_turnover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_turnover">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Labour_as_percentage_cost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Labour_as_percentage_cost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_downtime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_downtime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Maintenance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Maintenance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Manufacturing_cost_per_unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Manufacturing_cost_per_unit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Number_of_units_produced -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Number_of_units_produced">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OEE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OEE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OSE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OSE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Outsourcing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Outsourcing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Resource_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Processing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Processing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Product_yeild -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Product_yeild">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Resource_utilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Resource_utilisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Capacity_utilisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Set-up_time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Set-up_time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Shipping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Shipping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Suppliers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Suppliers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Outsourcing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Third_parties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Third_parties -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Third_parties">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Outsourcing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Unscheduled_downtime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Unscheduled_downtime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_downtime"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Set-up_time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Utilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Utilisation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#profit_per_employee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#profit_per_employee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Control_units"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Product_yeild"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Customer_returns"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_accuracy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_turnover"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#First_pass_yeild"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_downtime"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Manufacturing_cost_per_unit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OEE"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Employee_turnover"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Labour_as_percentage_cost"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OSE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#profit_per_employee"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Maintenance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Number_of_units_produced"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Set-up_time"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Maintenance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Processing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Shipping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

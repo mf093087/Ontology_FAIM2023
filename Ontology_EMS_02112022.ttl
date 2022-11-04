@@ -1,0 +1,85 @@
+@prefix : <https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@base <https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel> .
+
+<https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel> rdf:type owl:Ontology ;
+                                                                        dc:contributor "Eeva Järvenpää"^^xsd:string ,
+                                                                                       "Niko Siltala"^^xsd:string ,
+                                                                                       "Otto Hylli"^^xsd:string ;
+                                                                        dc:creator "Eeva Järvenpää"^^xsd:string ;
+                                                                        dc:date "2016-11-22"^^xsd:string ;
+                                                                        dc:description "Process taxonomy (PT) defines the taxonomic hierarchy between different processes."@en ;
+                                                                        dc:language "en"^^xsd:language ;
+                                                                        dc:rights "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ "@en ;
+                                                                        dc:title "Process taxonomy ontology"^^xsd:string ;
+                                                                        rdfs:comment "Process taxonomy (PT) defines the taxonomic hierarchy between different processes."@en ,
+                                                                                     """The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ """^^xsd:string ;
+                                                                        rdfs:label "Process taxonomy ontology"^^xsd:string ;
+                                                                        owl:versionInfo "0.0.2"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#Logistic
+:Logistic rdf:type owl:Class ;
+          rdfs:subClassOf :ProcessTaxonomyElement ;
+          rdfs:comment "Logistic process is an auxiliary process (group of processes) needed for controlling the logistic issues within the production system. Doesn't add value to the product, but are needed to complete the other processes."^^xsd:string .
+
+
+###  https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement
+:ProcessTaxonomyElement rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:Thing rdfs:comment ""^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

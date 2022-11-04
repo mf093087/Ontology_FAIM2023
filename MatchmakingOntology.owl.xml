@@ -1,0 +1,4488 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rm="http://resourcedescription.tut.fi/ontology/resourceModel#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:cm="http://resourcedescription.tut.fi/ontology/capabilityModel#"
+    xmlns="http://resourcedescription.tut.fi/ontology/MatchmakingOntology#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:arg="http://spinrdf.org/arg#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:su="http://resourcedescription.tut.fi/ontology/spinUtils#"
+    xmlns:pt="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:spl="http://spinrdf.org/spl#"
+    xmlns:pm="http://resourcedescription.tut.fi/ontology/productModel#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://resourcedescription.tut.fi/ontology/MatchmakingOntology">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/spinUtils"/>
+    <rdfs:comment>The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: All rights reserved Copyright (c) 2016 Tampere University of Technology (TUT) / MEI. ReCaM Consortium Confidential.</rdfs:comment>
+    <dc:rights xml:lang="en">This work is licensed under: All rights reserved Copyright (c) 2016 Tampere University of Technology (TUT) / MEI. ReCaM Consortium Confidential.</dc:rights>
+    <rdfs:comment>This&#xD; ontology imports the ProductModel and ResourceModel ontologies. It is used for the capability matchmaking purposes.</rdfs:comment>
+    <owl:imports rdf:resource="http://spinrdf.org/spin"/>
+    <owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/productModel"/>
+    <owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="MatchPerformance">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasMatchPerformance">
+    <rdfs:range rdf:resource="#MatchPerformance"/>
+    <rdfs:comment></rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="canBeImplementedWith">
+    <rdfs:label>can be implemented with</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCapabilityMatch">
+    <rdfs:label>has capability match</rdfs:label>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#this">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#item1">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#taxonomy">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#capability">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#shape">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#item2">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#param1">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://spinrdf.org/arg#param2">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Property>
+  <owl:DatatypeProperty rdf:ID="ignoreProcess">
+    <rdfs:label>ignore process</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#ConeShape">
+    <owl:equivalentClass rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ConeShape"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#BoxShape">
+    <owl:equivalentClass rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#BoxShape"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing">
+    <implementRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredAccuracy</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>accuracy</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:and>
+                <sp:arg2>
+                  <pickingMatch>
+                    <arg:this rdf:resource="http://spinrdf.org/spin#_this"/>
+                    <arg:instance rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:instance>
+                  </pickingMatch>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:ge>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>accuracy</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredAccuracy</sp:varName>
+                    </sp:arg1>
+                  </sp:ge>
+                </sp:arg1>
+              </sp:and>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Feeding">
+    <implementRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredAccuracy</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredFeedRate</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredFeedRate"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>feedRate</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#feedRate_max"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>accuracy</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:ge>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>accuracy</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredAccuracy</sp:varName>
+                    </sp:arg1>
+                  </sp:ge>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredAccuracy</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>feedRate</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredFeedRate</sp:varName>
+                    </sp:arg1>
+                  </sp:le>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:or>
+                    <sp:arg2>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>feedRate</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>requiredFeedRate</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg1>
+                  </sp:or>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <shapeAndSizeExactMatch>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                  </shapeAndSizeExactMatch>
+                </sp:arg2>
+                <sp:arg1>
+                  <shapeAndSizeMatch>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                  </shapeAndSizeMatch>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <spin:RuleProperty rdf:ID="matchPerformanceRule">
+    <spin:rulePropertyMaxIterationCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</spin:rulePropertyMaxIterationCount>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#rule"/>
+  </spin:RuleProperty>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredStroke"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredStroke</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#stroke_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>stroke_max</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <forceMatch>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:resource="http://spinrdf.org/spin#_this"/>
+              </forceMatch>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredStroke</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>stroke_max</sp:varName>
+                </sp:arg2>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Activity">
+    <matchPerformanceRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:nodeID="A0"/>
+            <sp:predicate rdf:resource="#hasMatchPerformance"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:nodeID="A0"/>
+            <sp:predicate rdf:resource="#hasMatchPerformance"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>requirement</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:nodeID="A0"/>
+            <sp:predicate rdf:resource="#hasMatchPerformance"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:resource="#MatchPerformance"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A0"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>processTime</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#duration"/>
+            <sp:subject rdf:nodeID="A0"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>duration</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#duration"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>occurrences</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#occurrences"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#relatesToProcess"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>fixation</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>fixingElements</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#numberOfFixingElements"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>fixation</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Bind>
+            <sp:expression>
+              <sp:if>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>occurrences</sp:varName>
+                </sp:arg3>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>fixingElements</sp:varName>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>fixingElements</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:if>
+            </sp:expression>
+            <sp:variable rdf:parseType="Resource">
+              <sp:varName>times</sp:varName>
+            </sp:variable>
+          </sp:Bind>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requirement</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+              <sp:Optional>
+                <sp:elements rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>capability</sp:varName>
+                    </sp:object>
+                    <sp:predicate rdf:resource="#canBeImplementedWith"/>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>requirement</sp:varName>
+                    </sp:subject>
+                  </rdf:Description>
+                  <sp:TriplePath>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>capability</sp:varName>
+                    </sp:object>
+                    <sp:path>
+                      <sp:AltPath>
+                        <sp:path2 rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasCapability"/>
+                        <sp:path1 rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasCalculatedCapability"/>
+                      </sp:AltPath>
+                    </sp:path>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>device</sp:varName>
+                    </sp:subject>
+                  </sp:TriplePath>
+                  <sp:Filter>
+                    <sp:expression>
+                      <sp:notExists>
+                        <sp:elements rdf:parseType="Collection">
+                          <rdf:Description>
+                            <sp:object rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#CapabilityPerformanceLevel"/>
+                            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+                            <sp:subject rdf:parseType="Resource">
+                              <sp:varName>device</sp:varName>
+                            </sp:subject>
+                          </rdf:Description>
+                        </sp:elements>
+                      </sp:notExists>
+                    </sp:expression>
+                  </sp:Filter>
+                  <sp:Optional>
+                    <sp:elements rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName>performance</sp:varName>
+                        </sp:object>
+                        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasPerformance"/>
+                        <sp:subject rdf:parseType="Resource">
+                          <sp:varName>device</sp:varName>
+                        </sp:subject>
+                      </rdf:Description>
+                      <rdf:Description>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName>cycleTime</sp:varName>
+                        </sp:object>
+                        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#cycleTime_average"/>
+                        <sp:subject rdf:parseType="Resource">
+                          <sp:varName>performance</sp:varName>
+                        </sp:subject>
+                      </rdf:Description>
+                    </sp:elements>
+                  </sp:Optional>
+                </sp:elements>
+              </sp:Optional>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Bind>
+            <sp:expression>
+              <sp:if>
+                <sp:arg3>
+                  <sp:mul>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>cycleTime</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>times</sp:varName>
+                    </sp:arg1>
+                  </sp:mul>
+                </sp:arg3>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>duration</sp:varName>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:or>
+                    <sp:arg2>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>capability</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>requirement</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg1>
+                  </sp:or>
+                </sp:arg1>
+              </sp:if>
+            </sp:expression>
+            <sp:variable rdf:parseType="Resource">
+              <sp:varName>processTime</sp:varName>
+            </sp:variable>
+          </sp:Bind>
+        </sp:where>
+      </sp:Construct>
+    </matchPerformanceRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TighteningFromSide">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#nutSize"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>nutSize</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#nutSize_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>nutSize_max</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#nutSize_min"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>nutSize_min</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <torqueMatch>
+                <arg:capability rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </arg:capability>
+                <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+              </torqueMatch>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>nutSize_min</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>nutSize</sp:varName>
+                </sp:arg2>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:ge>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>nutSize_max</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>nutSize</sp:varName>
+                </sp:arg2>
+              </sp:ge>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Fixturing">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+            <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>mass</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredAccuracy</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_max"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredForce_max</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_min"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredForce_min</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#payload"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>payload</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>accuracy</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>force_max</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_min"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>force_min</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:ge>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>payload</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>mass</sp:varName>
+                </sp:arg2>
+              </sp:ge>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredAccuracy</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:ge>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredAccuracy</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>accuracy</sp:varName>
+                    </sp:arg2>
+                  </sp:ge>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredForce_max</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:ge>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredForce_max</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>force_min</sp:varName>
+                    </sp:arg2>
+                  </sp:ge>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredForce_min</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredForce_min</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>force_max</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <shapeAndSizeMatch>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </shapeAndSizeMatch>
+                </sp:arg1>
+                <sp:arg2>
+                  <fixtureOpeningMatch>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </fixtureOpeningMatch>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <spin:RuleProperty rdf:ID="combinationPerformanceRule">
+    <spin:nextRuleProperty rdf:resource="http://resourcedescription.tut.fi/ontology/matchPerformanceRule"/>
+    <spin:rulePropertyMaxIterationCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</spin:rulePropertyMaxIterationCount>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#rule"/>
+    <rdfs:comment></rdfs:comment>
+  </spin:RuleProperty>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#PyramidShape">
+    <owl:equivalentClass rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#PyramidShape"/>
+  </rdf:Description>
+  <spin:RuleProperty rdf:ID="implementRule">
+    <spin:nextRuleProperty rdf:resource="http://resourcedescription.tut.fi/ontology/combinationPerformanceRule"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#rule"/>
+  </spin:RuleProperty>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ThreadRunning">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <shapeAndSizeMatch>
+                <arg:capability rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </arg:capability>
+                <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+              </shapeAndSizeMatch>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <torqueMatch>
+                <arg:capability rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </arg:capability>
+                <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+              </torqueMatch>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Screwing">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwType"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredType</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwDiameter"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>diameter</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#screwType"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instanceType</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#screwSize"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>size</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:eq>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredType</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>instanceType</sp:varName>
+                </sp:arg2>
+              </sp:eq>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:eq>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>diameter</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>size</sp:varName>
+                </sp:arg2>
+              </sp:eq>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <torqueMatch>
+                <arg:capability rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </arg:capability>
+                <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+              </torqueMatch>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#MountingO-ring">
+    <implementRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>dimension</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>diameter_inner</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter_inner"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>dimension</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredForce_min</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredForce_max</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>ringPosition</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasRingPosition"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredDiameter</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>ringPosition</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredDimension_z</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>ringPosition</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>internalDiameter_min</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#itemDiameterInternal_min"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>internalDiameter_max</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#ItemDiameterInternal_max"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>force_min</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_min"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>capability</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>force_max</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_max"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>internalShape</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasShapeAndSize_internal"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>diameter</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>internalShape</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>dimension_z</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_z"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>internalShape</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:ge>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>internalDiameter_min</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>diameter_inner</sp:varName>
+                </sp:arg1>
+              </sp:ge>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>internalDiameter_max</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>diameter_inner</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>diameter</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredDiameter</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>dimension_z</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredDimension_z</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>force_max</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredForce_min</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:ge>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>force_min</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredForce_max</sp:varName>
+                    </sp:arg1>
+                  </sp:ge>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredForce_max</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredAccuracy</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>accuracy</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_x"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredSpeed_x</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_y"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredSpeed_y</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_z"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredSpeed_z</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#speed_x_max"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>speed_x</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#speed_y_max"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>speed_y</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#speed_z_max"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>speed_z</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredAccuracy</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:ge>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredAccuracy</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>accuracy</sp:varName>
+                    </sp:arg2>
+                  </sp:ge>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredSpeed_x</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredSpeed_x</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>speed_x</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredSpeed_y</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredSpeed_y</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>speed_y</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredSpeed_z</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredSpeed_z</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>speed_z</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:and>
+                <sp:arg1>
+                  <shapeAndSizeMatch>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </shapeAndSizeMatch>
+                </sp:arg1>
+                <sp:arg2>
+                  <dofMatch>
+                    <arg:instance rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:instance>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </dofMatch>
+                </sp:arg2>
+              </sp:and>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredAccuracy</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>accuracy</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:and>
+                <sp:arg1>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:ge>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredAccuracy</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>accuracy</sp:varName>
+                        </sp:arg2>
+                      </sp:ge>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <pickingMatch>
+                        <arg:instance rdf:parseType="Resource">
+                          <sp:varName>instance</sp:varName>
+                        </arg:instance>
+                        <arg:this rdf:resource="http://spinrdf.org/spin#_this"/>
+                      </pickingMatch>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg1>
+                <sp:arg2>
+                  <dofMatch>
+                    <arg:instance rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:instance>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </dofMatch>
+                </sp:arg2>
+              </sp:and>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking">
+    <implementRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <pickingMatch>
+                <arg:this rdf:resource="http://spinrdf.org/spin#_this"/>
+                <arg:instance rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </arg:instance>
+              </pickingMatch>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <spin:RuleProperty rdf:ID="capabilityNameLevelRule">
+    <spin:nextRuleProperty rdf:resource="http://resourcedescription.tut.fi/ontology/implementRule"/>
+    <spin:rulePropertyMaxIterationCount rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</spin:rulePropertyMaxIterationCount>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#rule"/>
+  </spin:RuleProperty>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement">
+    <capabilityNameLevelRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+            <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:notExists>
+                <sp:elements rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>process</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="#ignoreProcess"/>
+                    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</sp:object>
+                  </rdf:Description>
+                </sp:elements>
+              </sp:notExists>
+            </sp:expression>
+          </sp:Filter>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#matchmakingRequired"/>
+            <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>class</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:TriplePath>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:path>
+              <sp:ModPath>
+                <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+                <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >-2</sp:modMax>
+                <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</sp:modMin>
+              </sp:ModPath>
+            </sp:path>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>class</sp:varName>
+            </sp:object>
+          </sp:TriplePath>
+          <sp:TriplePath>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:path>
+              <sp:ModPath>
+                <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+                <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >-2</sp:modMax>
+                <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:modMin>
+              </sp:ModPath>
+            </sp:path>
+            <sp:object rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+          </sp:TriplePath>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </capabilityNameLevelRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/resourceModel#DeviceCombination">
+    <combinationPerformanceRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasPerformance"/>
+            <sp:object rdf:nodeID="A1"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A1"/>
+            <sp:object rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Performance"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:nodeID="A1"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>totalTime</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#cycleTime_average"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:SubQuery>
+            <sp:query>
+              <sp:Select>
+                <sp:where rdf:parseType="Collection">
+                  <sp:TriplePath>
+                    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                    <sp:path>
+                      <sp:ModPath>
+                        <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >-2</sp:modMax>
+                        <sp:subPath rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasIndividualDeviceOrDeviceCombination"/>
+                        <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >1</sp:modMin>
+                      </sp:ModPath>
+                    </sp:path>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>device</sp:varName>
+                    </sp:object>
+                  </sp:TriplePath>
+                  <sp:Filter>
+                    <sp:expression>
+                      <sp:notExists>
+                        <sp:elements rdf:parseType="Collection">
+                          <rdf:Description>
+                            <sp:subject rdf:parseType="Resource">
+                              <sp:varName>device</sp:varName>
+                            </sp:subject>
+                            <sp:object rdf:parseType="Resource">
+                              <sp:varName>device2</sp:varName>
+                            </sp:object>
+                            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasIndividualDeviceOrDeviceCombination"/>
+                          </rdf:Description>
+                        </sp:elements>
+                      </sp:notExists>
+                    </sp:expression>
+                  </sp:Filter>
+                  <sp:Optional>
+                    <sp:elements rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName>blueprint</sp:varName>
+                        </sp:object>
+                        <sp:subject rdf:parseType="Resource">
+                          <sp:varName>device</sp:varName>
+                        </sp:subject>
+                        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasDeviceBlueprint"/>
+                      </rdf:Description>
+                    </sp:elements>
+                  </sp:Optional>
+                  <sp:Bind>
+                    <sp:expression>
+                      <sp:if>
+                        <sp:arg3 rdf:parseType="Resource">
+                          <sp:varName>device</sp:varName>
+                        </sp:arg3>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>blueprint</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>blueprint</sp:varName>
+                        </sp:arg2>
+                      </sp:if>
+                    </sp:expression>
+                    <sp:variable rdf:parseType="Resource">
+                      <sp:varName>target</sp:varName>
+                    </sp:variable>
+                  </sp:Bind>
+                  <rdf:Description>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>performance</sp:varName>
+                    </sp:object>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>target</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasPerformance"/>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>time</sp:varName>
+                    </sp:object>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>performance</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#cycleTime_average"/>
+                  </rdf:Description>
+                </sp:where>
+                <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >true</sp:distinct>
+                <sp:groupBy rdf:parseType="Collection">
+                  <rdf:Description rdf:about="http://spinrdf.org/spin#_this"/>
+                </sp:groupBy>
+                <sp:resultVariables rdf:parseType="Collection">
+                  <rdf:Description rdf:about="http://spinrdf.org/spin#_this"/>
+                  <rdf:Description>
+                    <sp:expression>
+                      <sp:Sum>
+                        <sp:expression rdf:parseType="Resource">
+                          <sp:varName>time</sp:varName>
+                        </sp:expression>
+                      </sp:Sum>
+                    </sp:expression>
+                    <sp:varName>totalTime</sp:varName>
+                  </rdf:Description>
+                </sp:resultVariables>
+              </sp:Select>
+            </sp:query>
+          </sp:SubQuery>
+          <sp:Filter>
+            <sp:expression>
+              <sp:notExists>
+                <sp:elements rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/resourceModel#hasPerformance"/>
+                    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>p</sp:varName>
+                    </sp:object>
+                  </rdf:Description>
+                </sp:elements>
+              </sp:notExists>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Construct>
+    </combinationPerformanceRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BlindRiveting">
+    <implementRule>
+      <sp:Construct>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>rivet</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>rivetDiameter</sp:varName>
+            </sp:object>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivet</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetDiameter"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetLength"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivet</sp:varName>
+            </sp:subject>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>rivetLength</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>type</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetType"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivet</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredRivetHeadShape"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>requiredHeadShape</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredStroke</sp:varName>
+                </sp:object>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredStroke"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>mandrelLength</sp:varName>
+                </sp:object>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mandrelLength"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>reqForce_min</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_min"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>rivetSize_min</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivetSize_min</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min_rivetDiameter</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min_rivetLength</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#length"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivetSize_min</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_max"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>rivetSize_max</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max_rivetDiameter</sp:varName>
+            </sp:object>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivetSize_max</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>rivetSize_max</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#length"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max_rivetLength</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>force_max</sp:varName>
+            </sp:object>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#stroke_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>stroke_max</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#rivetHeadShape"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:subject>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>headShape</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>mandrelSize_max</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_max"/>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>max_mandrelLength</sp:varName>
+                </sp:object>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>mandrelSize_max</sp:varName>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#length"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_min"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>mandrelSize_min</sp:varName>
+                </sp:object>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>instance</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>mandrelSize_min</sp:varName>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#length"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>min_mandrelLength</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Filter>
+            <sp:expression>
+              <sp:ge>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>rivetDiameter</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_rivetDiameter</sp:varName>
+                </sp:arg2>
+              </sp:ge>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>max_rivetDiameter</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>rivetDiameter</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:ge>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_rivetLength</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>rivetLength</sp:varName>
+                </sp:arg1>
+              </sp:ge>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>max_rivetLength</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>rivetLength</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>reqForce_min</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>reqForce_min</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>force_max</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>stroke_max</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredStroke</sp:varName>
+                    </sp:arg1>
+                  </sp:le>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredStroke</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:eq>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>headShape</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredHeadShape</sp:varName>
+                </sp:arg1>
+              </sp:eq>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>mandrelLength</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>max_mandrelLength</sp:varName>
+                    </sp:arg2>
+                  </sp:le>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>mandrelLength</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:templates>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#SphereShape">
+    <owl:equivalentClass rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SphereShape"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#CylinderShape">
+    <owl:equivalentClass rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Hammering">
+    <implementRule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#canBeImplementedWith"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>instance</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:where>
+      </sp:Construct>
+    </implementRule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:first>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#payload"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>payload</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max_shape</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>max_shape</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max_shape_class</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>max_shape_class</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape_class</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_min"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min_shape</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>min_shape</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min_shape_class</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>min_shape_class</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape_class</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_min"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min_size</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_max"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max_size</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Bind>
+        <sp:variable rdf:parseType="Resource">
+          <sp:varName>has_either_size_or_shape_limits</sp:varName>
+        </sp:variable>
+        <sp:expression>
+          <sp:if>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg1>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>max_shape</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>min_shape</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>min_size</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>max_size</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg2>
+              </sp:or>
+            </sp:arg1>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</sp:arg2>
+            <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >false</sp:arg3>
+          </sp:if>
+        </sp:expression>
+      </sp:Bind>
+      <sp:Filter>
+        <sp:expression rdf:parseType="Resource">
+          <sp:varName>has_either_size_or_shape_limits</sp:varName>
+        </sp:expression>
+      </sp:Filter>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_shape</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_shape</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_shape</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_shape</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_z"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_shape</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_shape</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_x"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_shape</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_shape</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_y"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>element</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_shape</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_shape</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#mass"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Bind>
+            <sp:variable rdf:parseType="Resource">
+              <sp:varName>shapeMatch</sp:varName>
+            </sp:variable>
+            <sp:expression rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</sp:expression>
+          </sp:Bind>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_size</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_size</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_size</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_size</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#height"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_size</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_size</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#length"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_size</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_size</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#width"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <inRange>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>element</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min_size</sp:varName>
+                </sp:arg2>
+                <sp:arg3 rdf:parseType="Resource">
+                  <sp:varName>max_size</sp:varName>
+                </sp:arg3>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#weight"/>
+              </inRange>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Bind>
+            <sp:variable rdf:parseType="Resource">
+              <sp:varName>sizeMatch</sp:varName>
+            </sp:variable>
+            <sp:expression rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</sp:expression>
+          </sp:Bind>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Filter>
+        <sp:expression>
+          <sp:and>
+            <sp:arg1>
+              <sp:and>
+                <sp:arg1>
+                  <sp:or>
+                    <sp:arg1>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>payload</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>mass</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>payload</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg2>
+                  </sp:or>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>shapeMatch</sp:varName>
+                </sp:arg2>
+              </sp:and>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName>sizeMatch</sp:varName>
+            </sp:arg2>
+          </sp:and>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+  </rdf:Description>
+  <sp:Optional rdf:nodeID="A3">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:predicate rdf:parseType="Resource">
+          <sp:varName>param2</sp:varName>
+        </sp:predicate>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>min</sp:varName>
+        </sp:object>
+        <sp:subject rdf:resource="http://spinrdf.org/spin#_arg2"/>
+      </rdf:Description>
+    </sp:elements>
+  </sp:Optional>
+  <sp:not rdf:nodeID="A4">
+    <sp:arg1>
+      <sp:bound>
+        <sp:arg1 rdf:parseType="Resource">
+          <sp:varName>requiredExact</sp:varName>
+        </sp:arg1>
+      </sp:bound>
+    </sp:arg1>
+  </sp:not>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max</sp:varName>
+            </sp:object>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_arg3"/>
+            <sp:predicate rdf:parseType="Resource">
+              <sp:varName>param2</sp:varName>
+            </sp:predicate>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:and>
+                <sp:arg2>
+                  <sp:or>
+                    <sp:arg1>
+                      <sp:or>
+                        <sp:arg2>
+                          <sp:not>
+                            <sp:arg1>
+                              <sp:bound>
+                                <sp:arg1 rdf:parseType="Resource">
+                                  <sp:varName>max</sp:varName>
+                                </sp:arg1>
+                              </sp:bound>
+                            </sp:arg1>
+                          </sp:not>
+                        </sp:arg2>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>arg3NotBound</sp:varName>
+                        </sp:arg1>
+                      </sp:or>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>value</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>max</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg2>
+                  </sp:or>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:or>
+                    <sp:arg1>
+                      <sp:or>
+                        <sp:arg2>
+                          <sp:not>
+                            <sp:arg1>
+                              <sp:bound>
+                                <sp:arg1 rdf:parseType="Resource">
+                                  <sp:varName>min</sp:varName>
+                                </sp:arg1>
+                              </sp:bound>
+                            </sp:arg1>
+                          </sp:not>
+                        </sp:arg2>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>arg2NotBound</sp:varName>
+                        </sp:arg1>
+                      </sp:or>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:ge>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>value</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>min</sp:varName>
+                        </sp:arg2>
+                      </sp:ge>
+                    </sp:arg2>
+                  </sp:or>
+                </sp:arg1>
+              </sp:and>
+            </sp:arg2>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>arg1NotBound</sp:varName>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>value</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg2>
+              </sp:or>
+            </sp:arg1>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+    <rdf:first rdf:nodeID="A3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <sp:varName>common</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <sp:varName>taxonomy</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <sp:varName>force_min</sp:varName>
+  </rdf:Description>
+  <sp:not rdf:nodeID="A9">
+    <sp:arg1>
+      <sp:bound>
+        <sp:arg1 rdf:parseType="Resource">
+          <sp:varName>min</sp:varName>
+        </sp:arg1>
+      </sp:bound>
+    </sp:arg1>
+  </sp:not>
+  <rdf:Description rdf:nodeID="A10">
+    <sp:varName>param2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <sp:varName>requiredMin</sp:varName>
+  </rdf:Description>
+  <sp:not rdf:nodeID="A12">
+    <sp:arg1>
+      <sp:bound>
+        <sp:arg1 rdf:parseType="Resource">
+          <sp:varName>value2</sp:varName>
+        </sp:arg1>
+      </sp:bound>
+    </sp:arg1>
+  </sp:not>
+  <sp:le rdf:nodeID="A13">
+    <sp:arg1 rdf:nodeID="A11"/>
+    <sp:arg2 rdf:parseType="Resource">
+      <sp:varName>max</sp:varName>
+    </sp:arg2>
+  </sp:le>
+  <rdf:Description rdf:nodeID="A14">
+    <sp:varName>value2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <sp:predicate rdf:parseType="Resource">
+      <sp:varName>param1</sp:varName>
+    </sp:predicate>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>value</sp:varName>
+    </sp:object>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <sp:varName>shape_class</sp:varName>
+  </rdf:Description>
+  <sp:and rdf:nodeID="A17">
+    <sp:arg1>
+      <sp:or>
+        <sp:arg1>
+          <sp:not>
+            <sp:arg1>
+              <sp:bound>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredType</sp:varName>
+                </sp:arg1>
+              </sp:bound>
+            </sp:arg1>
+          </sp:not>
+        </sp:arg1>
+        <sp:arg2>
+          <sp:eq>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName>type</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName>requiredType</sp:varName>
+            </sp:arg2>
+          </sp:eq>
+        </sp:arg2>
+      </sp:or>
+    </sp:arg1>
+    <sp:arg2>
+      <sp:or>
+        <sp:arg1>
+          <sp:not>
+            <sp:arg1>
+              <sp:bound>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>allowedForce</sp:varName>
+                </sp:arg1>
+              </sp:bound>
+            </sp:arg1>
+          </sp:not>
+        </sp:arg1>
+        <sp:arg2>
+          <sp:ge>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName>allowedForce</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName>force_min</sp:varName>
+            </sp:arg2>
+          </sp:ge>
+        </sp:arg2>
+      </sp:or>
+    </sp:arg2>
+  </sp:and>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject rdf:parseType="Resource">
+        <sp:varName>shape</sp:varName>
+      </sp:subject>
+      <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+      <sp:object rdf:nodeID="A16"/>
+    </rdf:first>
+    <rdf:rest rdf:nodeID="A2"/>
+  </rdf:Description>
+  <sp:bound rdf:nodeID="A19">
+    <sp:arg1 rdf:parseType="Resource">
+      <sp:varName>requiredExact</sp:varName>
+    </sp:arg1>
+  </sp:bound>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:first>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>max</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredExact</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:arg2>
+            <sp:arg1>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredExact</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg1>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:ge>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredExact</sp:varName>
+                </sp:arg1>
+              </sp:ge>
+            </sp:arg2>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg2 rdf:nodeID="A9"/>
+                <sp:arg1 rdf:nodeID="A4"/>
+              </sp:or>
+            </sp:arg1>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:ge>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredMax</sp:varName>
+                </sp:arg1>
+              </sp:ge>
+            </sp:arg2>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg2>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>min</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredMax</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:arg1>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:le>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>max</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredMin</sp:varName>
+                </sp:arg1>
+              </sp:le>
+            </sp:arg2>
+            <sp:arg1>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredMin</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg1>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+  </rdf:Description>
+  <sp:not rdf:nodeID="A21">
+    <sp:arg1 rdf:nodeID="A19"/>
+  </sp:not>
+  <rdf:Description rdf:nodeID="A22">
+    <sp:varName>dim_x</sp:varName>
+  </rdf:Description>
+  <sp:or rdf:nodeID="A23">
+    <sp:arg2 rdf:nodeID="A12"/>
+    <sp:arg1>
+      <sp:not>
+        <sp:arg1>
+          <sp:bound>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName>value1</sp:varName>
+            </sp:arg1>
+          </sp:bound>
+        </sp:arg1>
+      </sp:not>
+    </sp:arg1>
+  </sp:or>
+  <sp:Filter rdf:nodeID="A24">
+    <sp:expression>
+      <sp:or>
+        <sp:arg1>
+          <sp:or>
+            <sp:arg1>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredExact</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg1>
+            <sp:arg2>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>min</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg2>
+          </sp:or>
+        </sp:arg1>
+        <sp:arg2>
+          <sp:ge>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName>requiredExact</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName>min</sp:varName>
+            </sp:arg2>
+          </sp:ge>
+        </sp:arg2>
+      </sp:or>
+    </sp:expression>
+  </sp:Filter>
+  <rdf:Description rdf:nodeID="A25">
+    <sp:subject rdf:parseType="Resource">
+      <sp:varName>capability</sp:varName>
+    </sp:subject>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#fixtureOpening_min"/>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>opening_min</sp:varName>
+    </sp:object>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <sp:object rdf:nodeID="A14"/>
+    <sp:predicate rdf:nodeID="A10"/>
+    <sp:subject rdf:parseType="Resource">
+      <sp:varName>item2</sp:varName>
+    </sp:subject>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredMax</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>min</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg2>
+              </sp:or>
+            </sp:arg1>
+            <sp:arg2>
+              <sp:ge>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredMax</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>min</sp:varName>
+                </sp:arg2>
+              </sp:ge>
+            </sp:arg2>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg1>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>requiredMin</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg1>
+            <sp:arg2 rdf:nodeID="A13"/>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+    <rdf:first rdf:nodeID="A24"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:first rdf:nodeID="A25"/>
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName>capability</sp:varName>
+        </sp:subject>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#fixtureOpening_max"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>opening_max</sp:varName>
+        </sp:object>
+      </rdf:Description>
+      <sp:Filter>
+        <sp:expression>
+          <sp:and>
+            <sp:arg1>
+              <sp:or>
+                <sp:arg1>
+                  <sp:or>
+                    <sp:arg1>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:and>
+                            <sp:arg1>
+                              <sp:bound>
+                                <sp:arg1 rdf:nodeID="A22"/>
+                              </sp:bound>
+                            </sp:arg1>
+                            <sp:arg2>
+                              <sp:bound>
+                                <sp:arg1 rdf:parseType="Resource">
+                                  <sp:varName>dim_y</sp:varName>
+                                </sp:arg1>
+                              </sp:bound>
+                            </sp:arg2>
+                          </sp:and>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:and>
+                        <sp:arg1>
+                          <sp:le>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>opening_min</sp:varName>
+                            </sp:arg1>
+                            <sp:arg2 rdf:parseType="Resource">
+                              <sp:varName>dim_x</sp:varName>
+                            </sp:arg2>
+                          </sp:le>
+                        </sp:arg1>
+                        <sp:arg2>
+                          <sp:le>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>dim_x</sp:varName>
+                            </sp:arg1>
+                            <sp:arg2 rdf:parseType="Resource">
+                              <sp:varName>opening_max</sp:varName>
+                            </sp:arg2>
+                          </sp:le>
+                        </sp:arg2>
+                      </sp:and>
+                    </sp:arg2>
+                  </sp:or>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>opening_min</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>dim_y</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>dim_y</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>opening_max</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg2>
+              </sp:or>
+            </sp:arg1>
+            <sp:arg2>
+              <sp:or>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>diameter</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>opening_min</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>diameter</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:le>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>diameter</sp:varName>
+                        </sp:arg1>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>opening_max</sp:varName>
+                        </sp:arg2>
+                      </sp:le>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg2>
+              </sp:or>
+            </sp:arg2>
+          </sp:and>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+  </rdf:Description>
+  <spin:Function rdf:ID="shapeAndSizeExactMatch">
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>taxonomy</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>process</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>mass</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape_class</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>shape</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>exact_shape</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_exact"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>exact_shape_class</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>exact_shape</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape_class</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>exact_shape_class</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>exactMass</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#mass"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>exact_shape</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg2>
+                  <sp:le>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName>exactMass</sp:varName>
+                    </sp:arg2>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>mass</sp:varName>
+                    </sp:arg1>
+                  </sp:le>
+                </sp:arg2>
+                <sp:arg1>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>exactMass</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg1>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <equalsOrNotDefined>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#diameter"/>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <arg:item2 rdf:parseType="Resource">
+                  <sp:varName>exact_shape</sp:varName>
+                </arg:item2>
+                <arg:item1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </arg:item1>
+              </equalsOrNotDefined>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <equalsOrNotDefined>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_z"/>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <arg:item2 rdf:parseType="Resource">
+                  <sp:varName>exact_shape</sp:varName>
+                </arg:item2>
+                <arg:item1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </arg:item1>
+              </equalsOrNotDefined>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <equalsOrNotDefined>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_y"/>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+                <arg:item2 rdf:parseType="Resource">
+                  <sp:varName>exact_shape</sp:varName>
+                </arg:item2>
+                <arg:item1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </arg:item1>
+              </equalsOrNotDefined>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Filter>
+            <sp:expression>
+              <equalsOrNotDefined>
+                <arg:param2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_x"/>
+                <arg:param1 rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+                <arg:item2 rdf:parseType="Resource">
+                  <sp:varName>exact_shape</sp:varName>
+                </arg:item2>
+                <arg:item1 rdf:parseType="Resource">
+                  <sp:varName>shape</sp:varName>
+                </arg:item1>
+              </equalsOrNotDefined>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Ask>
+    </spin:body>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#capability"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#taxonomy"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A29">
+    <rdf:first>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>min</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_min"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first>
+        <sp:Optional>
+          <sp:elements rdf:parseType="Collection">
+            <rdf:Description>
+              <sp:object rdf:parseType="Resource">
+                <sp:varName>requiredMax</sp:varName>
+              </sp:object>
+              <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+              <sp:subject rdf:parseType="Resource">
+                <sp:varName>taxonomy</sp:varName>
+              </sp:subject>
+            </rdf:Description>
+          </sp:elements>
+        </sp:Optional>
+      </rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredExact</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>taxonomy</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+        </rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first>
+            <sp:Optional>
+              <sp:elements rdf:parseType="Collection">
+                <rdf:Description>
+                  <sp:object rdf:parseType="Resource">
+                    <sp:varName>requiredMin</sp:varName>
+                  </sp:object>
+                  <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                  <sp:subject rdf:parseType="Resource">
+                    <sp:varName>taxonomy</sp:varName>
+                  </sp:subject>
+                </rdf:Description>
+              </sp:elements>
+            </sp:Optional>
+          </rdf:first>
+          <rdf:rest rdf:nodeID="A20"/>
+        </rdf:rest>
+      </rdf:rest>
+    </rdf:rest>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:rest rdf:nodeID="A27"/>
+    <rdf:first>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg1 rdf:nodeID="A21"/>
+            <sp:arg2>
+              <sp:le>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>requiredExact</sp:varName>
+                </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>max</sp:varName>
+                </sp:arg2>
+              </sp:le>
+            </sp:arg2>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A26"/>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A32">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#capability"/>
+    <rdfs:comment>capability instance</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <sp:bound rdf:nodeID="A33">
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg3"/>
+  </sp:bound>
+  <sp:Optional rdf:nodeID="A34">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A15"/>
+    </sp:elements>
+  </sp:Optional>
+  <spl:Argument rdf:nodeID="A35">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#taxonomy"/>
+    <rdfs:comment>taxonomy instance</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject rdf:parseType="Resource">
+        <sp:varName>process</sp:varName>
+      </sp:subject>
+      <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+      <sp:object rdf:parseType="Resource">
+        <sp:varName>taxonomy</sp:varName>
+      </sp:object>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName>process</sp:varName>
+        </sp:subject>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>element</sp:varName>
+        </sp:object>
+      </rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:parseType="Resource">
+          <sp:subject rdf:parseType="Resource">
+            <sp:varName>element</sp:varName>
+          </sp:subject>
+          <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+          <sp:object rdf:parseType="Resource">
+            <sp:varName>mass</sp:varName>
+          </sp:object>
+        </rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:parseType="Resource">
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>element</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>shape</sp:varName>
+            </sp:object>
+          </rdf:first>
+          <rdf:rest rdf:nodeID="A18"/>
+        </rdf:rest>
+      </rdf:rest>
+    </rdf:rest>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:nodeID="A34"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg2>
+              <sp:eq>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName>value2</sp:varName>
+                </sp:arg2>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName>value1</sp:varName>
+                </sp:arg1>
+              </sp:eq>
+            </sp:arg2>
+            <sp:arg1 rdf:nodeID="A23"/>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:rest>
+    <rdf:first>
+      <sp:Optional>
+        <sp:elements rdf:nodeID="A31"/>
+      </sp:Optional>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Bind rdf:nodeID="A39">
+    <sp:expression>
+      <sp:not>
+        <sp:arg1>
+          <sp:bound>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+          </sp:bound>
+        </sp:arg1>
+      </sp:not>
+    </sp:expression>
+    <sp:variable rdf:parseType="Resource">
+      <sp:varName>arg1NotBound</sp:varName>
+    </sp:variable>
+  </sp:Bind>
+  <sp:Bind rdf:nodeID="A40">
+    <sp:expression>
+      <sp:not>
+        <sp:arg1 rdf:nodeID="A33"/>
+      </sp:not>
+    </sp:expression>
+    <sp:variable rdf:parseType="Resource">
+      <sp:varName>arg3NotBound</sp:varName>
+    </sp:variable>
+  </sp:Bind>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:nodeID="A37"/>
+        <rdf:first rdf:nodeID="A40"/>
+      </rdf:rest>
+      <rdf:first>
+        <sp:Bind>
+          <sp:variable rdf:parseType="Resource">
+            <sp:varName>arg2NotBound</sp:varName>
+          </sp:variable>
+          <sp:expression>
+            <sp:not>
+              <sp:arg1>
+                <sp:bound>
+                  <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                </sp:bound>
+              </sp:arg1>
+            </sp:not>
+          </sp:expression>
+        </sp:Bind>
+      </rdf:first>
+    </rdf:rest>
+    <rdf:first rdf:nodeID="A39"/>
+  </rdf:Description>
+  <spin:Function rdf:ID="inRange">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment>maximum value</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment>minimum value</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment>value to be compared with minimum and maximum</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label>can be implemented with</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#param2"/>
+        <rdfs:comment>property for getting value from arg2 and arg3</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#param1"/>
+        <rdfs:comment>property for getting value from arg1</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:nodeID="A41"/>
+      </sp:Ask>
+    </spin:body>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A42">
+    <sp:varName>process</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>value1</sp:varName>
+    </sp:object>
+    <sp:predicate rdf:parseType="Resource">
+      <sp:varName>param1</sp:varName>
+    </sp:predicate>
+    <sp:subject rdf:parseType="Resource">
+      <sp:varName>item1</sp:varName>
+    </sp:subject>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A44">
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#item1"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A45">
+    <sp:subject rdf:parseType="Resource">
+      <sp:varName>taxonomy</sp:varName>
+    </sp:subject>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min"/>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>requiredMin</sp:varName>
+    </sp:object>
+  </rdf:Description>
+  <sp:Optional rdf:nodeID="A46">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName>taxonomy</sp:varName>
+        </sp:subject>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>requiredExact</sp:varName>
+        </sp:object>
+      </rdf:Description>
+    </sp:elements>
+  </sp:Optional>
+  <rdf:Description rdf:nodeID="A47">
+    <sp:subject rdf:parseType="Resource">
+      <sp:varName>process</sp:varName>
+    </sp:subject>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>taxonomy</sp:varName>
+    </sp:object>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:varName>instance</sp:varName>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A30"/>
+      <rdf:first>
+        <sp:Optional>
+          <sp:elements rdf:parseType="Collection">
+            <rdf:Description rdf:nodeID="A45"/>
+          </sp:elements>
+        </sp:Optional>
+      </rdf:first>
+    </rdf:rest>
+    <rdf:first rdf:nodeID="A46"/>
+  </rdf:Description>
+  <sp:Ask rdf:nodeID="A50">
+    <sp:where rdf:nodeID="A36"/>
+  </sp:Ask>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A43"/>
+        </sp:elements>
+      </sp:Optional>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <sp:varName>element</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <sp:varName>element</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <sp:Filter>
+        <sp:expression>
+          <sp:or>
+            <sp:arg1>
+              <sp:not>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName>grasping</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+              </sp:not>
+            </sp:arg1>
+            <sp:arg2 rdf:nodeID="A17"/>
+          </sp:or>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <sp:subject rdf:nodeID="A42"/>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+    <sp:object rdf:nodeID="A52"/>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A56">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#this"/>
+    <rdfs:comment>process taxonomy element instance</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A57">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#instance"/>
+    <rdfs:comment>capability instance</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <spin:Function rdf:ID="forceMatch">
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:parseType="Resource">
+          <rdf:first rdf:parseType="Resource">
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>max</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#force_max"/>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>capability</sp:varName>
+            </sp:subject>
+          </rdf:first>
+          <rdf:rest rdf:nodeID="A29"/>
+        </sp:where>
+      </sp:Ask>
+    </spin:body>
+    <rdfs:label>can be implemented with</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A58">
+    <sp:varName>commonDOF</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <sp:varName>dim_y</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <sp:varName>requiredMax</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A61">
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment>capability instance</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#instance"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:rest rdf:nodeID="A48"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:varName>taxonomy</sp:varName>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <sp:varName>size</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A64">
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment>process taxonomy instance</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#this"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A65">
+    <sp:subject rdf:nodeID="A53"/>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>size</sp:varName>
+    </sp:object>
+  </rdf:Description>
+  <sp:Ask rdf:nodeID="A66">
+    <sp:where rdf:nodeID="A51"/>
+  </sp:Ask>
+  <sp:Optional rdf:nodeID="A67">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject rdf:nodeID="A7"/>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max"/>
+        <sp:object rdf:nodeID="A60"/>
+      </rdf:Description>
+    </sp:elements>
+  </sp:Optional>
+  <spin:Function rdf:ID="pickingMatch">
+    <rdfs:comment></rdfs:comment>
+    <spin:constraint rdf:nodeID="A64"/>
+    <spin:constraint rdf:nodeID="A61"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:parseType="Collection">
+          <sp:Filter>
+            <sp:expression>
+              <sp:and>
+                <sp:arg1>
+                  <shapeAndSizeMatch>
+                    <arg:capability rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:capability>
+                    <arg:taxonomy rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </shapeAndSizeMatch>
+                </sp:arg1>
+                <sp:arg2>
+                  <fingerGraspingMatch>
+                    <arg:instance rdf:parseType="Resource">
+                      <sp:varName>instance</sp:varName>
+                    </arg:instance>
+                    <arg:this rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </fingerGraspingMatch>
+                </sp:arg2>
+              </sp:and>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Ask>
+    </spin:body>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A68">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:object rdf:nodeID="A58"/>
+      <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#dof"/>
+      <sp:subject rdf:parseType="Resource">
+        <sp:varName>instance</sp:varName>
+      </sp:subject>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:nodeID="A49"/>
+    <rdf:first rdf:nodeID="A67"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <rdf:first>
+      <sp:Optional>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName>size</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName>diameter</sp:varName>
+            </sp:object>
+          </rdf:Description>
+        </sp:elements>
+      </sp:Optional>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName>taxonomy</sp:varName>
+        </sp:subject>
+        <sp:predicate rdf:resource="#hasCapabilityMatch"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>capability</sp:varName>
+        </sp:object>
+      </rdf:first>
+      <rdf:rest rdf:nodeID="A28"/>
+    </rdf:rest>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <sp:varName>capability</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A72">
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#item2"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A73">
+    <sp:varName>size</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A74">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#taxonomy"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A75">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject rdf:nodeID="A63"/>
+      <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+      <sp:object rdf:nodeID="A59"/>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:nodeID="A68"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject rdf:parseType="Resource">
+        <sp:varName>taxonomy</sp:varName>
+      </sp:subject>
+      <sp:object rdf:parseType="Resource">
+        <sp:varName>requiredDOF</sp:varName>
+      </sp:object>
+      <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF"/>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Optional rdf:nodeID="A77">
+    <sp:elements rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A75"/>
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:nodeID="A73"/>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>dim_x</sp:varName>
+        </sp:object>
+      </rdf:first>
+    </sp:elements>
+  </sp:Optional>
+  <rdf:Description rdf:nodeID="A78">
+    <sp:subject rdf:nodeID="A71"/>
+    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#torque_min"/>
+    <sp:object rdf:parseType="Resource">
+      <sp:varName>min</sp:varName>
+    </sp:object>
+  </rdf:Description>
+  <spin:Function rdf:ID="dofMatch">
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:parseType="Collection">
+          <sp:SubQuery>
+            <sp:query>
+              <sp:Select>
+                <sp:groupBy rdf:nodeID="A62"/>
+                <sp:where rdf:parseType="Resource">
+                  <rdf:rest rdf:nodeID="A76"/>
+                  <rdf:first rdf:parseType="Resource">
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>taxonomy</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF"/>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>commonDOF</sp:varName>
+                    </sp:object>
+                  </rdf:first>
+                </sp:where>
+                <sp:resultVariables rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:varName>taxonomy</sp:varName>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:varName>common</sp:varName>
+                    <sp:expression>
+                      <sp:Count>
+                        <sp:expression rdf:parseType="Resource">
+                          <sp:varName>commonDOF</sp:varName>
+                        </sp:expression>
+                        <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >true</sp:distinct>
+                      </sp:Count>
+                    </sp:expression>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:expression>
+                      <sp:Count>
+                        <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >true</sp:distinct>
+                        <sp:expression rdf:parseType="Resource">
+                          <sp:varName>requiredDOF</sp:varName>
+                        </sp:expression>
+                      </sp:Count>
+                    </sp:expression>
+                    <sp:varName>required</sp:varName>
+                  </rdf:Description>
+                </sp:resultVariables>
+              </sp:Select>
+            </sp:query>
+          </sp:SubQuery>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName>requiredDOF</sp:varName>
+                </sp:object>
+                <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF"/>
+                <sp:subject rdf:parseType="Resource">
+                  <sp:varName>taxonomy</sp:varName>
+                </sp:subject>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Filter>
+            <sp:expression>
+              <sp:or>
+                <sp:arg1>
+                  <sp:and>
+                    <sp:arg1>
+                      <sp:ge>
+                        <sp:arg2 rdf:parseType="Resource">
+                          <sp:varName>required</sp:varName>
+                        </sp:arg2>
+                        <sp:arg1 rdf:nodeID="A6"/>
+                      </sp:ge>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <sp:and>
+                        <sp:arg1>
+                          <sp:gt>
+                            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</sp:arg2>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>required</sp:varName>
+                            </sp:arg1>
+                          </sp:gt>
+                        </sp:arg1>
+                        <sp:arg2>
+                          <sp:gt>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName>common</sp:varName>
+                            </sp:arg1>
+                            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</sp:arg2>
+                          </sp:gt>
+                        </sp:arg2>
+                      </sp:and>
+                    </sp:arg2>
+                  </sp:and>
+                </sp:arg1>
+                <sp:arg2>
+                  <sp:not>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName>requiredDOF</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:arg2>
+              </sp:or>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+      </sp:Ask>
+    </spin:body>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment>capability instance</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#instance"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>can be implemented with</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment>process taxonomy element instance</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#taxonomy"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A79">
+    <sp:varName>max</sp:varName>
+  </rdf:Description>
+  <sp:Optional rdf:nodeID="A80">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName>allowedForce</sp:varName>
+        </sp:object>
+      </rdf:Description>
+    </sp:elements>
+  </sp:Optional>
+  <rdf:Description rdf:nodeID="A81">
+    <sp:varName>capability</sp:varName>
+  </rdf:Description>
+  <sp:Optional rdf:nodeID="A82">
+    <sp:elements rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A78"/>
+    </sp:elements>
+  </sp:Optional>
+  <rdf:Description rdf:nodeID="A83">
+    <rdf:rest rdf:nodeID="A69"/>
+    <rdf:first rdf:nodeID="A82"/>
+  </rdf:Description>
+  <sp:Ask rdf:nodeID="A84">
+    <sp:where rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A83"/>
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:nodeID="A81"/>
+        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#torque_max"/>
+        <sp:object rdf:nodeID="A79"/>
+      </rdf:first>
+    </sp:where>
+  </sp:Ask>
+  <spin:Function rdf:ID="fingerGraspingMatch">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>can be implemented with</rdfs:label>
+    <spin:constraint rdf:nodeID="A57"/>
+    <spin:constraint rdf:nodeID="A56"/>
+    <spin:body>
+      <sp:Ask>
+        <sp:where rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:nodeID="A54"/>
+                <rdf:first>
+                  <sp:Optional>
+                    <sp:elements rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                        <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType"/>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName>requiredType</sp:varName>
+                        </sp:object>
+                      </rdf:Description>
+                    </sp:elements>
+                  </sp:Optional>
+                </rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:nodeID="A80"/>
+            </rdf:rest>
+            <rdf:first>
+              <sp:Optional>
+                <sp:elements rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>grasping</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#graspingForce_min"/>
+                    <sp:object rdf:nodeID="A8"/>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:subject rdf:parseType="Resource">
+                      <sp:varName>grasping</sp:varName>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#graspingType"/>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName>type</sp:varName>
+                    </sp:object>
+                  </rdf:Description>
+                </sp:elements>
+              </sp:Optional>
+            </rdf:first>
+          </rdf:rest>
+          <rdf:first>
+            <sp:Bind>
+              <sp:variable rdf:parseType="Resource">
+                <sp:varName>grasping</sp:varName>
+              </sp:variable>
+              <sp:expression>
+                <su:getLowerLevelCapability>
+                  <sp:arg1 rdf:parseType="Resource">
+                    <sp:varName>instance</sp:varName>
+                  </sp:arg1>
+                  <sp:arg2 rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#FingerGrasping"/>
+                </su:getLowerLevelCapability>
+              </sp:expression>
+            </sp:Bind>
+          </rdf:first>
+        </sp:where>
+      </sp:Ask>
+    </spin:body>
+  </spin:Function>
+  <spin:Function rdf:ID="shapeAndSizeMatch">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:constraint rdf:nodeID="A35"/>
+    <rdfs:comment></rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#capability"/>
+        <rdfs:comment>capability instance</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body rdf:nodeID="A50"/>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A85">
+    <rdf:first rdf:nodeID="A47"/>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first rdf:nodeID="A55"/>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:nodeID="A65"/>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:nodeID="A77"/>
+          <rdf:rest rdf:nodeID="A70"/>
+        </rdf:rest>
+      </rdf:rest>
+    </rdf:rest>
+  </rdf:Description>
+  <sp:Ask rdf:nodeID="A86">
+    <sp:where rdf:nodeID="A85"/>
+  </sp:Ask>
+  <spl:Argument rdf:nodeID="A87">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#param2"/>
+  </spl:Argument>
+  <spin:Function rdf:ID="fixtureOpeningMatch">
+    <spin:constraint rdf:nodeID="A74"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#capability"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body rdf:nodeID="A86"/>
+  </spin:Function>
+  <spin:Function rdf:ID="equalsOrNotDefined">
+    <spin:body rdf:nodeID="A66"/>
+    <spin:constraint rdf:nodeID="A87"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/arg#param1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint rdf:nodeID="A72"/>
+    <spin:constraint rdf:nodeID="A44"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+  </spin:Function>
+  <spl:Argument rdf:nodeID="A88">
+    <spl:predicate rdf:resource="http://spinrdf.org/arg#taxonomy"/>
+    <rdfs:comment>taxonomy element instance</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <spin:Function rdf:ID="torqueMatch">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:comment></rdfs:comment>
+    <spin:constraint rdf:nodeID="A32"/>
+    <spin:constraint rdf:nodeID="A88"/>
+    <spin:body rdf:nodeID="A84"/>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

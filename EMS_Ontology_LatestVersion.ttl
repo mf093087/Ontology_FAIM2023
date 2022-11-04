@@ -1,0 +1,585 @@
+@prefix : <http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/Fan/ontologies/2022/7/EMS> .
+
+<http://www.semanticweb.org/Fan/ontologies/2022/7/EMS> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#hasSimpleCapability
+:hasSimpleCapability rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ComplicatedCapability ;
+                     rdfs:range :SimpleCapability .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#hasUtilisation
+:hasUtilisation rdf:type owl:ObjectProperty ;
+                rdfs:domain :Task ;
+                rdfs:range :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#requiredProcess
+:requiredProcess rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Product .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#DrillBitFunction
+:DrillBitFunction rdf:type owl:Class ;
+                  rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Drilling
+:Drilling rdf:type owl:Class ;
+          rdfs:subClassOf :ComplicatedCapability ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSimpleCapability ;
+                            owl:someValuesFrom :DrillBitFunction
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSimpleCapability ;
+                            owl:someValuesFrom :Spinning_Tool
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSimpleCapability ;
+                            owl:someValuesFrom :ToolHolding
+                          ] .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#FingerFunction
+:FingerFunction rdf:type owl:Class ;
+                rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#FingerGrasping
+:FingerGrasping rdf:type owl:Class ;
+                rdfs:subClassOf :ComplicatedCapability ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSimpleCapability ;
+                                  owl:someValuesFrom :FingerFunction
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSimpleCapability ;
+                                  owl:someValuesFrom :FingerGripperFunction
+                                ] .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#FingerGripperFunction
+:FingerGripperFunction rdf:type owl:Class ;
+                       rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Fixturing
+:Fixturing rdf:type owl:Class ;
+           rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#ForceApplying
+:ForceApplying rdf:type owl:Class ;
+               rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Inserting
+:Inserting rdf:type owl:Class ;
+           rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Milling
+:Milling rdf:type owl:Class ;
+         rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#MillingToolFunction
+:MillingToolFunction rdf:type owl:Class ;
+                     rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Moving
+:Moving rdf:type owl:Class ;
+        rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#PickAndPlace
+:PickAndPlace rdf:type owl:Class ;
+              rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Releasing
+:Releasing rdf:type owl:Class ;
+           rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Screwing
+:Screwing rdf:type owl:Class ;
+          rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#ScrewingHeadFunction
+:ScrewingHeadFunction rdf:type owl:Class ;
+                      rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#SpinningTool
+:SpinningTool rdf:type owl:Class ;
+              rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Spinning_Tool
+:Spinning_Tool rdf:type owl:Class ;
+               rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#ToolHolding
+:ToolHolding rdf:type owl:Class ;
+             rdfs:subClassOf :SimpleCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#Transporting
+:Transporting rdf:type owl:Class ;
+              rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/Fan/ontologies/2022/7/EMS#VacuumGrasping
+:VacuumGrasping rdf:type owl:Class ;
+                rdfs:subClassOf :ComplicatedCapability .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Asset_utilisation
+:Asset_utilisation rdf:type owl:Class ;
+                   rdfs:subClassOf :Capacity_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Capacity_utilisation
+:Capacity_utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Changeover_Time
+:Changeover_Time rdf:type owl:Class ;
+                 rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#ComplicatedCapability
+:ComplicatedCapability rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Control_units
+:Control_units rdf:type owl:Class ;
+               rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Customer_returns
+:Customer_returns rdf:type owl:Class ;
+                  rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Cycle_time
+:Cycle_time rdf:type owl:Class ;
+            rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Demand_Forecasting
+:Demand_Forecasting rdf:type owl:Class ;
+                    rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Devices
+:Devices rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Direct_Material_Usage_Variance
+:Direct_Material_Usage_Variance rdf:type owl:Class ;
+                                rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Downtime_To_Operating_Time
+:Downtime_To_Operating_Time rdf:type owl:Class ;
+                            rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#ElasticResponse
+:ElasticResponse rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Employee_turnover
+:Employee_turnover rdf:type owl:Class ;
+                   rdfs:subClassOf :People ;
+                   owl:disjointWith :profit_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#EndEffectors
+:EndEffectors rdf:type owl:Class ;
+              rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Energy_Cost_Per_Unit
+:Energy_Cost_Per_Unit rdf:type owl:Class ;
+                      rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#First_pass_yield
+:First_pass_yield rdf:type owl:Class ;
+                  rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Health_and_Safety_Incidence_Rate
+:Health_and_Safety_Incidence_Rate rdf:type owl:Class ;
+                                  rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_accuracy
+:Inventory_accuracy rdf:type owl:Class ;
+                    rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Inventory_turnover
+:Inventory_turnover rdf:type owl:Class ;
+                    rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Labour_as_percentage_cost
+:Labour_as_percentage_cost rdf:type owl:Class ;
+                           rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Lead_time
+:Lead_time rdf:type owl:Class ;
+           rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_downtime
+:Machine_downtime rdf:type owl:Class ;
+                  rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Machine_utilisation
+:Machine_utilisation rdf:type owl:Class ;
+                     rdfs:subClassOf :Asset_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Maintenance
+:Maintenance rdf:type owl:Class ;
+             rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Manufacturing_Lead_Time
+:Manufacturing_Lead_Time rdf:type owl:Class ;
+                         rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Manufacturing_cost_per_unit
+:Manufacturing_cost_per_unit rdf:type owl:Class ;
+                             rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Material_Utilisation
+:Material_Utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Material_Yield_Variance
+:Material_Yield_Variance rdf:type owl:Class ;
+                         rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Mean_Time_Between_Failure
+:Mean_Time_Between_Failure rdf:type owl:Class ;
+                           rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Mean_Time_to_Failure
+:Mean_Time_to_Failure rdf:type owl:Class ;
+                      rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Mean_Time_to_Repair
+:Mean_Time_to_Repair rdf:type owl:Class ;
+                     rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#MetrologySystem
+:MetrologySystem rdf:type owl:Class ;
+                 rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Non-compliance_Events_Per_Year
+:Non-compliance_Events_Per_Year rdf:type owl:Class ;
+                                rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Number_of_units_produced
+:Number_of_units_produced rdf:type owl:Class ;
+                          rdfs:subClassOf :Cycle_time ;
+                          owl:disjointWith :Plant_Downtime .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OEE
+:OEE rdf:type owl:Class ;
+     rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#OSE
+:OSE rdf:type owl:Class ;
+     rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#On_time_delivery
+:On_time_delivery rdf:type owl:Class ;
+                  rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Outsourcing
+:Outsourcing rdf:type owl:Class ;
+             rdfs:subClassOf :Resource_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#People
+:People rdf:type owl:Class ;
+        rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Percentage_Planned_Maintenance
+:Percentage_Planned_Maintenance rdf:type owl:Class ;
+                                rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Plant_Downtime
+:Plant_Downtime rdf:type owl:Class ;
+                rdfs:subClassOf :Cycle_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Process
+:Process rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Processing
+:Processing rdf:type owl:Class ;
+            rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Product
+:Product rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Production_attainment
+:Production_attainment rdf:type owl:Class ;
+                       rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Resource_utilisation
+:Resource_utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Revenue_per_employee
+:Revenue_per_employee rdf:type owl:Class ;
+                      rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Robots
+:Robots rdf:type owl:Class ;
+        rdfs:subClassOf :Devices .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Scrap_Rate
+:Scrap_Rate rdf:type owl:Class ;
+            rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Set-up_time
+:Set-up_time rdf:type owl:Class ;
+             rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Shipping
+:Shipping rdf:type owl:Class ;
+          rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#SimpleCapability
+:SimpleCapability rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Suppliers
+:Suppliers rdf:type owl:Class ;
+           rdfs:subClassOf :Outsourcing ;
+           owl:disjointWith :Third_parties .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Takt_time
+:Takt_time rdf:type owl:Class ;
+           rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Task
+:Task rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Third_parties
+:Third_parties rdf:type owl:Class ;
+               rdfs:subClassOf :Outsourcing .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Time_To_Production
+:Time_To_Production rdf:type owl:Class ;
+                    rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Unscheduled_downtime
+:Unscheduled_downtime rdf:type owl:Class ;
+                      rdfs:subClassOf :Machine_downtime ,
+                                      :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#Utilisation
+:Utilisation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#profit_per_employee
+:profit_per_employee rdf:type owl:Class ;
+                     rdfs:subClassOf :People .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DrillBitFunction
+                :FingerFunction
+                :FingerGripperFunction
+                :Fixturing
+                :ForceApplying
+                :MillingToolFunction
+                :Moving
+                :Releasing
+                :SpinningTool
+                :ToolHolding
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DrillBitFunction
+                :FingerFunction
+                :FingerGripperFunction
+                :ForceApplying
+                :Moving
+                :Releasing
+                :SpinningTool
+                :ToolHolding
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Drilling
+                :FingerGrasping
+                :Inserting
+                :Milling
+                :PickAndPlace
+                :Screwing
+                :Transporting
+                :VacuumGrasping
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Capacity_utilisation
+                :Manufacturing_Lead_Time
+                :On_time_delivery
+                :Revenue_per_employee
+                :Set-up_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Changeover_Time
+                :Energy_Cost_Per_Unit
+                :Takt_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Control_units
+                :Downtime_To_Operating_Time
+                :Machine_downtime
+                :Manufacturing_cost_per_unit
+                :Material_Utilisation
+                :Mean_Time_Between_Failure
+                :Mean_Time_to_Failure
+                :Mean_Time_to_Repair
+                :OEE
+                :People
+                :Percentage_Planned_Maintenance
+                :Unscheduled_downtime
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Customer_returns
+                :Inventory_accuracy
+                :Inventory_turnover
+                :Non-compliance_Events_Per_Year
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Cycle_time
+                :First_pass_yield
+                :Lead_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Demand_Forecasting
+                :Direct_Material_Usage_Variance
+                :Material_Yield_Variance
+                :Scrap_Rate
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EndEffectors
+                :MetrologySystem
+                :Robots
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Health_and_Safety_Incidence_Rate
+                :Labour_as_percentage_cost
+                :OSE
+                :Production_attainment
+                :Resource_utilisation
+                :Time_To_Production
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Maintenance
+                :Processing
+                :Shipping
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,878 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022">
+    <Prefix name="" IRI="http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/MatchmakingOntology</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/capabilityModel</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/commonConcepts</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/productModel</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/resourceInterfaceModel</Import>
+    <Import>http://resourcedescription.rd.tuni.fi/ontology/resourceModel</Import>
+    <Declaration>
+        <Class IRI="#Bill_of_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bill_of_resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Current_system_configuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dimensions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrillingEndeffector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EndEffector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Features"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nominal_shape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operation_state"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process_constraints"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relationship"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Report"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Required_system_configuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resource_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Robot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Schedule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Task_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tolerances"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeldingEndeffector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#available_capability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#available_devices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#product"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#With_devices"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#With_process"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#capability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#constraints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#content"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dimensions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#feature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_capability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_content"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_dimensions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_feature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_material"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_nominal_shape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_the_constraints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_the_relationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_the_report"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_the_schedule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_tolerance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_tool"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_capability_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_dimensions_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_feature_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_material_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_nominal_shape_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_constraint_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_content_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_operation_state_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_report_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_schedule_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_the_source_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_tolerance_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_tool_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#material"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#opeartion_state"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#parallel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#report"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#require"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#schedule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sequential_after"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sequential_before"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#shape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tolerance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tool"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Cost"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Identifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Capability_PnP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Capability_Welding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Failure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Full_load"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Idle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NewTask1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Overload"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PnPEndEffector1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Requirement_documents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robot1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Robot2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TaskContent1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TaskSource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Bill_of_process"/>
+        <Class IRI="#Required_system_configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bill_of_resource"/>
+        <Class IRI="#Required_system_configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capability"/>
+        <Class IRI="#Resource_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Content"/>
+        <Class IRI="#Task_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class IRI="#Resource_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dimensions"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrillingEndeffector"/>
+        <Class IRI="#EndEffector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EndEffector"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Features"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Material"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Material"/>
+        <Class IRI="#Resource_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nominal_shape"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operation_state"/>
+        <Class IRI="#Resource_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process_constraints"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relationship"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Report"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Requirement"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Schedule"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Source"/>
+        <Class IRI="#Task_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Status"/>
+        <Class IRI="#Process_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <Class IRI="#Task_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tolerances"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <Class IRI="#Resource_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WeldingEndeffector"/>
+        <Class IRI="#EndEffector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#available_capability"/>
+        <Class IRI="#Current_system_configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#available_devices"/>
+        <Class IRI="#Current_system_configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#product"/>
+        <Class IRI="#Product_information"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Capability"/>
+        <NamedIndividual IRI="#Capability_PnP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Capability"/>
+        <NamedIndividual IRI="#Capability_Welding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Operation_state"/>
+        <NamedIndividual IRI="#Failure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Operation_state"/>
+        <NamedIndividual IRI="#Full_load"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Operation_state"/>
+        <NamedIndividual IRI="#Idle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#NewTask1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Operation_state"/>
+        <NamedIndividual IRI="#Overload"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Source"/>
+        <NamedIndividual IRI="#Requirement_documents"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Robot"/>
+        <NamedIndividual IRI="#Robot1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Robot"/>
+        <NamedIndividual IRI="#Robot2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Content"/>
+        <NamedIndividual IRI="#TaskContent1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Source"/>
+        <NamedIndividual IRI="#TaskSource"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WeldingEndeffector"/>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_content"/>
+        <NamedIndividual IRI="#NewTask1"/>
+        <NamedIndividual IRI="#TaskContent1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_source"/>
+        <NamedIndividual IRI="#NewTask1"/>
+        <NamedIndividual IRI="#TaskSource"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_tool_of"/>
+        <NamedIndividual IRI="#PnPEndEffector1"/>
+        <NamedIndividual IRI="#Robot2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_capability"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <NamedIndividual IRI="#Capability_PnP"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <NamedIndividual IRI="#Idle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_tool"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <NamedIndividual IRI="#PnPEndEffector1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_capability"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <NamedIndividual IRI="#Capability_Welding"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <NamedIndividual IRI="#Idle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_tool"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_capability"/>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+        <NamedIndividual IRI="#Capability_Welding"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_tool_of"/>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+        <NamedIndividual IRI="#Robot1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Type"/>
+        <NamedIndividual IRI="#PnPEndEffector1"/>
+        <Literal>Welding</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cost"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Identifier"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">1.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Location"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal>Kuka KR2700 ultra robot 1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Type"/>
+        <NamedIndividual IRI="#Robot1"/>
+        <Literal>Robot
+</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Cost"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Identifier"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Location"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float"></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Name"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <Literal>Kuka KR2700 ultra robot 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Type"/>
+        <NamedIndividual IRI="#Robot2"/>
+        <Literal>Robot</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Type"/>
+        <NamedIndividual IRI="#WeldingEndEffector1"/>
+        <Literal>PnP
+</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#With_devices"/>
+        <ObjectProperty IRI="#has_the_relationship"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#With_process"/>
+        <ObjectProperty IRI="#has_the_relationship"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#capability"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_capability"/>
+        <ObjectProperty IRI="#capability"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_content"/>
+        <ObjectProperty IRI="#content"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_dimensions"/>
+        <ObjectProperty IRI="#dimensions"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_feature"/>
+        <ObjectProperty IRI="#feature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_material"/>
+        <ObjectProperty IRI="#material"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_nominal_shape"/>
+        <ObjectProperty IRI="#shape"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_source"/>
+        <ObjectProperty IRI="#source"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_the_constraints"/>
+        <ObjectProperty IRI="#constraints"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <ObjectProperty IRI="#opeartion_state"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_the_report"/>
+        <ObjectProperty IRI="#report"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_the_schedule"/>
+        <ObjectProperty IRI="#schedule"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_tolerance"/>
+        <ObjectProperty IRI="#tolerance"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_tool"/>
+        <ObjectProperty IRI="#tool"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_capability_of"/>
+        <ObjectProperty IRI="#capability"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_dimensions_of"/>
+        <ObjectProperty IRI="#dimensions"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_feature_of"/>
+        <ObjectProperty IRI="#feature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_material_of"/>
+        <ObjectProperty IRI="#material"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_nominal_shape_of"/>
+        <ObjectProperty IRI="#shape"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_constraint_of"/>
+        <ObjectProperty IRI="#constraints"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_content_of"/>
+        <ObjectProperty IRI="#content"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_operation_state_of"/>
+        <ObjectProperty IRI="#opeartion_state"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_report_of"/>
+        <ObjectProperty IRI="#report"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_schedule_of"/>
+        <ObjectProperty IRI="#schedule"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_the_source_of"/>
+        <ObjectProperty IRI="#source"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_tolerance_of"/>
+        <ObjectProperty IRI="#tolerance"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_tool_of"/>
+        <ObjectProperty IRI="#tool"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#material"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#parallel"/>
+        <ObjectProperty IRI="#With_process"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#require"/>
+        <ObjectProperty IRI="#With_devices"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#sequential_after"/>
+        <ObjectProperty IRI="#With_process"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#sequential_before"/>
+        <ObjectProperty IRI="#With_process"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_capability"/>
+        <ObjectProperty IRI="#is_capability_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_dimensions"/>
+        <ObjectProperty IRI="#is_dimensions_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_feature"/>
+        <ObjectProperty IRI="#is_feature_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_material"/>
+        <ObjectProperty IRI="#is_material_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_nominal_shape"/>
+        <ObjectProperty IRI="#is_nominal_shape_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_the_constraints"/>
+        <ObjectProperty IRI="#is_the_constraint_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <ObjectProperty IRI="#is_the_operation_state_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_the_report"/>
+        <ObjectProperty IRI="#is_the_report_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_the_schedule"/>
+        <ObjectProperty IRI="#is_the_schedule_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_tolerance"/>
+        <ObjectProperty IRI="#is_tolerance_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_tool"/>
+        <ObjectProperty IRI="#is_tool_of"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_capability"/>
+        <Class IRI="#EndEffector"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_capability"/>
+        <Class IRI="#Robot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_material"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_material"/>
+        <Class IRI="#product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_capability_of"/>
+        <Class IRI="#Capability"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_capability"/>
+        <Class IRI="#Capability"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_material"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_the_operation_state"/>
+        <Class IRI="#Operation_state"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_capability_of"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Cost"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Identifier"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Location"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Type"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Cost"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Identifier"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Location"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name"/>
+        <Class IRI="#Process"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Type"/>
+        <Class IRI="#EndEffector"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Type"/>
+        <Class IRI="#Robot"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskSource</IRI>
+        <Literal>Document
+CAD model</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

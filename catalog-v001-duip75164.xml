@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.rd.tuni.fi/ontology/capabilityModel" uri="New%20folder/capabilityModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="Combination.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="CombineModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="Combination.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="CapabilityModel.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="file:/C:/Users/ezzfm3/TBCMEWorkspace/Industry4.0/resourceInterfaceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="file:/C:/Users/ezzfm3/TBCMEWorkspace/Industry4.0/resourceModel.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://www.co-ode.org/ontologies/pizza/2.0.0" uri="12.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/productModel" uri="productModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="resourceInterfaceModel.owl.xml"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/MatchmakingOntology" uri="New%20folder/MatchmakingOntology.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/capabilityModel" uri="New%20folder/capabilityModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/commonConcepts" uri="New%20folder/commonConcepts.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel" uri="New%20folder/processTaxonomyModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/productModel" uri="New%20folder/productModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/resourceInterfaceModel" uri="New%20folder/resourceInterfaceModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/resourceModel" uri="New%20folder/resourceModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.rd.tuni.fi/ontology/spinUtils" uri="New%20folder/spinUtils.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/MatchMakingOntology" uri="Ontology_Giovanna/ontology/MatchMakingOntology.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/MatchmakingOntology" uri="MatchmakingOntology.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/commonConcepts" uri="commonConcepts.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/processTaxonomyModel" uri="processTaxonomyModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/productModel" uri="productModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="resourceInterfaceModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://resourcedescription.tut.fi/ontology/spinUtils" uri="Ontology_Giovanna/ontology/spinUtils.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://www.co-ode.org/ontologies/pizza/pizza.owl" uri="pizza.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_filling_a_tray.owl" uri="ocra_filling_a_tray.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="duplicate:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="Ontology%20reconfiguration.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="duplicate:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="Ontology%20reconfigurationV2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://www.semanticweb.org/ezzfm3/ontologies/2022/4/untitled-ontology-19" uri="12.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="http://www.semanticweb.org/ezzgm/ontologies/2021/6/EMS_resources" uri="Ontology_Giovanna/ontology/resourcesWithInstances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="duplicate:http://www.semanticweb.org/ezzgm/ontologies/2021/6/resources" uri="Ontology_Giovanna/ontology/EMS_Resources.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="duplicate:http://www.semanticweb.org/ezzgm/ontologies/2021/6/resources" uri="Ontology_Giovanna/ontology/EMS_Resources.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="https://w3id.org/i40/sto/iot#concerns" uri="i40kg/I40KG-master/docs_without_individuals/serializations/ontology.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/MatchmakingOntology" uri="Ontology_Giovanna/ontology/EMS_MatchMakingOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/capabilityModel" uri="Ontology_Giovanna/ontology/capabilityModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/commonConcepts" uri="Ontology_Giovanna/ontology/commonConcepts.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/processTaxonomyModel" uri="Ontology_Giovanna/ontology/processTaxonomyModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/productModel" uri="Ontology_Giovanna/ontology/productModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="Ontology_Giovanna/ontology/resourceInterfaceModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://resourcedescription.tut.fi/ontology/resourceModel" uri="Ontology_Giovanna/ontology/resourceModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="i40kg/I40KG-master/Ontology%20reconfigurationV2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="i40kg/I40KG-master/Ontology%20reconfigurationV2.ttl"/>
+        <uri id="Automatically generated entry, Timestamp=1657119765165" name="shadowed:https://w3id.org/i40/sto/iot#concerns" uri="i40kg/I40KG-master/docs/serializations/ontology.xml"/>
+    </group>
+</catalog>

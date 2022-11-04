@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://resourcedescription.tut.fi/ontology/commonConcepts#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://resourcedescription.tut.fi/ontology/commonConcepts">
+  <owl:Ontology rdf:about="">
+    <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#language"
+    >en</dc:language>
+    <dc:rights xml:lang="en">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </dc:rights>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Common Concepts (CC) defines the data model for common concepts used in the Capability Model and Resource Model, in order to increase the re-use of the concepts. Currently used for testing.</rdfs:comment>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Common Concepts Ontology</dc:title>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2018-03-18</dc:date>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eeva Järvenpää</dc:creator>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </rdfs:comment>
+    <dc:description xml:lang="en">Common Concepts (CC) defines the data model for common concepts used in the Capability Model and Resource Model, in order to increase the re-use of the concepts. </dc:description>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.4</owl:versionInfo>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eeva Järvenpää</dc:contributor>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Niko Siltala</dc:contributor>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Otto Hylli</dc:contributor>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Common Concepts Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="MaterialType">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <MaterialType rdf:ID="aluminium"/>
+          <MaterialType rdf:ID="plastic"/>
+          <MaterialType rdf:ID="stainlessSteel"/>
+          <MaterialType rdf:ID="wood"/>
+          <MaterialType rdf:ID="iron"/>
+          <MaterialType rdf:ID="steel"/>
+          <MaterialType rdf:ID="carbonSteel"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class consists of an enumerated list of different material types. &#xD;
+Can &#xD; be used to link the capabilities with their suitable materials, or &#xD;products to the material from which they are made of.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasMaterialType">
+    <rdfs:range rdf:resource="#MaterialType"/>
+  </owl:ObjectProperty>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <MaterialType rdf:about="#aluminium"/>
+      <MaterialType rdf:about="#plastic"/>
+      <MaterialType rdf:about="#stainlessSteel"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

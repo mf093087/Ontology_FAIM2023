@@ -1,0 +1,566 @@
+@prefix : <http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022> .
+
+<http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022> rdf:type owl:Ontology ;
+                                                                owl:imports <http://resourcedescription.rd.tuni.fi/ontology/MatchmakingOntology> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/capabilityModel> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/commonConcepts> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/productModel> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/resourceInterfaceModel> ,
+                                                                            <http://resourcedescription.rd.tuni.fi/ontology/resourceModel> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#With_devices
+:With_devices rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_the_relationship .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#With_process
+:With_process rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_the_relationship .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#capability
+:capability rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#constraints
+:constraints rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#content
+:content rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#dimensions
+:dimensions rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#feature
+:feature rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_capability
+:has_capability rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :capability ;
+                owl:inverseOf :is_capability_of ;
+                rdfs:domain :EndEffector ,
+                            :Robot ;
+                rdfs:range :Capability .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_content
+:has_content rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :content .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_dimensions
+:has_dimensions rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :dimensions ;
+                owl:inverseOf :is_dimensions_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_feature
+:has_feature rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :feature ;
+             owl:inverseOf :is_feature_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_material
+:has_material rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :material ;
+              owl:inverseOf :is_material_of ;
+              rdfs:domain :Device ,
+                          :product ;
+              rdfs:range :Material .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_nominal_shape
+:has_nominal_shape rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :shape ;
+                   owl:inverseOf :is_nominal_shape_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_source
+:has_source rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :source .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_the_constraints
+:has_the_constraints rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :constraints ;
+                     owl:inverseOf :is_the_constraint_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_the_operation_state
+:has_the_operation_state rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :opeartion_state ;
+                         owl:inverseOf :is_the_operation_state_of ;
+                         rdfs:domain :Device ;
+                         rdfs:range :Operation_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_the_relationship
+:has_the_relationship rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_the_report
+:has_the_report rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :report ;
+                owl:inverseOf :is_the_report_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_the_schedule
+:has_the_schedule rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :schedule ;
+                  owl:inverseOf :is_the_schedule_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_tolerance
+:has_tolerance rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :tolerance ;
+               owl:inverseOf :is_tolerance_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#has_tool
+:has_tool rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :tool ;
+          owl:inverseOf :is_tool_of .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_capability_of
+:is_capability_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :capability ;
+                  rdfs:domain :Capability ;
+                  rdfs:range :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_dimensions_of
+:is_dimensions_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :dimensions .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_feature_of
+:is_feature_of rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :feature .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_material_of
+:is_material_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :material .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_nominal_shape_of
+:is_nominal_shape_of rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :shape .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_constraint_of
+:is_the_constraint_of rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :constraints .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_content_of
+:is_the_content_of rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :content .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_operation_state_of
+:is_the_operation_state_of rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :opeartion_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_report_of
+:is_the_report_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :report .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_schedule_of
+:is_the_schedule_of rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :schedule .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_the_source_of
+:is_the_source_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :source .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_tolerance_of
+:is_tolerance_of rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :tolerance .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#is_tool_of
+:is_tool_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :tool .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#material
+:material rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#opeartion_state
+:opeartion_state rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#parallel
+:parallel rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :With_process .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#report
+:report rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#require
+:require rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :With_devices .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#schedule
+:schedule rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#sequential_after
+:sequential_after rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :With_process .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#sequential_before
+:sequential_before rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :With_process .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#shape
+:shape rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#source
+:source rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#tolerance
+:tolerance rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#tool
+:tool rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Cost
+:Cost rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Identifier
+:Identifier rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Location
+:Location rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Name
+:Name rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Device ,
+                  :Process .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Type
+:Type rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :EndEffector ,
+                  :Robot .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Bill_of_process
+:Bill_of_process rdf:type owl:Class ;
+                 rdfs:subClassOf :Required_system_configuration .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Bill_of_resource
+:Bill_of_resource rdf:type owl:Class ;
+                  rdfs:subClassOf :Required_system_configuration .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Capability
+:Capability rdf:type owl:Class ;
+            rdfs:subClassOf :Resource_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Content
+:Content rdf:type owl:Class ;
+         rdfs:subClassOf :Task_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Current_system_configuration
+:Current_system_configuration rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf :Resource_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Dimensions
+:Dimensions rdf:type owl:Class ;
+            rdfs:subClassOf :Product_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#DrillingEndeffector
+:DrillingEndeffector rdf:type owl:Class ;
+                     rdfs:subClassOf :EndEffector .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#EndEffector
+:EndEffector rdf:type owl:Class ;
+             rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Features
+:Features rdf:type owl:Class ;
+          rdfs:subClassOf :Product_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Material
+:Material rdf:type owl:Class ;
+          rdfs:subClassOf :Product_information ,
+                          :Resource_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Nominal_shape
+:Nominal_shape rdf:type owl:Class ;
+               rdfs:subClassOf :Product_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Operation_state
+:Operation_state rdf:type owl:Class ;
+                 rdfs:subClassOf :Resource_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Process_constraints
+:Process_constraints rdf:type owl:Class ;
+                     rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Process_information
+:Process_information rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Product_information
+:Product_information rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Relationship
+:Relationship rdf:type owl:Class ;
+              rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Report
+:Report rdf:type owl:Class ;
+        rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Required_system_configuration
+:Required_system_configuration rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf :Product_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Resource_information
+:Resource_information rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Robot
+:Robot rdf:type owl:Class ;
+       rdfs:subClassOf :Device .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Schedule
+:Schedule rdf:type owl:Class ;
+          rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf :Task_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf :Process_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf :Task_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Task_information
+:Task_information rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Tolerances
+:Tolerances rdf:type owl:Class ;
+            rdfs:subClassOf :Product_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Tool
+:Tool rdf:type owl:Class ;
+      rdfs:subClassOf :Resource_information .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#WeldingEndeffector
+:WeldingEndeffector rdf:type owl:Class ;
+                    rdfs:subClassOf :EndEffector .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#available_capability
+:available_capability rdf:type owl:Class ;
+                      rdfs:subClassOf :Current_system_configuration .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#available_devices
+:available_devices rdf:type owl:Class ;
+                   rdfs:subClassOf :Current_system_configuration .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#product
+:product rdf:type owl:Class ;
+         rdfs:subClassOf :Product_information .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Capability_PnP
+:Capability_PnP rdf:type owl:NamedIndividual ,
+                         :Capability .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Capability_Welding
+:Capability_Welding rdf:type owl:NamedIndividual ,
+                             :Capability .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Failure
+:Failure rdf:type owl:NamedIndividual ,
+                  :Operation_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Full_load
+:Full_load rdf:type owl:NamedIndividual ,
+                    :Operation_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Idle
+:Idle rdf:type owl:NamedIndividual ,
+               :Operation_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#NewTask1
+:NewTask1 rdf:type owl:NamedIndividual ,
+                   :Task ;
+          :has_content :TaskContent1 ;
+          :has_source :TaskSource .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Overload
+:Overload rdf:type owl:NamedIndividual ,
+                   :Operation_state .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#PnPEndEffector1
+:PnPEndEffector1 rdf:type owl:NamedIndividual ;
+                 :is_tool_of :Robot2 ;
+                 :Type "Welding" .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Requirement_documents
+:Requirement_documents rdf:type owl:NamedIndividual ,
+                                :Source .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Robot1
+:Robot1 rdf:type owl:NamedIndividual ,
+                 :Robot ;
+        :has_capability :Capability_PnP ;
+        :has_the_operation_state :Idle ;
+        :has_tool :PnPEndEffector1 ;
+        :Cost "" ;
+        :Identifier "1.0"^^xsd:float ;
+        :Location "" ;
+        :Name "Kuka KR2700 ultra robot 1" ;
+        :Type """Robot
+""" .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#Robot2
+:Robot2 rdf:type owl:NamedIndividual ,
+                 :Robot ;
+        :has_capability :Capability_Welding ;
+        :has_the_operation_state :Idle ;
+        :has_tool :WeldingEndEffector1 ;
+        :Cost "" ;
+        :Identifier "2.0"^^xsd:float ;
+        :Location ""^^xsd:float ;
+        :Name "Kuka KR2700 ultra robot 2" ;
+        :Type "Robot" .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#TaskContent1
+:TaskContent1 rdf:type owl:NamedIndividual ,
+                       :Content .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#TaskSource
+:TaskSource rdf:type owl:NamedIndividual ,
+                     :Source ;
+            rdfs:comment """Document
+CAD model""" .
+
+
+###  http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022#WeldingEndEffector1
+:WeldingEndEffector1 rdf:type owl:NamedIndividual ,
+                              :WeldingEndeffector ;
+                     :has_capability :Capability_Welding ;
+                     :is_tool_of :Robot1 ;
+                     :Type """PnP
+""" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

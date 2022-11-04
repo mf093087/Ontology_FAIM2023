@@ -1,0 +1,396 @@
+@prefix : <http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS> .
+
+<http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#hasUtilisation
+:hasUtilisation rdf:type owl:ObjectProperty ;
+                rdfs:domain :Task ;
+                rdfs:range :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#requiredProcess
+:requiredProcess rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Product ;
+                 rdfs:range <https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#Process> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Asset_utilisation
+:Asset_utilisation rdf:type owl:Class ;
+                   rdfs:subClassOf :Capacity_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Capacity_utilisation
+:Capacity_utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Changeover_Time
+:Changeover_Time rdf:type owl:Class ;
+                 rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#ComplicatedCapability
+:ComplicatedCapability rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Control_units
+:Control_units rdf:type owl:Class ;
+               rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Customer_returns
+:Customer_returns rdf:type owl:Class ;
+                  rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Cycle_time
+:Cycle_time rdf:type owl:Class ;
+            rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Demand_Forecasting
+:Demand_Forecasting rdf:type owl:Class ;
+                    rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Devices
+:Devices rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Direct_Material_Usage_Variance
+:Direct_Material_Usage_Variance rdf:type owl:Class ;
+                                rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Downtime_To_Operating_Time
+:Downtime_To_Operating_Time rdf:type owl:Class ;
+                            rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#ElasticResponse
+:ElasticResponse rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Employee_turnover
+:Employee_turnover rdf:type owl:Class ;
+                   rdfs:subClassOf :People ;
+                   owl:disjointWith :profit_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Energy_Cost_Per_Unit
+:Energy_Cost_Per_Unit rdf:type owl:Class ;
+                      rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#First_pass_yield
+:First_pass_yield rdf:type owl:Class ;
+                  rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Health_and_Safety_Incidence_Rate
+:Health_and_Safety_Incidence_Rate rdf:type owl:Class ;
+                                  rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Inventory_accuracy
+:Inventory_accuracy rdf:type owl:Class ;
+                    rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Inventory_turnover
+:Inventory_turnover rdf:type owl:Class ;
+                    rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Labour_as_percentage_cost
+:Labour_as_percentage_cost rdf:type owl:Class ;
+                           rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Lead_time
+:Lead_time rdf:type owl:Class ;
+           rdfs:subClassOf :Machine_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Machine_downtime
+:Machine_downtime rdf:type owl:Class ;
+                  rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Machine_utilisation
+:Machine_utilisation rdf:type owl:Class ;
+                     rdfs:subClassOf :Asset_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Maintenance
+:Maintenance rdf:type owl:Class ;
+             rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Manufacturing_Lead_Time
+:Manufacturing_Lead_Time rdf:type owl:Class ;
+                         rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Manufacturing_cost_per_unit
+:Manufacturing_cost_per_unit rdf:type owl:Class ;
+                             rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Material_Utilisation
+:Material_Utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Material_Yield_Variance
+:Material_Yield_Variance rdf:type owl:Class ;
+                         rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Mean_Time_Between_Failure
+:Mean_Time_Between_Failure rdf:type owl:Class ;
+                           rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Mean_Time_to_Failure
+:Mean_Time_to_Failure rdf:type owl:Class ;
+                      rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Mean_Time_to_Repair
+:Mean_Time_to_Repair rdf:type owl:Class ;
+                     rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Non-compliance_Events_Per_Year
+:Non-compliance_Events_Per_Year rdf:type owl:Class ;
+                                rdfs:subClassOf :On_time_delivery .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Number_of_units_produced
+:Number_of_units_produced rdf:type owl:Class ;
+                          rdfs:subClassOf :Cycle_time ;
+                          owl:disjointWith :Plant_Downtime .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#OEE
+:OEE rdf:type owl:Class ;
+     rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#OSE
+:OSE rdf:type owl:Class ;
+     rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#On_time_delivery
+:On_time_delivery rdf:type owl:Class ;
+                  rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Outsourcing
+:Outsourcing rdf:type owl:Class ;
+             rdfs:subClassOf :Resource_utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#People
+:People rdf:type owl:Class ;
+        rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Percentage_Planned_Maintenance
+:Percentage_Planned_Maintenance rdf:type owl:Class ;
+                                rdfs:subClassOf :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Plant_Downtime
+:Plant_Downtime rdf:type owl:Class ;
+                rdfs:subClassOf :Cycle_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Processing
+:Processing rdf:type owl:Class ;
+            rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Product
+:Product rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Production_attainment
+:Production_attainment rdf:type owl:Class ;
+                       rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Resource_utilisation
+:Resource_utilisation rdf:type owl:Class ;
+                      rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Revenue_per_employee
+:Revenue_per_employee rdf:type owl:Class ;
+                      rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Scrap_Rate
+:Scrap_Rate rdf:type owl:Class ;
+            rdfs:subClassOf :Material_Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Set-up_time
+:Set-up_time rdf:type owl:Class ;
+             rdfs:subClassOf :Utilisation .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Shipping
+:Shipping rdf:type owl:Class ;
+          rdfs:subClassOf :Lead_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#SimpleCapability
+:SimpleCapability rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Suppliers
+:Suppliers rdf:type owl:Class ;
+           rdfs:subClassOf :Outsourcing ;
+           owl:disjointWith :Third_parties .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Takt_time
+:Takt_time rdf:type owl:Class ;
+           rdfs:subClassOf :Control_units .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Task
+:Task rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Third_parties
+:Third_parties rdf:type owl:Class ;
+               rdfs:subClassOf :Outsourcing .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Time_To_Production
+:Time_To_Production rdf:type owl:Class ;
+                    rdfs:subClassOf :Revenue_per_employee .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Unscheduled_downtime
+:Unscheduled_downtime rdf:type owl:Class ;
+                      rdfs:subClassOf :Machine_downtime ,
+                                      :Set-up_time .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#Utilisation
+:Utilisation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/basemelshafei/ontologies/2022/7/EMS#profit_per_employee
+:profit_per_employee rdf:type owl:Class ;
+                     rdfs:subClassOf :People .
+
+
+###  https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#Process
+<https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel#Process> rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Capacity_utilisation
+                :Manufacturing_Lead_Time
+                :On_time_delivery
+                :Revenue_per_employee
+                :Set-up_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Changeover_Time
+                :Energy_Cost_Per_Unit
+                :Takt_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Control_units
+                :Downtime_To_Operating_Time
+                :Machine_downtime
+                :Manufacturing_cost_per_unit
+                :Material_Utilisation
+                :Mean_Time_Between_Failure
+                :Mean_Time_to_Failure
+                :Mean_Time_to_Repair
+                :OEE
+                :People
+                :Percentage_Planned_Maintenance
+                :Unscheduled_downtime
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Customer_returns
+                :Inventory_accuracy
+                :Inventory_turnover
+                :Non-compliance_Events_Per_Year
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Cycle_time
+                :First_pass_yield
+                :Lead_time
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Demand_Forecasting
+                :Direct_Material_Usage_Variance
+                :Material_Yield_Variance
+                :Scrap_Rate
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Health_and_Safety_Incidence_Rate
+                :Labour_as_percentage_cost
+                :OSE
+                :Production_attainment
+                :Resource_utilisation
+                :Time_To_Production
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Maintenance
+                :Processing
+                :Shipping
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

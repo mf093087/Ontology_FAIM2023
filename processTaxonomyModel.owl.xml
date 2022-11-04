@@ -1,0 +1,1807 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://resourcedescription.tut.fi/ontology/processTaxonomyModel">
+  <owl:Ontology rdf:about="">
+    <dc:rights xml:lang="en">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </dc:rights>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eeva Järvenpää</dc:contributor>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process taxonomy ontology</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </rdfs:comment>
+    <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#language"
+    >en</dc:language>
+    <dc:description xml:lang="en">Process taxonomy (PT) defines the taxonomic hierarchy between different processes.</dc:description>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2016-11-22</dc:date>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eeva Järvenpää</dc:creator>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.2</owl:versionInfo>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Niko Siltala</dc:contributor>
+    <rdfs:comment xml:lang="en">Process taxonomy (PT) defines the taxonomic hierarchy between different processes.</rdfs:comment>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process taxonomy ontology</dc:title>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Otto Hylli</dc:contributor>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Screwing">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Clamping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Taping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Nailing"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of joining two or more parts by application of screws.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Riveting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Stapling"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Fastening"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SpringFastening"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="PickAndPlaceFlexible">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PickAndPlace"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;&#xD;
+      This refers to flexible&#xD;
+    &lt;/p&gt;</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ImageCapturing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Identification"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="VisionReading"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Scanning"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ElectroSlagWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TungstenArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ShieldedMetalArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PlasmaArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ElectronBeamWelding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ArcWelding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Clipping">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ElasticDeformingFixating"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Wedging"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Shrinking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Snapping"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ShapingManufacturing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DiscreteManufacturing"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Non-shapingManufacturing"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ShapingManufacturing class includes processes which change the shape of the processed object.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="AdhesiveDispensing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AdhesiveApplication"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SelfAdhesiveTapeApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AdhesivePrinting"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ContinuousManufacturing">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#DiscreteManufacturing"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Manufacturing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Welding">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Soldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="AdhesiveCuring"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Fastening"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DeformingFixating"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parent class for various welding processes. Welding involves joining two or more parts together by causing fusion by using heat or pressure.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Joining"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Testing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Qualifying"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A testing process is a quality process which is needed for qualifying and/or quantifying certain product (part) properties within production system.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Measuring"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Inspection"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Identification"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Riveting">
+    <owl:disjointWith rdf:resource="#Screwing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Clamping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Stapling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Taping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fastening"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SpringFastening"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of joining two or more parts by application of rivets.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreadRunning">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fastening"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process to attach parts together by thread features.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="BulkFeeding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Feeding"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bulk feeding is a parent class for feeding processes in which the parts are fed from bulk, i.e. they are not pre-oriented or structured, but just in random position and orientation when the process starts.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TrayFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TapeFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TubeFeeding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Cleaning">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Finalization"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Preparation"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Unpacking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SolderPasteApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Fixturing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Loading"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="FlexibleFeeding">
+    <rdfs:subClassOf rdf:resource="#BulkFeeding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="VibratoryFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TransportationBasedFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="BulkBoxFeeding"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flexible feeding is a feeding process in which bulk parts are separated, and randomly positioned and oriented parts are fed by the help of machine vision.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Painting">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SurfaceFinishing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SpringFastening">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fastening"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of joining two or more parts by application of springs.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Taping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Stapling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Clamping"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DeformingFixating">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Joining"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DeformingFixating class includes processes which fixes two or more parts together by deforming the parts.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Welding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Soldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveCuring"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Fastening"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Finalization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ProcessTaxonomyElement"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parent class for auxiliary processes necessary for preparing products or parts for further industrial processes or to final customer.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="OrbitalRiveting">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ImpactRiveting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="RadialRiveting"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Riveting"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is a process for performing orbital riveting (orbital movement).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Stapling">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Clamping"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Taping"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The process of joining two or more parts through the application and deformation of staples.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Fastening"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#SpringFastening"/>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Marking">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SurfaceFinishing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MaterialConserving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MaterialRemoving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MaterialAdding"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The process of writing codes or any other marks relevant for product identification.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Non-shapingManufacturing"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Finalization"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Identification">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Measuring"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Testing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Inspection"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Qualifying"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LaserCutting">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MaterialRemoving"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Grinding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Machining"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Punching"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ColdWelding">
+    <rdfs:subClassOf rdf:resource="#Welding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PlasticWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="MetalWelding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#ElectronBeamWelding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ArcWelding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TungstenArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ShieldedMetalArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PlasmaArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ElectroSlagWelding"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BlindRiveting">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is the process for performing blind riveting. It means riveting from only one side of the product.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Riveting"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mating">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Positioning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Orienting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Inserting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Placing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Flipping"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Manipulation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Printing">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Labelling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InkMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Writing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="StampMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LaserMarking"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The use of printing technology for the application of marking onto a part or product.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Boring">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Machining"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Grooving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Threading"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Drilling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Turning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Milling"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="TorchSoldering">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ResistanceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="IronSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InductionSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="FurnaceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DipSoldering"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Soldering"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TransportationBasedFeeding">
+    <owl:disjointWith rdf:resource="#FlexibleFeeding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VibratoryFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BulkBoxFeeding"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Feeding process in which the parts are fed to an assembly or process station by transporting them e.g. by a conveyr.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Feeding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DipSoldering">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Soldering"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#TorchSoldering"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ResistanceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#IronSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InductionSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FurnaceSoldering"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Wrapping">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Encapsulating"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Sealing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Bagging"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Boxing"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Packaging"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The application of material around a final product in order to cover it.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Writing">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Labelling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InkMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#StampMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LaserMarking"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The use of pen-type device for the application of marking onto a part or product.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Threading">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Machining"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Grooving"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Boring"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Drilling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Turning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Milling"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Forming">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MaterialConserving"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Hammering">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ElasticDeformingFixating"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SurfaceFinishing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Non-shapingManufacturing"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Marking"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialConserving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialRemoving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialAdding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Crimping">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Folding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Clinching"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Twisting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Bending"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PlasticDeformingFixating"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Storing">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Feeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Routing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Buffering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manipulation"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Logistic"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PlasticDeformingFixating">
+    <rdfs:subClassOf rdf:resource="#DeformingFixating"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PlasticDeforming class includes processes which fixes two or more parts together by plastically deforming the parts (irreversible).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ThermalCuring">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Gluing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="UV-curing"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fixing two or more parts together with adhesive which is heated.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AdhesiveCuring"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Drilling">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Machining"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Grooving"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Threading"/>
+    <owl:disjointWith rdf:resource="#Boring"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Turning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Milling"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Grooving">
+    <owl:disjointWith rdf:resource="#Threading"/>
+    <owl:disjointWith rdf:resource="#Boring"/>
+    <owl:disjointWith rdf:resource="#Drilling"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Turning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Milling"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Machining"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Coating">
+    <rdfs:subClassOf rdf:resource="#Finalization"/>
+    <rdfs:subClassOf rdf:resource="#SurfaceFinishing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Unloading"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Packaging"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#LaserMarking">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Labelling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InkMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Writing"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#StampMarking"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The use of laser technology for the application of marking onto a part or product.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PickAndPlace">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manipulation"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This&#xD; process combines the picking, transporting and placing processes into one process.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Buffering">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Logistic"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Feeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Routing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Storing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manipulation"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Punching">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Grinding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LaserCutting"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Machining"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MaterialRemoving"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PercussionWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="StudWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SpotWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SeamWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ProjectionWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="FlashButtWelding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ResistanceWelding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TubeFeeding">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tube feeding is a capability in which the parts are fed from tube (magazines) in a known position and orientation.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TrayFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TapeFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BulkFeeding"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Feeding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Bending">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Folding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Crimping"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Clinching"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Twisting"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Forming"/>
+    <rdfs:subClassOf rdf:resource="#PlasticDeformingFixating"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Fastening">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fastening class includes processes in which parts are fixed together by using mechanical fasteners.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Welding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Soldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveCuring"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#DeformingFixating"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Joining"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TungstenArcWelding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ArcWelding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ShieldedMetalArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PlasmaArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ElectroSlagWelding"/>
+    <owl:disjointWith rdf:resource="#ElectronBeamWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ResistanceWelding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MetalWelding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LaserWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ArcWelding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="UltrasonicWelding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PlasticWelding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HeatedAirWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="FrictionWelding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Clamping">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Taping"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Stapling"/>
+    <owl:disjointWith rdf:resource="#SpringFastening"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+    <rdfs:subClassOf rdf:resource="#Fastening"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Encapsulating">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sealing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Bagging"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boxing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Wrapping"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The application of a protective enclosure around the product.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Packaging"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Sealing">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The application of a special material to a package to ensure its resistance against given elements and/or unwarranted handling.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Packaging"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Encapsulating"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Bagging"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boxing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Wrapping"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VisionReading">
+    <rdfs:subClassOf rdf:resource="#Identification"/>
+    <owl:disjointWith rdf:resource="#ImageCapturing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Scanning"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Taping">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of joining two or more parts by application of tape.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Stapling"/>
+    <rdfs:subClassOf rdf:resource="#Fastening"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Sewing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#SpringFastening"/>
+    <owl:disjointWith rdf:resource="#Clamping"/>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PlasticWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MetalWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ColdWelding"/>
+    <rdfs:subClassOf rdf:resource="#Welding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AdhesivePrinting">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AdhesiveApplication"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SelfAdhesiveTapeApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#AdhesiveDispensing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MountingO-ring">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ElasticDeformingFixating"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of mounting o-rings.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="TransportingCollaborative">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Transporting"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StampMarking">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Labelling"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InkMarking"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Writing"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#LaserMarking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The use of pressure (stamping) in the application of some form of identification to a product or part.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ArcWelding">
+    <owl:disjointWith rdf:resource="#ResistanceWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LaserWelding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MetalWelding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Snapping">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ElasticDeformingFixating"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Clipping"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Wedging"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Shrinking"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Machining">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Grinding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LaserCutting"/>
+    <owl:disjointWith rdf:resource="#Punching"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MaterialRemoving"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Fixturing">
+    <owl:disjointWith rdf:resource="#Cleaning"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpacking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SolderPasteApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Loading"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Preparation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Routing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Logistic"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Feeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Storing"/>
+    <owl:disjointWith rdf:resource="#Buffering"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Manipulation"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Joining">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parent class for joining related process. Joining includes processes which join (fix) two or more parts together during assembly process.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Assembling"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#IronSoldering">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Soldering"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#TorchSoldering"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ResistanceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InductionSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FurnaceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#DipSoldering"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Wedging">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ElasticDeformingFixating"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Clipping"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Shrinking"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Snapping"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ElasticDeformingFixating">
+    <rdfs:subClassOf rdf:resource="#DeformingFixating"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ElasticDeforming class includes processes which fixes two or more parts together by elastically deforming the parts (reversible).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#BulkBoxFeeding">
+    <rdfs:subClassOf rdf:resource="#BulkFeeding"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bulk box feeding process feeds parts directly from bulk, e.g. from boxes. Other commonly used term is bin picking. Machine vision is needed to identify the position and orientation of the parts.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#FlexibleFeeding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VibratoryFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#TransportationBasedFeeding"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SolderPasteDispensing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SolderPasteApplication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HeatTreatment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Non-shapingManufacturing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Preparation">
+    <rdfs:subClassOf rdf:resource="#ProcessTaxonomyElement"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Qualifying"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Logistic"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Assembling"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A preparation process is an auxiliary process necessary for preparing products or product parts to be processed by the production system.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Grasping">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manipulation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MetalWelding">
+    <rdfs:subClassOf rdf:resource="#Welding"/>
+    <owl:disjointWith rdf:resource="#PlasticWelding"/>
+    <owl:disjointWith rdf:resource="#ColdWelding"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BowlFeeding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#VibratoryFeeding"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bowl feeding is a feeding process in which the bulk parts are separeted, oriented and positioned in a bowl by vibration.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LinearVibratoryFeeding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#ResistanceSoldering">
+    <owl:disjointWith rdf:resource="#TorchSoldering"/>
+    <owl:disjointWith rdf:resource="#IronSoldering"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#InductionSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FurnaceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#DipSoldering"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Soldering"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TighteningFromSide">
+    <rdfs:subClassOf rdf:resource="#Fastening"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AdhesiveCuring">
+    <owl:disjointWith rdf:resource="#Welding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Soldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Fastening"/>
+    <owl:disjointWith rdf:resource="#DeformingFixating"/>
+    <rdfs:subClassOf rdf:resource="#Joining"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Processes which fix two or more parts together by applying some sort of adhesives.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#ProjectionWelding">
+    <rdfs:subClassOf rdf:resource="#ResistanceWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#StudWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SpotWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SeamWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PercussionWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FlashButtWelding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Flipping">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manipulation"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Placing"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Orienting"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Positioning"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Mating"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Inserting"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#DiscreteManufacturing">
+    <owl:disjointWith rdf:resource="#ContinuousManufacturing"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manufacturing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Inserting">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Positioning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Orienting"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Mating"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Placing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Flipping"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Manipulation"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inserting process is a process in which a part is placed to a certain location by applying force.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#RadialRiveting">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is a process for performing radial riveting (radial movement).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Riveting"/>
+    <owl:disjointWith rdf:resource="#OrbitalRiveting"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#ImpactRiveting"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Manufacturing">
+    <rdfs:subClassOf rdf:resource="#ProcessTaxonomyElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manufacturing class includes manufacturing processes.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Manipulation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A manipulation process is a handling process which is needed for re-orienting products or parts, to be able to undergo another assembly process.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Feeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Routing"/>
+    <owl:disjointWith rdf:resource="#Storing"/>
+    <owl:disjointWith rdf:resource="#Buffering"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Logistic"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MaterialRemoving">
+    <rdfs:subClassOf rdf:resource="#ShapingManufacturing"/>
+    <owl:disjointWith rdf:resource="#Marking"/>
+    <owl:disjointWith rdf:resource="#SurfaceFinishing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialConserving"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialAdding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#InkMarking">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Labelling"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Writing"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#StampMarking"/>
+    <owl:disjointWith rdf:resource="#LaserMarking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The use of ink for the application of marking onto a part or product.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+  </owl:Class>
+  <owl:Class rdf:about="#FrictionWelding">
+    <owl:disjointWith rdf:resource="#UltrasonicWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#HeatedAirWelding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#PlasticWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ImpactRiveting">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is a process for performing impact riveting (linear movement).</rdfs:comment>
+    <owl:disjointWith rdf:resource="#OrbitalRiveting"/>
+    <owl:disjointWith rdf:resource="#RadialRiveting"/>
+    <rdfs:subClassOf rdf:resource="#Riveting"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Pressing">
+    <rdfs:subClassOf rdf:resource="#ElasticDeformingFixating"/>
+    <rdfs:subClassOf rdf:resource="#Forming"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LaserScanning">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Scanning"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SeamWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#StudWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SpotWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ProjectionWelding"/>
+    <owl:disjointWith rdf:resource="#PercussionWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FlashButtWelding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#ResistanceWelding"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DotcodeReading">
+    <rdfs:subClassOf rdf:resource="#VisionReading"/>
+  </owl:Class>
+  <owl:Class rdf:about="#FlashButtWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#StudWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SpotWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#SeamWelding"/>
+    <owl:disjointWith rdf:resource="#ProjectionWelding"/>
+    <owl:disjointWith rdf:resource="#PercussionWelding"/>
+    <rdfs:subClassOf rdf:resource="#ResistanceWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Placing">
+    <rdfs:subClassOf rdf:resource="#Manipulation"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Positioning"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Orienting"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Inserting"/>
+    <owl:disjointWith rdf:resource="#Mating"/>
+    <owl:disjointWith rdf:resource="#Flipping"/>
+  </owl:Class>
+  <owl:Class rdf:about="#StudWelding">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#SpotWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#SeamWelding"/>
+    <owl:disjointWith rdf:resource="#ProjectionWelding"/>
+    <owl:disjointWith rdf:resource="#PercussionWelding"/>
+    <owl:disjointWith rdf:resource="#FlashButtWelding"/>
+    <rdfs:subClassOf rdf:resource="#ResistanceWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ShieldedMetalArcWelding">
+    <rdfs:subClassOf rdf:resource="#ArcWelding"/>
+    <owl:disjointWith rdf:resource="#TungstenArcWelding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PlasmaArcWelding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ElectroSlagWelding"/>
+    <owl:disjointWith rdf:resource="#ElectronBeamWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Turning">
+    <owl:disjointWith rdf:resource="#Grooving"/>
+    <owl:disjointWith rdf:resource="#Threading"/>
+    <owl:disjointWith rdf:resource="#Boring"/>
+    <owl:disjointWith rdf:resource="#Drilling"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Milling"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Machining"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Assembling">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parent class for assembly related processes.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Qualifying"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Preparation"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Logistic"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#ProcessTaxonomyElement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Sewing">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Nailing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Taping"/>
+    <owl:disjointWith rdf:resource="#SpringFastening"/>
+    <owl:disjointWith rdf:resource="#Stapling"/>
+    <owl:disjointWith rdf:resource="#Clamping"/>
+    <rdfs:subClassOf rdf:resource="#Fastening"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The process of joining two parts through the sewing of the parts edges. The operation is performed by alternately crossing up and down a series of holes performed on the two overlapped edges with some kind of string.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Non-shapingManufacturing">
+    <rdfs:subClassOf rdf:resource="#DiscreteManufacturing"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Non-shaping manufacturing class includes processes which don't change the shape of the processed object.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#ShapingManufacturing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Milling">
+    <owl:disjointWith rdf:resource="#Grooving"/>
+    <owl:disjointWith rdf:resource="#Threading"/>
+    <owl:disjointWith rdf:resource="#Boring"/>
+    <owl:disjointWith rdf:resource="#Drilling"/>
+    <owl:disjointWith rdf:resource="#Turning"/>
+    <rdfs:subClassOf rdf:resource="#Machining"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LaserWelding">
+    <rdfs:subClassOf rdf:resource="#MetalWelding"/>
+    <owl:disjointWith rdf:resource="#ResistanceWelding"/>
+    <owl:disjointWith rdf:resource="#ArcWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Measuring">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A measuring  process is a quality process which is needed for qualifying and/or quantifying certain product (part) properties within production system.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Qualifying"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Testing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Inspection"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Identification"/>
+  </owl:Class>
+  <owl:Class rdf:about="#InductionSoldering">
+    <owl:disjointWith rdf:resource="#TorchSoldering"/>
+    <owl:disjointWith rdf:resource="#ResistanceSoldering"/>
+    <owl:disjointWith rdf:resource="#IronSoldering"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#FurnaceSoldering"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#DipSoldering"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Soldering"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Clinching">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Folding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Crimping"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Twisting"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Bending"/>
+    <rdfs:subClassOf rdf:resource="#PlasticDeformingFixating"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Grinding">
+    <owl:disjointWith rdf:resource="#LaserCutting"/>
+    <owl:disjointWith rdf:resource="#Machining"/>
+    <owl:disjointWith rdf:resource="#Punching"/>
+    <rdfs:subClassOf rdf:resource="#MaterialRemoving"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Transporting">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Holding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Picking"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Logistic"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TapeFeeding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Feeding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TrayFeeding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#TubeFeeding"/>
+    <owl:disjointWith rdf:resource="#BulkFeeding"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tape feeding is a process in which the parts attached to a tape are provided in a known position and orientation.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Inspection">
+    <owl:disjointWith rdf:resource="#Measuring"/>
+    <owl:disjointWith rdf:resource="#Testing"/>
+    <owl:disjointWith rdf:resource="#Identification"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A inspection process is a quality process which is needed for qualifying and/or quantifying certain product (part) properties within production system.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Qualifying"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Soldering">
+    <owl:disjointWith rdf:resource="#Welding"/>
+    <owl:disjointWith rdf:resource="#AdhesiveCuring"/>
+    <owl:disjointWith rdf:resource="#Fastening"/>
+    <owl:disjointWith rdf:resource="#DeformingFixating"/>
+    <rdfs:subClassOf rdf:resource="#Joining"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Soldering is a process in which two or more parts are joined together by melting and putting a filler metal (solder) into the joint.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Nailing">
+    <owl:disjointWith rdf:resource="#Sewing"/>
+    <owl:disjointWith rdf:resource="#Clamping"/>
+    <owl:disjointWith rdf:resource="#Stapling"/>
+    <owl:disjointWith rdf:resource="#Screwing"/>
+    <rdfs:subClassOf rdf:resource="#Fastening"/>
+    <owl:disjointWith rdf:resource="#Taping"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process of joining two or more parts by application of nails.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Riveting"/>
+    <owl:disjointWith rdf:resource="#SpringFastening"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Twisting">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Folding"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Crimping"/>
+    <owl:disjointWith rdf:resource="#Clinching"/>
+    <owl:disjointWith rdf:resource="#Bending"/>
+    <rdfs:subClassOf rdf:resource="#PlasticDeformingFixating"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SpotWelding">
+    <owl:disjointWith rdf:resource="#StudWelding"/>
+    <owl:disjointWith rdf:resource="#SeamWelding"/>
+    <owl:disjointWith rdf:resource="#ProjectionWelding"/>
+    <owl:disjointWith rdf:resource="#PercussionWelding"/>
+    <owl:disjointWith rdf:resource="#FlashButtWelding"/>
+    <rdfs:subClassOf rdf:resource="#ResistanceWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#UV-curing">
+    <rdfs:subClassOf rdf:resource="#AdhesiveCuring"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fixing two or more parts together by using adhesive, which is cured by UV light.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Gluing"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#ThermalCuring"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SolderPasteApplication">
+    <owl:disjointWith rdf:resource="#Cleaning"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unpacking"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Fixturing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Loading"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Preparation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Gluing">
+    <rdfs:subClassOf rdf:resource="#AdhesiveCuring"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fixing two or more parts together with glue, which doesn't need any specific curing process (e.g. heating or UV light).</rdfs:comment>
+    <owl:disjointWith rdf:resource="#UV-curing"/>
+    <owl:disjointWith rdf:resource="#ThermalCuring"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Scanning">
+    <owl:disjointWith rdf:resource="#ImageCapturing"/>
+    <owl:disjointWith rdf:resource="#VisionReading"/>
+    <rdfs:subClassOf rdf:resource="#Identification"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Positioning">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Orienting"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Inserting"/>
+    <owl:disjointWith rdf:resource="#Mating"/>
+    <owl:disjointWith rdf:resource="#Placing"/>
+    <owl:disjointWith rdf:resource="#Flipping"/>
+    <rdfs:subClassOf rdf:resource="#Manipulation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Boxing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Packaging"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Encapsulating"/>
+    <owl:disjointWith rdf:resource="#Sealing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Bagging"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Wrapping"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The placing of products or parts into boxes (rigid material).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Shrinking">
+    <owl:disjointWith rdf:resource="#Clipping"/>
+    <owl:disjointWith rdf:resource="#Wedging"/>
+    <owl:disjointWith rdf:resource="#Snapping"/>
+    <rdfs:subClassOf rdf:resource="#ElasticDeformingFixating"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Unpacking">
+    <owl:disjointWith rdf:resource="#Cleaning"/>
+    <owl:disjointWith rdf:resource="#SolderPasteApplication"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#AdhesiveApplication"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Fixturing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Loading"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Preparation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="VacuumGrasping">
+    <rdfs:subClassOf rdf:resource="#Grasping"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RFScanning">
+    <rdfs:subClassOf rdf:resource="#Scanning"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Orienting">
+    <owl:disjointWith rdf:resource="#Positioning"/>
+    <owl:disjointWith rdf:resource="#Inserting"/>
+    <owl:disjointWith rdf:resource="#Mating"/>
+    <owl:disjointWith rdf:resource="#Placing"/>
+    <owl:disjointWith rdf:resource="#Flipping"/>
+    <rdfs:subClassOf rdf:resource="#Manipulation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AdhesiveApplication">
+    <rdfs:subClassOf rdf:resource="#Preparation"/>
+    <owl:disjointWith rdf:resource="#Cleaning"/>
+    <owl:disjointWith rdf:resource="#Unpacking"/>
+    <owl:disjointWith rdf:resource="#SolderPasteApplication"/>
+    <owl:disjointWith rdf:resource="#Fixturing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Loading"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#HeatedAirWelding">
+    <owl:disjointWith rdf:resource="#UltrasonicWelding"/>
+    <owl:disjointWith rdf:resource="#FrictionWelding"/>
+    <rdfs:subClassOf rdf:resource="#PlasticWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Loading">
+    <rdfs:subClassOf rdf:resource="#Preparation"/>
+    <owl:disjointWith rdf:resource="#Cleaning"/>
+    <owl:disjointWith rdf:resource="#Unpacking"/>
+    <owl:disjointWith rdf:resource="#SolderPasteApplication"/>
+    <owl:disjointWith rdf:resource="#AdhesiveApplication"/>
+    <owl:disjointWith rdf:resource="#Fixturing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Packaging">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Unloading"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Coating"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The process by which the finalised product is placed into a protective shell.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Finalization"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FingerGrasping">
+    <rdfs:subClassOf rdf:resource="#Grasping"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SelfAdhesiveTapeApplication">
+    <rdfs:subClassOf rdf:resource="#AdhesiveApplication"/>
+    <owl:disjointWith rdf:resource="#AdhesivePrinting"/>
+    <owl:disjointWith rdf:resource="#AdhesiveDispensing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SolderPasteScreenPrinting">
+    <rdfs:subClassOf rdf:resource="#SolderPasteApplication"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LinearVibratoryFeeding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#VibratoryFeeding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#BowlFeeding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Qualifying">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An auxiliary process (group of processes), needed for qualifying or quantifying certain quality aspects within a production system.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#ProcessTaxonomyElement"/>
+    <owl:disjointWith rdf:resource="#Preparation"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Logistic"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Assembling"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PlasmaArcWelding">
+    <rdfs:subClassOf rdf:resource="#ArcWelding"/>
+    <owl:disjointWith rdf:resource="#TungstenArcWelding"/>
+    <owl:disjointWith rdf:resource="#ShieldedMetalArcWelding"/>
+    <owl:disjointWith rdf:resource="#ElectroSlagWelding"/>
+    <owl:disjointWith rdf:resource="#ElectronBeamWelding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Folding">
+    <rdfs:subClassOf rdf:resource="#PlasticDeformingFixating"/>
+    <owl:disjointWith rdf:resource="#Crimping"/>
+    <owl:disjointWith rdf:resource="#Clinching"/>
+    <owl:disjointWith rdf:resource="#Twisting"/>
+    <owl:disjointWith rdf:resource="#Bending"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BarcodeReading">
+    <rdfs:subClassOf rdf:resource="#VisionReading"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Logistic">
+    <rdfs:subClassOf rdf:resource="#ProcessTaxonomyElement"/>
+    <owl:disjointWith rdf:resource="#Qualifying"/>
+    <owl:disjointWith rdf:resource="#Preparation"/>
+    <owl:disjointWith rdf:resource="#Assembling"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Logistic process is an auxiliary process (group of processes) needed for controlling the logistic issues within the production system. Doesn't add value to the product, but are needed to complete the other processes.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Picking">
+    <rdfs:subClassOf rdf:resource="#Manipulation"/>
+    <owl:disjointWith rdf:resource="#Transporting"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Holding"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Labelling">
+    <rdfs:subClassOf rdf:resource="#Marking"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The application of a material slip (as of paper or cloth) inscribed and affixed to a part or product for identification or description.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#InkMarking"/>
+    <owl:disjointWith rdf:resource="#Writing"/>
+    <owl:disjointWith rdf:resource="#Printing"/>
+    <owl:disjointWith rdf:resource="#StampMarking"/>
+    <owl:disjointWith rdf:resource="#LaserMarking"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LaserAdding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MaterialAdding"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Moulding"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Casting"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#TrayFeeding">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tray feeding is a process in which the parts are pre-structured (positioned and oriented) on trays, which provide the parts for the assembly station.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#TapeFeeding"/>
+    <owl:disjointWith rdf:resource="#TubeFeeding"/>
+    <owl:disjointWith rdf:resource="#BulkFeeding"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Feeding"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#FurnaceSoldering">
+    <owl:disjointWith rdf:resource="#TorchSoldering"/>
+    <owl:disjointWith rdf:resource="#ResistanceSoldering"/>
+    <owl:disjointWith rdf:resource="#IronSoldering"/>
+    <owl:disjointWith rdf:resource="#InductionSoldering"/>
+    <owl:disjointWith rdf:resource="#DipSoldering"/>
+    <rdfs:subClassOf rdf:resource="#Soldering"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VibratoryFeeding">
+    <owl:disjointWith rdf:resource="#FlexibleFeeding"/>
+    <owl:disjointWith rdf:resource="#TransportationBasedFeeding"/>
+    <owl:disjointWith rdf:resource="#BulkBoxFeeding"/>
+    <rdfs:subClassOf rdf:resource="#BulkFeeding"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vibratory feeding is a process by which bulk parts are separated and provided in a certain position and orientation with the help of vibration.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Feeding">
+    <rdfs:subClassOf rdf:resource="#Logistic"/>
+    <owl:disjointWith rdf:resource="#Routing"/>
+    <owl:disjointWith rdf:resource="#Storing"/>
+    <owl:disjointWith rdf:resource="#Buffering"/>
+    <owl:disjointWith rdf:resource="#Manipulation"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Feeding process provides the parts to the working area to be grasped by a robot or human.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#MaterialConserving">
+    <owl:disjointWith rdf:resource="#Marking"/>
+    <owl:disjointWith rdf:resource="#SurfaceFinishing"/>
+    <owl:disjointWith rdf:resource="#MaterialRemoving"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#MaterialAdding"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#ShapingManufacturing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#MaterialAdding">
+    <rdfs:subClassOf rdf:resource="#ShapingManufacturing"/>
+    <owl:disjointWith rdf:resource="#Marking"/>
+    <owl:disjointWith rdf:resource="#SurfaceFinishing"/>
+    <owl:disjointWith rdf:resource="#MaterialConserving"/>
+    <owl:disjointWith rdf:resource="#MaterialRemoving"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Moulding">
+    <rdfs:subClassOf rdf:resource="#MaterialAdding"/>
+    <owl:disjointWith rdf:resource="#LaserAdding"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Casting"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Holding">
+    <owl:disjointWith rdf:resource="#Transporting"/>
+    <owl:disjointWith rdf:resource="#Picking"/>
+    <rdfs:subClassOf rdf:resource="#Manipulation"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Casting">
+    <owl:disjointWith rdf:resource="#LaserAdding"/>
+    <owl:disjointWith rdf:resource="#Moulding"/>
+    <rdfs:subClassOf rdf:resource="#MaterialAdding"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Unloading">
+    <rdfs:subClassOf rdf:resource="#Finalization"/>
+    <owl:disjointWith rdf:resource="#Coating"/>
+    <owl:disjointWith rdf:resource="#Packaging"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Bagging">
+    <owl:disjointWith rdf:resource="#Encapsulating"/>
+    <owl:disjointWith rdf:resource="#Sealing"/>
+    <owl:disjointWith rdf:resource="#Boxing"/>
+    <owl:disjointWith rdf:resource="#Wrapping"/>
+    <rdfs:subClassOf rdf:resource="#Packaging"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The placing of products or parts into specific bags (soft material).</rdfs:comment>
+  </owl:Class>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

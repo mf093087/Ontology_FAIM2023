@@ -1,0 +1,1141 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://resourcedescription.tut.fi/ontology/resourceModel" xmlns="http://resourcedescription.tut.fi/ontology/resourceModel#" xmlns:cm="http://resourcedescription.tut.fi/ontology/capabilityModel#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lw="http://ontosphere3d.sourceforge.net/LogicViews.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:p1="http://www.owl-ontologies.com/assert.owl#" xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" xmlns:swrlb="http://www.w3.org/2003/11/swrlb#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#">
+	<owl:Ontology rdf:about="">
+		<owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel"/>
+		<owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel"/>
+		<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.4</owl:versionInfo>
+		<dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eeva Järvenpää</dc:creator>
+		<dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eeva Järvenpää</dc:contributor>
+		<dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Niko Siltala</dc:contributor>
+		<dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Otto Hylli</dc:contributor>
+		<dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#language">en</dc:language>
+		<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resource Model ontology</dc:title>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resource Model ontology</rdfs:label>
+		<dc:description xml:lang="en">Resource Model (RM) ontology is a data model for describing production resources, their capabilities and interfaces. The Resource Model imports two other ontologies, namely Capability Model and Resource Interface Model.</dc:description>
+		<rdfs:comment xml:lang="en">Resource Model (RM) ontology is a data model for describing production resources, their capabilities and interfaces. The Resource Model imports two other ontologies, namely Capability Model and Resource Interface Model.</rdfs:comment>
+		<dc:rights xml:lang="en">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </dc:rights>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </rdfs:comment>
+		<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-03-18</dc:date>
+	</owl:Ontology>
+	<owl:Class rdf:ID="IndividualJoiningDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="JoiningDevice"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="IndividualDevice"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="PerformanceLevel">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PerformanceLevel class is used to store information related to the level &#xD;of performance (expert, intermediate or adequate) that human operator may have in terms of the normal human &#xD;capabilities .</rdfs:comment>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:oneOf rdf:parseType="Collection">
+					<PerformanceLevel rdf:ID="adequate">
+						<hasCapability>
+							<cm:Placing rdf:ID="Placing_Human_Adequate"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Inserting rdf:ID="Inserting_Human_Adequate"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Transporting rdf:ID="Transporting_Human_Adequate"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Moving rdf:ID="Moving_Human_Adequate"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Picking rdf:ID="Picking_Human_Adequate"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:TransportFeeding rdf:ID="TransportFeeding_Human_Adequate"/>
+						</hasCapability>
+					</PerformanceLevel>
+					<PerformanceLevel rdf:ID="intermediate">
+						<hasCapability>
+							<cm:Placing rdf:ID="Placing_Human_Intermediate">
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+								<cm:repeatability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:repeatability>
+							</cm:Placing>
+						</hasCapability>
+						<hasCapability>
+							<cm:Inserting rdf:ID="Inserting_Human_Intermediate">
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+								<cm:repeatability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:repeatability>
+								<cm:force_min rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</cm:force_min>
+								<cm:force_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</cm:force_max>
+							</cm:Inserting>
+						</hasCapability>
+						<hasCapability>
+							<cm:Transporting rdf:ID="Transporting_Human_Intermediate">
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+								<cm:speed_y_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_y_max>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_X</cm:dof>
+								<cm:hasItemSize_max>
+									<cm:ItemSize rdf:ID="ItemSize_max_Human_intermediate">
+										<cm:width rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600.0</cm:width>
+										<cm:diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600.0</cm:diameter>
+										<cm:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</cm:weight>
+										<cm:height rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600.0</cm:height>
+										<cm:length rdf:datatype="http://www.w3.org/2001/XMLSchema#float">600.0</cm:length>
+									</cm:ItemSize>
+								</cm:hasItemSize_max>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_Y</cm:dof>
+								<cm:speed_x_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_x_max>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_X</cm:dof>
+								<cm:hasItemSize_min>
+									<cm:ItemSize rdf:ID="ItemSize_min_Human_intermediate">
+										<cm:height rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</cm:height>
+										<cm:width rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</cm:width>
+										<cm:length rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</cm:length>
+										<cm:diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</cm:diameter>
+										<cm:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.01</cm:weight>
+									</cm:ItemSize>
+								</cm:hasItemSize_min>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_Z</cm:dof>
+								<cm:repeatability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:repeatability>
+								<cm:payload rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</cm:payload>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_Z</cm:dof>
+								<cm:dof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_Y</cm:dof>
+								<cm:speed_z_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_z_max>
+							</cm:Transporting>
+						</hasCapability>
+						<hasCapability>
+							<cm:Moving rdf:ID="Moving_Human_Intermediate">
+								<cm:payload rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</cm:payload>
+								<cm:dofNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</cm:dofNumber>
+								<cm:speed_y_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_y_max>
+								<cm:repeatability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:repeatability>
+								<cm:speed_z_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_z_max>
+								<cm:speed_x_max rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</cm:speed_x_max>
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+							</cm:Moving>
+						</hasCapability>
+						<hasCapability>
+							<cm:Picking rdf:ID="Picking_Human_Intermediate">
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+								<cm:hasItemSize_max rdf:resource="#ItemSize_max_Human_intermediate"/>
+								<cm:payload rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</cm:payload>
+								<cm:repeatability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:repeatability>
+								<cm:hasItemSize_min rdf:resource="#ItemSize_min_Human_intermediate"/>
+							</cm:Picking>
+						</hasCapability>
+						<hasCapability>
+							<cm:TransportFeeding rdf:ID="TransportFeeding_Human_Intermediate">
+								<cm:accuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</cm:accuracy>
+								<cm:hasItemSize_min rdf:resource="#ItemSize_min_Human_intermediate"/>
+								<cm:payload rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</cm:payload>
+								<cm:hasItemSize_max rdf:resource="#ItemSize_max_Human_intermediate"/>
+							</cm:TransportFeeding>
+						</hasCapability>
+					</PerformanceLevel>
+					<PerformanceLevel rdf:ID="expert">
+						<hasCapability>
+							<cm:Placing rdf:ID="Placing_Human_Expert"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Inserting rdf:ID="Inserting_Human_Expert"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Transporting rdf:ID="Transporting_Human_Expert"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Moving rdf:ID="Moving_Human_Expert"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:Picking rdf:ID="Picking_Human_Expert"/>
+						</hasCapability>
+						<hasCapability>
+							<cm:TransportFeeding rdf:ID="TransportFeeding_Human_Expert"/>
+						</hasCapability>
+					</PerformanceLevel>
+				</owl:oneOf>
+			</owl:Class>
+		</owl:equivalentClass>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Competence"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasCapability"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasCapability"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualFeedingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="FeedingDevice"/>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#IndividualDevice"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="AssemblyQualification">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ability to perform assembly operations.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Qualification"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualSimpleDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="SimpleDevice"/>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#IndividualDevice"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="RawMaterial">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class RawMaterial represents the material resources of  the company/entity (e.g. material from which the product element is fabricated).</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasMaterialType"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:DatatypeProperty rdf:ID="lotNumber"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Resource"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="Software">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Resource"/>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Software class is for storing the codes and sofwares for the machines (for example G-code, code for robot or any other SW agent).</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#IndividualDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasCapabilityUpdated"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Device"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InvidualDevice is an actual individual device existing on the factory floor. The individual devices have reference to the DeviceBlueprint. This class stores the lifecycle information of the devices and updates the capability properties.
+This class corresponds to the "Resource Instance Description" in ReCaM approach.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#SimpleDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SimpleDevice class is for catalogue information of simple devices, such as tools.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="DeviceBlueprint"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualModifyingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="ModifyingDevice"/>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:ID="FixturingDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class defines the catalogue information of fixturing devices.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#DeviceBlueprint"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#JoiningDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is for storing information related to different kind of &#xD;joining devices. These may be for &#xD;example screwdrivers or riveting machines.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#DeviceBlueprint"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="Line">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class Line refers to the production line where the manufacturing or assembly takes place. Line can consist of multiple cells and stations.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="FactoryUnit"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasCellOrStation"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:ID="Cell"/>
+							<owl:Class rdf:ID="Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasPosition"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="Site">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#FactoryUnit"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasArea"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="Area"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class site refers to a complete factory where the manufacturing or assemlby takes place. Factory = Site (ANSI/ISA95)</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#ModifyingDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ModifyingDevice class defines the catalogue information of different devices that are able to modify material, such as milling or turning machines.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#DeviceBlueprint"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="ToolingDevice">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#DeviceBlueprint"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#FactoryUnit">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FactoryUnit class refers to the place where the operations take place. It is a parent class for other area-related classes.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Resource"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasCalculatedCapability"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasResource"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:about="#Resource"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#DeviceBlueprint">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Device"/>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasCapability"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasCapability"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasBasicResourceInformation"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel#InterfaceDefinition"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasInterface"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasPerformance"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeviceBlueprint class is a super class for different kind of devices. Blueprint contains the catalogue information of devices. This class have several subclasses for different categories of devices.
+DeviceBlueprint corresponds to "Resource Description" in ReCaM approach.</rdfs:comment>
+		<owl:disjointWith>
+			<owl:Class rdf:ID="Person"/>
+		</owl:disjointWith>
+	</owl:Class>
+	<owl:Class rdf:ID="MachineToolQualification">
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Qualification"/>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ability to operate machine tools.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#Device">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+				<owl:onProperty>
+					<owl:DatatypeProperty rdf:ID="resourceDescriptionURL"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Resource"/>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device class includes any machines, equipments and tools used to manufacture or assemble a product. Devices can be either catalogue devices (blueprints) or actual individual devices and combinations of them.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="TestDeviceCombination">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#IndividualDevice"/>
+							<owl:Class rdf:about="#DeviceBlueprint"/>
+							<owl:Class rdf:ID="RealDeviceCombination"/>
+							<owl:Class rdf:about="#TestDeviceCombination"/>
+							<owl:Class rdf:about="#Person"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="DeviceCombination"/>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is storing the virtual device combinations which are not &#xD;existing in the real world, but which are used to test different  combinations to the capability matchmaking purposes. Thus, it may  include also combinations of resources which are only in catalogues, not really existing on the factory floor.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#Person">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person class refers to any human operator or other human resource.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:hasValue rdf:resource="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel#human_interaction_general"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasInterface"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasPerformanceLevel"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="#PerformanceLevel"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasPerformanceLevel"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasQualification"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:about="#Qualification"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:DatatypeProperty rdf:about="#resourceDescriptionURL"/>
+				</owl:onProperty>
+				<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Resource"/>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualMovingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="MovingDevice"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class>
+		<owl:unionOf rdf:parseType="Collection">
+			<owl:Class rdf:about="#RealDeviceCombination"/>
+			<owl:Class rdf:about="#IndividualDevice"/>
+		</owl:unionOf>
+	</owl:Class>
+	<owl:Class>
+		<owl:unionOf rdf:parseType="Collection">
+			<owl:Class rdf:about="#IndividualDevice"/>
+			<owl:Class rdf:about="#DeviceBlueprint"/>
+			<owl:Class rdf:about="#RealDeviceCombination"/>
+			<owl:Class rdf:about="#TestDeviceCombination"/>
+		</owl:unionOf>
+	</owl:Class>
+	<owl:Class rdf:about="#RealDeviceCombination">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#RealDeviceCombination"/>
+							<owl:Class rdf:about="#IndividualDevice"/>
+							<owl:Class rdf:about="#Person"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#DeviceCombination"/>
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RealDeviceCombination class includes combinations of multiple individual devices.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#Resource">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class Resource refers to any physical or virtual resource that is used for assembling or manufacturing a product element or providing a certain service.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:DatatypeProperty rdf:ID="entityID"/>
+				</owl:onProperty>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#Competence">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Competence class is meant for storing information related to human competences&#xD;.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualStorageDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="StorageDevice"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:about="#Cell">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="connectedTo"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class rdf:about="#Station"/>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasStation"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasPosition"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="precededBy"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="adjacentTo"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#FactoryUnit"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class Cell refers to the cell where the manufacturing or assembly takes place. Cell can be either product-oriented or process-oriented cell. Process-oriented cell may consist of multiple machines providing similar process capabilities. Product-oriented cell in contrary consist of resources targeted to manufacture certain entiretys of the product (e.g. sub-assembies).</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualToolingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom rdf:resource="#ToolingDevice"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:about="#Station">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Station class refers to a station where the manufacturing or assembly takes place. Station refers to one unit in the system, where certain operations can be completed. Cell can contain multiple stations.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#FactoryUnit"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#connectedTo"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasPosition"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#precededBy"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#adjacentTo"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#Cell"/>
+							<owl:Class rdf:about="#Station"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="#RealDeviceCombination"/>
+							<owl:Class rdf:about="#IndividualDevice"/>
+						</owl:unionOf>
+					</owl:Class>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualControlDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="ControlDevice"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualFixturingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="#FixturingDevice"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:about="#Qualification">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qualification class is used to store information related to different &#xD;qualifications that a person may have. It is the parent class of various &#xD;qualification related classes.
+NOTE: This clss is under construction. More sub-classes are expected to be added, and more properties attached to the classes.</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+				<owl:onProperty>
+					<owl:FunctionalProperty rdf:ID="experience_InYears"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+				<owl:onProperty>
+					<owl:DatatypeProperty rdf:ID="certificate"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#Competence"/>
+	</owl:Class>
+	<owl:Class rdf:ID="IndividualGraspingDevice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasDeviceBlueprint"/>
+				</owl:onProperty>
+				<owl:allValuesFrom>
+					<owl:Class rdf:ID="GraspingDevice"/>
+				</owl:allValuesFrom>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#IndividualDevice"/>
+	</owl:Class>
+	<owl:Class rdf:about="#MovingDevice">
+		<rdfs:subClassOf rdf:resource="#DeviceBlueprint"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MovingDevice class contains the catalogue information for devices which are able to move items, such as robots or conveyors.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#GraspingDevice">
+		<rdfs:subClassOf rdf:resource="#DeviceBlueprint"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class&#xD; is used to store information related to grasping devices.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="WeldingQualification">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ability to perform welding operation.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Qualification"/>
+	</owl:Class>
+	<owl:Class rdf:about="#Area">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:ID="hasLine"/>
+				</owl:onProperty>
+				<owl:allValuesFrom rdf:resource="#Line"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="#FactoryUnit"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class Area refers to a place where the assembly or manufacturing takes place.</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#DeviceCombination">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeviceCombination is a parent class for real and test device &#xD;combinations.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Resource"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasCalculatedCapability"/>
+				</owl:onProperty>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty>
+					<owl:ObjectProperty rdf:about="#hasCalculatedCapability"/>
+				</owl:onProperty>
+				<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#FeedingDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class&#xD; is for storing feeding devices.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#DeviceBlueprint"/>
+	</owl:Class>
+	<owl:Class rdf:about="#StorageDevice">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StorageDevice class contains catalogue information of storaging devices.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#DeviceBlueprint"/>
+	</owl:Class>
+	<owl:Class rdf:about="#ControlDevice">
+		<rdfs:subClassOf rdf:resource="#DeviceBlueprint"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ControlDevice class includes the catalogue information of control devices.</rdfs:comment>
+	</owl:Class>
+	<owl:ObjectProperty rdf:about="#hasPerformanceLevel">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to refer to the performance level.</rdfs:comment>
+		<rdfs:range rdf:resource="#PerformanceLevel"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasStation">
+		<rdfs:range rdf:resource="#Station"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates which stations include to the given cell.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#connectedTo">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates if the entity is physically connected to other entity.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasQualification">
+		<rdfs:range rdf:resource="#Qualification"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to refer to a qualification.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#isInputAssociationForCapability">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates for which capability this is input.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasPosition">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Location property defines the exact position of the entity.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasCellOrStation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the cells or stations that are included into the line.</rdfs:comment>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<owl:Class rdf:about="#Cell"/>
+					<owl:Class rdf:about="#Station"/>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasCoordinate">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the coordianate of the feature.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasIndividualDeviceOrDeviceCombination">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the individual devices and device combinations that forms the device combination or station.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="isMadeOf">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the raw material of the given part.</rdfs:comment>
+		<rdfs:range rdf:resource="#RawMaterial"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasBasicResourceInformation">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#BasicResourceInformation"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasCapability">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property refers to the generic capability this is an instantiation of.</rdfs:comment>
+		<rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Capability"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasCapabilityUpdated">
+		<rdfs:subPropertyOf rdf:resource="#hasCapability"/>
+		<rdfs:domain rdf:resource="#IndividualDevice"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasResource">
+		<rdfs:range rdf:resource="#Resource"/>
+		<rdfs:domain rdf:resource="#FactoryUnit"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HasResources property defines the resources that belong to the given entity.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#precededBy">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines, which entity preceeds the current entity on the layout.</rdfs:comment>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasArea">
+		<rdfs:range rdf:resource="#Area"/>
+		<rdfs:domain rdf:resource="#Site"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the areas that are located in the site/factory.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasInterface">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the interfaces the actor has.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasCalculatedCapability">
+		<rdfs:subPropertyOf rdf:resource="#hasCapability"/>
+		<rdfs:domain rdf:resource="#RealDeviceCombination"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculated capability is a combined capability of combination of devices, e.g. a device combination or a station.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasMaterialType">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/commonConcepts#MaterialType"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasDeviceBlueprint">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HasDeviceBlueprint links the individual device to the blueprint (i.e. template information).</rdfs:comment>
+		<rdfs:domain rdf:resource="#IndividualDevice"/>
+		<rdfs:range rdf:resource="#DeviceBlueprint"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#adjacentTo">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property tells which entities are adjacent (close to, next to) the current entity, but not physically connected.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasLine">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates the lines that are located in the area.</rdfs:comment>
+		<rdfs:range rdf:resource="#Line"/>
+		<rdfs:domain rdf:resource="#Area"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="#hasPerformance">
+		<rdfs:domain rdf:resource="#DeviceBlueprint"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to link to the device to its performance details.</rdfs:comment>
+		<rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/capabilityModel#Performance"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="requiresResource">
+		<rdfs:range rdf:resource="#Resource"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity requires one or many resources. This property can be either pre-defined, or the proper resources can be reasoned based on the required and provided capabilities. In the latter case this property will be left empty.</rdfs:comment>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#hasOrientation">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the orientation of the entity.</rdfs:comment>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:ObjectProperty>
+	<owl:DatatypeProperty rdf:ID="materialID">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="measurementType">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines what is measured.</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:about="#lotNumber">
+		<rdfs:domain rdf:resource="#RawMaterial"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="materialType">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="orient_I">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the X vector component of the orientation axis.</rdfs:comment>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:about="#certificate">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of a certificate.</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:about="#resourceDescriptionURL">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style="margin-top: 0"&gt;&#xD;
+      fd&#xD;
+    &lt;/p&gt;</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="orient_Q">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="posZ">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posZ tells the value of Z coordinate.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:about="#entityID">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entityID is a unique identifier of a given entity.</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="orient_J">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the Y vector component of the orientation axis.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="orient_K">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the Z vector component of the orientation axis.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="posY">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posY tells the value of Y coordinate.</rdfs:comment>
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="posX">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posX tells the value of X coordinate.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	</owl:DatatypeProperty>
+	<owl:FunctionalProperty rdf:about="#experience_InYears">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Year (y)</rdfs:comment>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exper&#xD;ience in years.</rdfs:comment>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</owl:FunctionalProperty>
+	<rdf:Description>
+		<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2D</rdf:first>
+		<rdf:rest rdf:parseType="Resource">
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3D</rdf:first>
+			<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		</rdf:rest>
+	</rdf:Description>
+	<MachineToolQualification rdf:ID="MachineToolQualification_Pena">
+		<experience_InYears rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</experience_InYears>
+	</MachineToolQualification>
+	<owl:DataRange>
+		<owl:oneOf rdf:parseType="Resource">
+			<rdf:rest rdf:parseType="Resource">
+				<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End-effector mounting</rdf:first>
+				<rdf:rest rdf:parseType="Resource">
+					<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+					<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attaching to other devices</rdf:first>
+				</rdf:rest>
+			</rdf:rest>
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mounting to base</rdf:first>
+		</owl:oneOf>
+	</owl:DataRange>
+	<AssemblyQualification rdf:ID="AssemblyQualification_Pena">
+		<certificate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</certificate>
+		<experience_InYears rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</experience_InYears>
+	</AssemblyQualification>
+	<cm:ItemSize rdf:ID="ItemSize_38"/>
+	<rdf:Description>
+		<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AC</rdf:first>
+		<rdf:rest rdf:parseType="Resource">
+			<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DC</rdf:first>
+		</rdf:rest>
+	</rdf:Description>
+	<owl:DataRange>
+		<owl:oneOf rdf:parseType="Resource">
+			<rdf:rest rdf:parseType="Resource">
+				<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DC</rdf:first>
+				<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+			</rdf:rest>
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AC</rdf:first>
+		</owl:oneOf>
+	</owl:DataRange>
+	<rdf:Description>
+		<rdf:rest rdf:parseType="Resource">
+			<rdf:rest rdf:parseType="Resource">
+				<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+				<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Misc</rdf:first>
+			</rdf:rest>
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mechanical</rdf:first>
+		</rdf:rest>
+		<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electrical</rdf:first>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityDefinitionElement">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CapabilityDefinitionElement class is a parent class for all the capability related classes. It holds the sub-classes needed for modelling and managing the individual and combined capabilities of resources.</rdfs:comment>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This&#xD; is a parent class for the taxonomy of different process functionalities.</rdfs:comment>
+	</rdf:Description>
+	<rdf:Description>
+		<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attaching to other devices</rdf:first>
+		<rdf:rest rdf:parseType="Resource">
+			<rdf:rest rdf:parseType="Resource">
+				<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+				<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mounting to base</rdf:first>
+			</rdf:rest>
+			<rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End-effector mounting</rdf:first>
+		</rdf:rest>
+	</rdf:Description>
+</rdf:RDF>
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

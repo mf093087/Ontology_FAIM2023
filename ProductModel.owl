@@ -1,0 +1,2925 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://resourcedescription.tut.fi/ontology/productModel#"
+     xml:base="http://resourcedescription.tut.fi/ontology/productModel"
+     xmlns:cc="http://resourcedescription.tut.fi/ontology/commonConcepts#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:lw="http://ontosphere3d.sourceforge.net/LogicViews.owl#"
+     xmlns:pt="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
+    <owl:Ontology rdf:about="http://resourcedescription.tut.fi/ontology/productModel">
+        <owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/commonConcepts"/>
+        <owl:imports rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel"/>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eeva Järvenpää</dc:contributor>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Niko Siltala</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eeva Järvenpää</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-03-18</dc:date>
+        <dc:description xml:lang="en">ProductModel ontology is defining product requirements. It defines the structure of product; its associations and liaisons; process requirements in terms of capabilities, and their parameters.</dc:description>
+        <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#language">en</dc:language>
+        <dc:rights xml:lang="en">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </dc:rights>
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product Model ontology</dc:title>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product Model (PM) ontology used for representing the product&apos;s parts, structure and processing requirements.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ </rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product Model ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.5</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Assembly"/>
+                    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Part"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Can include one or many instances from the class Part or Assembly.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasFeature">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property specifies the features that the entity has. Feature may have multiple sub-features.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasFixation -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasFixation">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixationDetail"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Refers to the specific fixation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasFixingElement -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasFixingElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixingElement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Refers to the fixing parts that are used to assemble product.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasGeometricFeature -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasGeometricFeature">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to relate a geometric feature to certain object.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasOrientation -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasOrientation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Orientation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the orientation of the entity.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasPosition -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasPosition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Coordinate"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the position of the entity.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasRingPosition -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasRingPosition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This property is used
+    &lt;/p&gt;</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to model the shape and size of an object.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasSubProcess -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasSubProcess">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process can have multiple sub-processes, which are defined through this property.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasSurfaceTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasSurfaceTreatment">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hasTolerance -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hasTolerance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTolerance defines the tolerance assinged to the geometric feature.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#isMadeOf -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#isMadeOf">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Material"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the raw material of the given part.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#isPerformedBefore -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#isPerformedBefore">
+        <owl:inverseOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPrecededBy"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement">
+        <owl:inverseOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresActivity"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activities performed on a product element. Product element may be part, assembly or complete product.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#isPrecededBy -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#isPrecededBy">
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines the occurance order of the activities. An activity can have multiple dependencies, e.g. activities 1, 2, 3 and 4 must be completed before the activity 5 can occur.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#producesFeature -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#producesFeature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property links the process with a certain geometric feature.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#refersToGeometricFeatureOrProductElement -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#refersToGeometricFeatureOrProductElement">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates the features or products where the non-geometric features are referring.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#relatesToProcess -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#relatesToProcess">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiresActivity -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiresActivity">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity requires one or many process capabilities. This property is used to make the reference to the correct level on the process taxonomy, where the required parameters are also defined.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiresSetup -->
+
+    <owl:ObjectProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiresSetup">
+        <rdfs:range rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Setup"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process may need some setup activities, before it can take place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#CADModel2DUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#CADModel2DUrl">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the URL to the referred 2D drawing.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#CADModel3DUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#CADModel3DUrl">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the URL to the referred 3D model.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#IMGModelUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#IMGModelUrl">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMGModelUrl defines the URL for the picture (e.g. .png) of the given object.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum force that can be applied for grasping in order not to violate the part.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#dateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#dateTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property tells the exact date and time, when the action takes place.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#diameter -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#diameter">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#diameter_inner -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#diameter_inner">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inner diameter of an object</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#dimension_x -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#dimension_x">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dimension of an entity in x-direction</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#dimension_y -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#dimension_y">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dimension of an entity in y-direction</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#dimension_z -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#dimension_z">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dimension of an entity in z-direction</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#drilling_depth -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#drilling_depth">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depth of the hole to be drilled.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#duration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duration of the activity in seconds.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Seconds (s)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#entityID -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#entityID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entityID is a unique identifier of a given entity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#hole_diameter -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#hole_diameter">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter of the hole to be drilled.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#lotNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#lotNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#mandrelLength -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#mandrelLength">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length of the rivet mandrel (the rivet rod which is done inside the riveting gun and from which the rivets are &quot;cut&quot; during the riveting process).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: millimeter (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#mass -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#mass">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mass of an entity.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Kilograms (kg)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#matchmakingRequired -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#matchmakingRequired">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property is used to indicate if automatic matchmaking is required for the process step or not. Gets boolean value.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#materialID -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#materialID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#materialType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#materialType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#measurementType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#measurementType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines what is measured.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#name -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of the entity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#numberOfFixingElements -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#numberOfFixingElements">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#numberOfRepetitions -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#numberOfRepetitions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates how many times a certain activity is repeated during the same process cycle. E.g. if six similar screws are screwed in the same production phase, it is not needed to model that repetitive process multiple times.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#nutSize -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#nutSize">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Size of the nut to be attached.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#o-ringMountingType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#o-ringMountingType">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">internal</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of the o-ring mounting. May be either &quot;internal&quot; or &quot;external&quot;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#occurrences -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#occurrences">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of occurences of the same activity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#orient_I -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#orient_I">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Orientation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the X vector component of the orientation axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#orient_J -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#orient_J">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Orientation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the Y vector component of the orientation axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#orient_K -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#orient_K">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Orientation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the Z vector component of the orientation axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#orient_Q -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#orient_Q">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Orientation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#pitch -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#pitch">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pitch of the screw thread.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: mm/rotation</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#posX -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#posX">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posX tells the value of X coordinate.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#posY -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#posY">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posY tells the value of Y coordinate.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#posZ -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#posZ">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posZ tells the value of Z coordinate.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Required accuracy of a process.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredCycleTime -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredCycleTime">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Seconds (s)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredDOF -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_X</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_Y</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotate_Z</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_X</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_Y</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Translate_Z</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredFeedRate -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredFeedRate">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Required feed rate for feeding parts</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: parts/s</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_max -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_max">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum fixturing force that should be applied.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_min -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredFixturingForce_min">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minimum fixturing force that can hold the part.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredForceDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredForceDirection">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+X</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+Y</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+Z</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-X</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-Y</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-Z</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rquired direction of force.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific force required.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum force that can be applied</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Required minimum force.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton (N)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">External grasping</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Internal grasping</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Required grasping type, defined if important. Can have values: &quot;internal grasping&quot; or &quot;external grasping&quot;.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a parent property for all the process (capability) related parameters related to product&apos;s processing.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredResolution -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredResolution">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resolution required from the process. E.g. minimum line width of marking operation.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredRivetHeadShape -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredRivetHeadShape">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">button</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cone</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flat</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flat countersunk</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oval</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pan</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">truss</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Required shape of the rivet head after the riveting process.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredRotations -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredRotations">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Required number of rotations that must be taken. 
+    &lt;/p&gt;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_x -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_x">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Meters/second (m/s)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_y -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_y">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Meters/second (m/s)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_z -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_z">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Meters/second (m/s)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredStroke -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredStroke">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific torque required.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton meters (Nm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum torque allowed to be applied</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton meters (Nm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min">
+        <rdfs:subPropertyOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredProcessParameter"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minimum torque allowed to be applied</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Newton meters (Nm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#rivetDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#rivetDiameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#rivetLength -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#rivetLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#rivetType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#rivetType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blind</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compression</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">countersunk</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semitubular</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solid</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">split</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubular</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of the rivet that should be rivetted.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#screwDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#screwDiameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diameter of the screw (nominal)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#screwLength -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#screwLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length of the screw</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#screwType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#screwType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cross</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hex_bolt</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hex_socket</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phillips</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pozidriv</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">robertson</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">security_T</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slotted</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">torx</rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of the screw head.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#threadingStandard -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#threadingStandard">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the threading information of the feature.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#time -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#time">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the duration in seconds.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#timeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#timeStamp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#toleranceLowerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#toleranceLowerValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToleranceLowerValue indicates the lower value of the defined tolerance.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#toleranceUpperValue -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#toleranceUpperValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToleranceValue indicates the upper value of the defined tolerance.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeters (mm</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#toolInterfaceWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#toolInterfaceWidth">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit: Millimeter (mm)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Width of the object that interfaces with the tightening tool.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#treamentType -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#treamentType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property tells what type of surface treatment it is, like plastic coating or filming.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#treatmentThickness -->
+
+    <owl:DatatypeProperty rdf:about="http://resourcedescription.tut.fi/ontology/productModel#treatmentThickness">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property defines the thickness of the surface treatment.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BarcodeReading -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BarcodeReading">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#DotcodeReading"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Bending -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Bending">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BlindRiveting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BlindRiveting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mandrelLength"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Buffering -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Buffering">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BulkFeeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BulkFeeding">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportationBasedFeeding"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Cleaning -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Cleaning">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Coating"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Marking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Packaging"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Unloading"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Clipping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Clipping">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Hammering"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Coating -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Coating">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Marking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Painting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#DotcodeReading -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#DotcodeReading"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Drilling -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Drilling">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hole_diameter"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#drilling_depth"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hole_diameter"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: This could also be expressed by modelling a geometric feature hole with associated dimensions.</owl:versionInfo>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ElasticDeformingFixating -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ElasticDeformingFixating">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PlasticDeformingFixating"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Feeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Feeding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredFeedRate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#FingerGrasping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#FingerGrasping">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#VacuumGrasping"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Fixturing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Fixturing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Flipping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Flipping">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Grasping"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Holding"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Grasping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Grasping">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Holding"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Inserting"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Mating"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Orienting"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Hammering -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Hammering">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Shrinking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Snapping"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Wedging"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#HeatTreatment -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#HeatTreatment">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Marking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SurfaceFinishing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Holding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Holding">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Inserting"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Mating"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Orienting"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Inserting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Inserting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForceDirection"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#LaserScanning -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#LaserScanning">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#RFScanning"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Manipulation -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Manipulation">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Marking -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Marking">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredResolution"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Packaging"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Unloading"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Mating -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Mating">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#MountingO-ring -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#MountingO-ring">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasRingPosition"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#o-ringMountingType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Orienting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Orienting">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Packaging -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Packaging"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Painting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Painting"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredCycleTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#allowedGraspingForce"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredGraspingType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PlasticDeformingFixating -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PlasticDeformingFixating"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredStroke"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Shrinking"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Snapping"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Wedging"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#matchmakingRequired"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#RFScanning -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#RFScanning"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Riveting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Riveting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredRivetHeadShape"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredStroke"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Routing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Routing">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Screwing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Screwing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwDiameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwLength"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: Screw details may be presented also as part of the product description --&gt; Add classes and properties there (maybe for other fastener types as well).</owl:versionInfo>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Shrinking -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Shrinking"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Snapping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Snapping">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredForce_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SolderPasteDispensing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SolderPasteDispensing">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SolderPasteScreenPrinting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SolderPasteScreenPrinting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SolderPasteScreenPrinting"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Storing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Storing">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SurfaceFinishing -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#SurfaceFinishing"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TapeFeeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TapeFeeding">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportationBasedFeeding"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ThreadRunning -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ThreadRunning">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredRotations"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#toolInterfaceWidth"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TighteningFromSide -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TighteningFromSide">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#nutSize"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_exact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_max"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredTorque_min"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportationBasedFeeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportationBasedFeeding">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TrayFeeding"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TubeFeeding"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredAccuracy"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredDOF"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_x"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_y"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiredSpeed_z"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TrayFeeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TrayFeeding"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TubeFeeding -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TubeFeeding"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Unloading -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Unloading"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#VacuumGrasping -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#VacuumGrasping"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Wedging -->
+
+    <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Wedging"/>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Activity -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPrecededBy"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#occurrences"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#duration"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity class is for storing the processes and their occurances.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Assembly -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Assembly">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Assembly"/>
+                            <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Part"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasGeometricFeature"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasFixation"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixationDetail"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Part"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assembly class is for any manufactured, handled or processed combination of physical parts. Assembly must include at least two parts or other assemblies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#BoxShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#BoxShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ConeShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#PyramidShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SphereShape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#ConeShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#ConeShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#PyramidShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SphereShape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Coordinate -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Coordinate">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#posX"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#posY"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#posZ"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coordinate class represents the position coordinates of a entity. Coordinate can be world coordinate, tool point coordinate or frame position coordinate depending on the feature itself.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#CylinderShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#PyramidShape"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SphereShape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Feature -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Feature">
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#FixationDetail -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#FixationDetail">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#relatesToProcess"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasFixingElement"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#numberOfFixingElements"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Material"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class contains details about fixation, which is done by using certain kind of fixing elements. This is used to indicate how many similar fixing elements (e.g. screws) belong to certain assembly.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#FixingElement -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#FixingElement">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/commonConcepts#MaterialType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class contains different fixing parts that are part of the product.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: How to eliminate the need to model each similar fixing part as a separate instance? Or should they be modelled separately? Each needs to be assembled anyway, so they affect to the process.</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasTolerance"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geometric features relating to the product. This class is intended to store information on such geometric features, which affect to the required capabilities.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: This class is currently under construction.</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Hole -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Hole">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Protrusion"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class contains information about the hole in an object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#HollowCylinderShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#HollowCylinderShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter_inner"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is used to model the shallow cylinder shapes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Material -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Material">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/commonConcepts#MaterialType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasMaterialType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#lotNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#materialID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Material class is used to store specific material instances.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Nail -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Nail">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixingElement"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Rivet"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Screw"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is used to save information about the nails in the product.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NonGeometricFeature class includes features that are not geometric. These can be for example parameters or other metadata.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Orientation -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Orientation">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#orient_I"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#orient_J"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#orient_K"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#orient_Q"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orientation class is for presenting the orientation of a feature. It is presented in quaternion.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Part -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Part">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasFixation"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixationDetail"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasGeometricFeature"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasTolerance"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isMadeOf"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isMadeOf"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Product"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Part is a single entity in the product. One part can also be a product.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Process -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Process">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasSubProcess"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresSetup"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#producesFeature"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Setup"/>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SupportProcess"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process is a subclass of Activity. Process can have multiple sub-processes, where the order of processes is defined by dependencies (process 1 has to be completed before process 2).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Product -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Product">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Assembly"/>
+                            <rdf:Description rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Part"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasAssembliesOrParts"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#hasShapeAndDimensions"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product is any manufactured, handled or processed part or combination of physical parts. It is the final product from the modeller&apos;s perspective. It may be a single assembly or part.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#ProductElement -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#ProductElement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresActivity"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#entityID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#mass"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProductElement class is the super class for products, assemblies and parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Protrusion -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Protrusion">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#GeometricFeature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class contains information about protrusion in an object</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#PyramidShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#PyramidShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_x"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_y"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#dimension_z"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SphereShape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Rivet -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Rivet">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixingElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetDiameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetLength"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#rivetType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Screw"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is used to save information about rivets used in the product</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Screw -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Screw">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#FixingElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwDiameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwLength"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#screwType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is used to save information of screws (or bolts) in the product</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Setup -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Setup">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedBefore"/>
+                <owl:someValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#SupportProcess"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Setup class is reserved for activities relating to setting up machines. These are activities which can not be regarded as processes from the product point of view, but which need to be done in order to the process to take place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Feature"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shape and size of an object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#SphereShape -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#SphereShape">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ShapeAndSize"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#diameter"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#SupportProcess -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#SupportProcess">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#isPerformedOnProductElement"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#ProductElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ProcessTaxonomyElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresSetup"/>
+                <owl:allValuesFrom rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Setup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#requiresProcessCapability"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is used to store processes which are not directly bringing value to the product, but which are needed for the process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#SurfaceTreatment">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#treamentType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#treatmentThickness"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#Tolerance"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SurfaceTreatment class represents the surface treatment of a product. It can be for example plastic coating, filming of the plastic...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#Tolerance -->
+
+    <owl:Class rdf:about="http://resourcedescription.tut.fi/ontology/productModel#Tolerance">
+        <rdfs:subClassOf rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#NonGeometricFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#toleranceLowerValue"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#toleranceUpperValue"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tolerance class includes the tolerance values a face can posses. This class is under construction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#DrillingProcess_test -->
+
+    <owl:NamedIndividual rdf:about="http://resourcedescription.tut.fi/ontology/productModel#DrillingProcess_test">
+        <rdf:type rdf:resource="http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Drilling"/>
+        <drilling_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</drilling_depth>
+        <hole_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hole_diameter>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      This is a test instance for product requirement description using the 
+      process taxonomy. 
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#ReCaM_Disc-1_Shape -->
+
+    <owl:NamedIndividual rdf:about="http://resourcedescription.tut.fi/ontology/productModel#ReCaM_Disc-1_Shape">
+        <rdf:type rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</diameter>
+        <dimension_z rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</dimension_z>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://resourcedescription.tut.fi/ontology/productModel#ReCaM_Disc-2_Shape -->
+
+    <owl:NamedIndividual rdf:about="http://resourcedescription.tut.fi/ontology/productModel#ReCaM_Disc-2_Shape">
+        <rdf:type rdf:resource="http://resourcedescription.tut.fi/ontology/productModel#CylinderShape"/>
+        <diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.0</diameter>
+        <dimension_z rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</dimension_z>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

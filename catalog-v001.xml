@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="file:/D:/OneDrive%20-%20The%20University%20of%20Nottingham/ESR1/work/FAIM/Ontology/Ontology_Giovanna/ontology/capabilityModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="file:/D:/OneDrive%20-%20The%20University%20of%20Nottingham/ESR1/work/FAIM/Ontology/Ontology_Giovanna/ontology/capabilityModel.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4" uri="Utililsation%20Semantic_August.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4" uri="https://raw.githubusercontent.com/mf093087/Ontology/main/Utililsation%20Semantic_August.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4" uri="Utililsation%20Semantic_August(24).owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl"/>
+    <uri id="Imports Wizard Entry" name="https://resourcedescription.rd.tuni.fi/ontology/productModel" uri="https://resourcedescription.rd.tuni.fi/ontology/productModel"/>
+    <uri id="Imports Wizard Entry" name="https://resourcedescription.rd.tuni.fi/ontology/productModel" uri="https://resourcedescription.rd.tuni.fi/ontology/productModel#ProductElement"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/productModel" uri="ProductModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/resourceModel" uri="Ontology_Giovanna/ontology/resourceModel.owl"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/resourceInterfaceModel" uri="Ontology_Giovanna/ontology/resourceInterfaceModel.owl"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/productModel" uri="productModel.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/commonConcepts" uri="commonConcepts.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel" uri="processTaxonomyModel.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://resourcedescription.rd.tuni.fi/ontology/MatchmakingOntology" uri="MatchmakingOntology.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/ezzgm/ontologies/2021/6/resources" uri="Ontology_Giovanna/ontology/MatchMakingOntology.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="Ontology_Giovanna/ontology/resourceModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.rd.tuni.fi/ontology/capabilityModel" uri="New%20folder/capabilityModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="Combination.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="CombineModel.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="Combination.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="CapabilityModel.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="file:/C:/Users/ezzfm3/TBCMEWorkspace/Industry4.0/resourceInterfaceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="file:/C:/Users/ezzfm3/TBCMEWorkspace/Industry4.0/resourceModel.owl.xml"/>
+    <uri id="User Entered Import Resolution" name="http://www.co-ode.org/ontologies/pizza/2.0.0" uri="12.owl"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/productModel" uri="productModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl.xml"/>
+    <uri id="Imports Wizard Entry" name="http://resourcedescription.tut.fi/ontology/resourceInterfaceModel" uri="resourceInterfaceModel.owl.xml"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://resourcedescription.tut.fi/ontology/MatchmakingOntology" uri="MatchmakingOntology.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://resourcedescription.tut.fi/ontology/capabilityModel" uri="capabilityModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://resourcedescription.tut.fi/ontology/commonConcepts" uri="commonConcepts.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://resourcedescription.tut.fi/ontology/processTaxonomyModel" uri="processTaxonomyModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://resourcedescription.tut.fi/ontology/productModel" uri="ProductModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://resourcedescription.tut.fi/ontology/productModel" uri="productModel.owl.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://resourcedescription.tut.fi/ontology/resourceModel" uri="resourceModel.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra_filling_a_tray.owl" uri="ocra_filling_a_tray.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4" uri="Utililsation%20Semantic_August.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://www.semanticweb.org/basemelshafei/ontologies/2022/7/untitled-ontology-4" uri="utilisation_viz.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="Ontology%20reconfiguration.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="duplicate:http://www.semanticweb.org/ezzfm3/ontologies/2022/3/FAIM2022" uri="Ontology%20reconfigurationV2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://www.semanticweb.org/ezzfm3/ontologies/2022/4/untitled-ontology-19" uri="12.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://www.semanticweb.org/mofan/ontologies/2022/10/untitled-ontology-10" uri="Ontology_EMS.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://www.semanticweb.org/mofan/ontologies/2022/10/untitled-ontology-15" uri="Test02112022.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="http://www.semanticweb.org/mofan/ontologies/2022/8/08092022Ontology" uri="0809200Ontology_Fan.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="https://resourcedescription.rd.tuni.fi/ontology/capabilityModel" uri="CapabilityModel0709.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1667425555719" name="https://resourcedescription.rd.tuni.fi/ontology/processTaxonomyModel" uri="EMSOntology_02112022.ttl"/>
+    </group>
+</catalog>

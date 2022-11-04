@@ -1,0 +1,1848 @@
+@prefix : <http://resourcedescription.tut.fi/ontology/capabilityModel#> .
+@prefix cc: <http://resourcedescription.tut.fi/ontology/commonConcepts#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lw: <http://ontosphere3d.sourceforge.net/LogicViews.owl#> .
+@prefix p1: <http://www.owl-ontologies.com/assert.owl#> .
+@prefix pt: <http://resourcedescription.tut.fi/ontology/processTaxonomyModel#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+
+<http://resourcedescription.tut.fi/ontology/capabilityModel> a owl:Ontology ;
+	owl:imports <http://resourcedescription.tut.fi/ontology/commonConcepts> , <http://resourcedescription.tut.fi/ontology/processTaxonomyModel> , <http://resourcedescription.tut.fi/ontology/productModel> , <http://resourcedescription.tut.fi/ontology/resourceInterfaceModel> , <http://resourcedescription.tut.fi/ontology/resourceModel> ;
+	dc:contributor "Eeva Järvenpää"^^xsd:string , "Niko Siltala"^^xsd:string ;
+	dc:creator "Eeva Järvenpää"^^xsd:string ;
+	dc:date "2018-03-18"^^xsd:string ;
+	dc:description "Capability Model (CM) is defining capabilities for production resources. This model will be extended by adding more capabilities and their parameters, i.e. extending the capability catalogue."@en ;
+	dc:language "en"^^xsd:language ;
+	dc:rights "This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ "@en ;
+	dc:title "Capability Model ontology"^^xsd:string ;
+	rdfs:comment "Capability Model (CM) is defining capabilities for production resources. This model will be extended by adding more capabilities and their parameters, i.e. extending the capability catalogue."@en , """The ontology has been defined at Tampere University of Technology, Finland, by Eeva Järvenpää, Niko Siltala and Otto Hylli. The research has received funding from the European Union Horizon 2020 Programm under grant agreement nbr 680759 (Project ReCaM - Rapid Reconfiguration of Flexible Production Systems through Capability-based Adaptation, Auto-configuration and Integrated tools for Production Planning)
+
+Licencing: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ """^^xsd:string ;
+	rdfs:label "Capability Model ontology"^^xsd:string ;
+	owl:versionInfo "0.0.7"^^xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/contributor
+
+dc:contributor a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/creator
+
+dc:creator a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/date
+
+dc:date a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/description
+
+dc:description a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/language
+
+dc:language a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/rights
+
+dc:rights a owl:AnnotationProperty .
+# 
+# http://purl.org/dc/elements/1.1/title
+
+dc:title a owl:AnnotationProperty .
+# 
+# http://www.w3.org/2002/07/owl#cardinality
+
+owl:cardinality a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParametersAdditional
+
+:CapabilityParametersAdditional a owl:ObjectProperty ;
+	rdfs:comment """This is a parent property for object properties which are used to relate the capabilities to additional capability parameters."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_exact
+
+:hasAllowedItemShapeAndSize_exact a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to define the exact allowable shape and size that can be handled with the specific capability. This property may get multiple values. ."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_internal_max
+
+:hasAllowedItemShapeAndSize_internal_max a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This property is used to define the shape and maximun internal size of items that can be handled with the capability."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_internal_min
+
+:hasAllowedItemShapeAndSize_internal_min a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This property is used to define the shape and minimun internal size of items that can be handled with the capability."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_max
+
+:hasAllowedItemShapeAndSize_max a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to define the shape and maximun size of items that can be handled with the capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_min
+
+:hasAllowedItemShapeAndSize_min a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to define the shape and minimum  size of items that can be handled with the capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedObjectSize
+
+:hasAllowedObjectSize a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This parameter is used to save the allowed size of the associated object, e.g. a tray of a tray feeder."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_max
+
+:hasFixturingShapeAndSpace_max a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This parameter is used to save the information related to the maximum size and shape of the fixtured product. This property is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_max can be used."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_min
+
+:hasFixturingShapeAndSpace_min a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This parameter is used to save the information related to the minimum size and shape of the fixtured product. This parameter is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_min can be used."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasForceDetail
+
+:hasForceDetail a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This parameter is used to refer to the min and max force values and direction of the force."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasInputCapability
+
+:hasInputCapability a owl:ObjectProperty ;
+	rdfs:comment "This property is used to indicate from which capabilities a certain combined capability is composed of."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_max
+
+:hasItemSize_max a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment """This property is used to link the capabilities to the maximum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_max should be used."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_min
+
+:hasItemSize_min a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to link the capabilities to the minimum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_min should be used."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasLinearMovementRange
+
+:hasLinearMovementRange a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment """This parameter is used to give details on the movement ranges of  translational movement capability."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_max
+
+:hasRivetSize_max a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment "This property is used to link to the definition of a maximum rivet size that can be handled with the capability. Can be used to define both the length and diameter."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_min
+
+:hasRivetSize_min a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment "This property is used to link to the definition of a minimum rivet size that can be handled with the capability. Can be used to define both the length and diameter."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasRotationMovementRange
+
+:hasRotationMovementRange a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment """This parameter is used to give details on the movement ranges of rotational capability."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasShapeAndSize
+
+:hasShapeAndSize a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to associate an object to a shape definition, i.e. to present the shape and size of the object, which is critical for determining the match between product requirements. It can be used e.g. to define the shape of a tool."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasShapeAndSize_internal
+
+:hasShapeAndSize_internal a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to associate an object to a shape definition, i.e. to present the internal shape of an object, which is critical for determining the match between product requirements."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasSpecialnputCapability
+
+:hasSpecialnputCapability a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasInputCapability ;
+	rdfs:comment "This property is used to save qualified property restrictions for input capabilities."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasSuitableMaterial
+
+:hasSuitableMaterial a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	rdfs:comment "This property is used to indicate the suitable materials that can be processed with the capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasToolShapeAndSize
+
+:hasToolShapeAndSize a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment "This property indicates the shape and size of the tool used to accomplish this capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hasWorkspaceTypeAndDimensions
+
+:hasWorkspaceTypeAndDimensions a owl:ObjectProperty ;
+	rdfs:subPropertyOf :CapabilityParametersAdditional ;
+	a owl:FunctionalProperty ;
+	rdfs:comment """This property is used to link the moving capability to a certain workspace type and its dimensions."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#refersToCapability
+
+:refersToCapability a owl:ObjectProperty , owl:FunctionalProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParameter
+
+:CapabilityParameter a owl:DatatypeProperty ;
+	rdfs:comment """This is a parent property for all the capability related datatype properties."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#ItemDiameterInternal_max
+
+:ItemDiameterInternal_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :ringSizeParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum internal diameter of the handled item."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#acceleration_x_max
+
+:acceleration_x_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum acceleration in x-direction."^^xsd:string , "Unit: m/s2"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#acceleration_y_max
+
+:acceleration_y_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum acceleration in y-direction."^^xsd:string , "Unit: m/s2"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#acceleration_z_max
+
+:acceleration_z_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum acceleration in z-direction."^^xsd:string , "Unit: m/s2"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#accuracy
+
+:accuracy a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Accuracy of the capability."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#algorithmType
+
+:algorithmType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid1 .
+
+_:genid1 a rdfs:Datatype ;
+	owl:oneOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first "blob"^^xsd:string ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first "circle_fitting"^^xsd:string ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first "pattern_matching"^^xsd:string ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first "surface_matching"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:algorithmType rdfs:comment """<p style=\"margin-top: 0\">
+      Type of the machine vision algorithm.
+    </p>"""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#armOfForce
+
+:armOfForce a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Unit: millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#bellows
+
+:bellows a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "This property is used to indicate if the vacuum cup has bellows or not. Gets Boolean value (true | false)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#bottomShape
+
+:bottomShape a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :drillBitParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Shape of the hole's bottom, that can be achieved with the tool, i.e. angle of the tool tip."@en , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#contractionTime_min
+
+:contractionTime_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum time it takes to contract (release) an expanding gripper."^^xsd:string , "Unit: Second (s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cupNumber
+
+:cupNumber a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Amount of vacuum cups in the vacuum gripper"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cutterParameter
+
+:cutterParameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parent property for capability parameters relating to cutters, e.g. milling or turning cutters."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cutterType
+
+:cutterType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid6 .
+
+_:genid6 a rdfs:Datatype ;
+	owl:oneOf _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first "end mill"^^xsd:string ;
+	rdf:rest _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first "face mill"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:cutterType rdfs:comment "Type of the cutter. Can be e.g. face mill."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cutterVersion
+
+:cutterVersion a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid9 .
+
+_:genid9 a rdfs:Datatype ;
+	owl:oneOf _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first "Left handed"^^xsd:string ;
+	rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first "Right handed"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:cutterVersion rdfs:comment "Version of the tool. Can be \"right handed\" or \"left handed\"."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cuttingEdgeAngle
+
+:cuttingEdgeAngle a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Angle of the cutting edge."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cuttingEdgeLength
+
+:cuttingEdgeLength a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Length of the cutting edge."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#cycleTime_average
+
+:cycleTime_average a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Average cycle time of one operation cycle with the given resource."^^xsd:string , "Unit: Second (s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#diameter
+
+:diameter a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Diameter of an entity."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_x
+
+:dimension_x a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Dimension in x-direction."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_y
+
+:dimension_y a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Dimension in y-direction."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#dimension_z
+
+:dimension_z a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Dimension in z-direction."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#dof
+
+:dof a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid12 .
+
+_:genid12 a rdfs:Datatype ;
+	owl:oneOf _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first "Rotate_X"^^xsd:string ;
+	rdf:rest _:genid17 .
+
+_:genid17 a rdf:List ;
+	rdf:first "Rotate_Y"^^xsd:string ;
+	rdf:rest _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first "Rotate_Z"^^xsd:string ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first "Translate_X"^^xsd:string ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first "Translate_Y"^^xsd:string ;
+	rdf:rest _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first "Translate_Z"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:dof rdfs:comment "Degrees of freedom of the movement."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#dofNumber
+
+:dofNumber a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Number (amount) of degrees of freedom of the movement."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#drillBitParameter
+
+:drillBitParameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to drill bits."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#drillBitType
+
+:drillBitType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :drillBitParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid19 .
+
+_:genid19 a rdfs:Datatype ;
+	owl:oneOf _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first "CenterDrillBit"^^xsd:string ;
+	rdf:rest _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first "TwistBit"^^xsd:string ;
+	rdf:rest _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first "U-drill"^^xsd:string ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first "Unibit"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:drillBitType rdfs:comment "Type of the drill. Value can be selected from enumerated list, e.g. U-drill, Unibit,..."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#drillingDepth_max
+
+:drillingDepth_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :drillBitParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum depth that can be drilled with the drill bit."@en , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#expansionTime_min
+
+:expansionTime_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum time it takes to expand the gripper in maximum."^^xsd:string , "Unit: Second (s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#expansion_max
+
+:expansion_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This is the maximum expansion of an expanding gripper."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#expansion_min
+
+:expansion_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """This is the miminum expansion of the expanding gripper (minimum by which it can still hold items)."""^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#feedRate_max
+
+:feedRate_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum feed rate of the capability. Represented as parts/second."^^xsd:string , "Unit: Parts/second"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fieldOfView_max_x
+
+:fieldOfView_max_x a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum field of view in x-direction."^^xsd:string , "Unit: millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fieldOfView_max_y
+
+:fieldOfView_max_y a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum field of view in y-direction."^^xsd:string , "Unit: Millimeter (mm)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fieldOfView_min_x
+
+:fieldOfView_min_x a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum field of view in x-direction."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fieldOfView_min_y
+
+:fieldOfView_min_y a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum field of view in y-direction."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerClosingTime_min
+
+:fingerClosingTime_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum closing time of the gripper fingers."^^xsd:string , "Unit: Seconds (s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerGripperParameter
+
+:fingerGripperParameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to finger grippers."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerNumber
+
+:fingerNumber a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Number of fingers in the gripper"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerOpeningTime_min
+
+:fingerOpeningTime_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum opening time of the gripper fingers (fastest possible)."^^xsd:string , "Unit: Seconds (s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerOpening_max
+
+:fingerOpening_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Maximum opening of the fingers.
+In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerOpening_min
+
+:fingerOpening_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Minimum opening of the fingers.
+In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fingerType
+
+:fingerType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	rdfs:range _:genid24 .
+
+_:genid24 a rdfs:Datatype ;
+	owl:oneOf _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first "Friction"^^xsd:string ;
+	rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first "Mechanical"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:fingerType rdfs:comment "Type of the fingers' grasping method. Can get value:\"Friction\" or \"Mechanical\""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixingForce_max
+
+:fixingForce_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum fixing force of the fixture."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixingForce_min
+
+:fixingForce_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum fixing force of the fixture."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixingPoints
+
+:fixingPoints a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Number of fixing points or surfaces in the fixture."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixing_parameter
+
+:fixing_parameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to fixturing capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixtureOpening_max
+
+:fixtureOpening_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Maximum opening of the fixture fixing elements. E.g. in case of a clamping type fixture, it is the maximum opening of the fixturing jaws."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixtureOpening_min
+
+:fixtureOpening_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Minimum opening of the fixture fixing elements. E.g in case of a clamping type fixture, it is the minimum opening of the fixturing jaws."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#fixturingMethod
+
+:fixturingMethod a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid27 .
+
+_:genid27 a rdfs:Datatype ;
+	owl:oneOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first "COMPRESSIVE_FORCE"^^xsd:string ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first "MAGNETIC"^^xsd:string ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first "VACUUM"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:fixturingMethod rdfs:comment """This property is used to indicate the method on how the fixture works. It gets values from enumerated list."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#focalLength_max
+
+:focalLength_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#focalLength_min
+
+:focalLength_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#focusDistance_max
+
+:focusDistance_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum allowed focus distance of the camera system."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#focusDistance_min
+
+:focusDistance_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum allowed focus distance of the camera system."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#forceControl
+
+:forceControl a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "Parameter indicating if the capability provides force control or not? Gets boolean value (true or false)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#forceDirection
+
+:forceDirection a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid31 .
+
+_:genid31 a rdfs:Datatype ;
+	owl:oneOf _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first "+X"^^xsd:string ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first "+Y"^^xsd:string ;
+	rdf:rest _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first "+Z"^^xsd:string ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first "-X"^^xsd:string ;
+	rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first "-Y"^^xsd:string ;
+	rdf:rest _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first "-Z"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:forceDirection rdfs:comment "Directios where the force can be applied."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#force_max
+
+:force_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum force that the capability can apply (N)."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#force_min
+
+:force_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Minimum force that the capability can apply."""^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#force_resolution
+
+:force_resolution a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum resolution on which the force can be controlled."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#frameType
+
+:frameType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid38 .
+
+_:genid38 a rdfs:Datatype ;
+	owl:oneOf _:genid41 .
+
+_:genid41 a rdf:List ;
+	rdf:first "C-frame"^^xsd:string ;
+	rdf:rest _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first "H-frame"^^xsd:string ;
+	rdf:rest _:genid39 .
+
+_:genid39 a rdf:List ;
+	rdf:first "O-frame"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:frameType rdfs:comment "Indicates the shape of the frame which gives the counterforce to the applied process force. Gets values from enumerated list."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#friction
+
+:friction a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Friction provided by the capability, e.g. friction of the finger gripper fingers."^^xsd:string ;
+	owl:versionInfo "TODO: The friction depends on the material of the grasped item. Can this parameter even exist without the product?"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#graspingForce_max
+
+:graspingForce_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximun grasping force of the gripper."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#graspingForce_min
+
+:graspingForce_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum grasping force of the gripper."^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#graspingType
+
+:graspingType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	rdfs:range _:genid42 .
+
+_:genid42 a rdfs:Datatype ;
+	owl:oneOf _:genid44 .
+
+_:genid44 a rdf:List ;
+	rdf:first "External grasping"^^xsd:string ;
+	rdf:rest _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first "Internal grasping"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:graspingType rdfs:comment "Type of the grasping. Can get values internal grasping and/or external grasping."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#gripperType
+
+:gripperType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range _:genid45 .
+
+_:genid45 a rdfs:Datatype ;
+	owl:oneOf _:genid49 .
+
+_:genid49 a rdf:List ;
+	rdf:first "3-point"^^xsd:string ;
+	rdf:rest _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first "Angular"^^xsd:string ;
+	rdf:rest _:genid47 .
+
+_:genid47 a rdf:List ;
+	rdf:first "Parallel"^^xsd:string ;
+	rdf:rest _:genid46 .
+
+_:genid46 a rdf:List ;
+	rdf:first "Radial"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:gripperType rdfs:comment "Type of the gripper. Can get the following values: \"Parallel\", \"3-point\", \"Radial\", or \"Angular\"."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#handleLength
+
+:handleLength a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This property is used to model the length of the handle, e.g. in case of a hammer."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#height
+
+:height a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Height of an entity."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#heightCompensation
+
+:heightCompensation a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "How much cup retracts when grasping occurs?"^^xsd:string , "Unit: millimetres (mm)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#height_bottom
+
+:height_bottom a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Height of the area in the sphere bottom, not belonging to a device workspace"^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#height_top
+
+:height_top a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Height of the area in the shere top, not belonging to a certain workspace."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#holdingForce
+
+:holdingForce a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maxomum holding force to hold items, e.g. in case of magnetic grasping."^^xsd:string , "Unit: Newton meter (Nm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#holdingForce_max
+
+:holdingForce_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Theoretical holding force of the device in a default pressure. 
+."""^^xsd:string , "Unit: Newton (N)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#hole_diameter
+
+:hole_diameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :drillBitParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Diameter of the drilled hole, i.e. drill bit diameter. 
+In case of unibit type drill bit, two values for the diameter can be given."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#insertShape
+
+:insertShape a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Shape of the insert (angle)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#itemDiameterExternal_max
+
+:itemDiameterExternal_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :ringSizeParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum external diameter of the handled item."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#itemDiameterExternal_min
+
+:itemDiameterExternal_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :ringSizeParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Miniimum external diameter of the handled item."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#itemDiameterInternal_min
+
+:itemDiameterInternal_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :ringSizeParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum internal diameter of the handled item."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#lateralForce_max
+
+:lateralForce_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Theoretical lateral holding force of the vacuum gripper at the nominal pressure."^^xsd:string , "Unit: Newton (N)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#length
+
+:length a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Length of an entity."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#mass
+
+:mass a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This property defines the mass of an entity."^^xsd:string , "Unit: Kilograms (kg)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#movingParameter
+
+:movingParameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to the moving capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#name
+
+:name a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:string ;
+	rdfs:comment "Name of the entity."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#noseRadius
+
+:noseRadius a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Nose radius of the cutting insert."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#numberOfParts_max
+
+:numberOfParts_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Maximum number of parts the capability can handle."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#nutSize_max
+
+:nutSize_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Maximum size of nut or bolt (the head that attaches with the tool)"""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#nutSize_min
+
+:nutSize_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum size of the nut (the head that attaches to the tool)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#operationType
+
+:operationType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid50 .
+
+_:genid50 a rdfs:Datatype ;
+	owl:oneOf _:genid54 .
+
+_:genid54 a rdf:List ;
+	rdf:first "color_recognition"^^xsd:string ;
+	rdf:rest _:genid53 .
+
+_:genid53 a rdf:List ;
+	rdf:first "existence_recognition"^^xsd:string ;
+	rdf:rest _:genid52 .
+
+_:genid52 a rdf:List ;
+	rdf:first "localization"^^xsd:string ;
+	rdf:rest _:genid51 .
+
+_:genid51 a rdf:List ;
+	rdf:first "shape_recognition"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:operationType rdfs:comment "Type of operation of the machine vision algorithm."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#partCentering
+
+:partCentering a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "This property is used to tell if the fixturing is centering or not. Gets boolean value: 1 meaning \"yes\", 0 meaning \"no\"."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#payload
+
+:payload a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Payload related to the given capability."^^xsd:string , "Unit: Kilograms (kg)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#pickingSpaceDimension_x
+
+:pickingSpaceDimension_x a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Parameter relating to the dimensions of the picking up space in feeder, e.g. in a tray. This will affect to the required workspace of the picking resource."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#pickingSpaceDimension_y
+
+:pickingSpaceDimension_y a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Parameter relating to the dimensions of the picking up space in feeder, e.g. in a tray. This will affect to the required workspace of the picking resource."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#positionControl
+
+:positionControl a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "Parameter indicating if the capability provides position control or not? Gets boolean value: 1 meaning \"yes\", 0 meaning \"no\"."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#pressure_nominal
+
+:pressure_nominal a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment ""^^xsd:string , "Nominal pressure of the capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#radius_inner
+
+:radius_inner a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Inner radius of a workspace"""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#radius_outer
+
+:radius_outer a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Outer radius of a workspace"^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#repeatability
+
+:repeatability a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Repeatability of a given capability."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#ringSizeParameter
+
+:ringSizeParameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Parent property for different ring size related properties."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rivetHeadShape
+
+:rivetHeadShape a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid55 .
+
+_:genid55 a rdfs:Datatype ;
+	owl:oneOf _:genid62 .
+
+_:genid62 a rdf:List ;
+	rdf:first "button"^^xsd:string ;
+	rdf:rest _:genid61 .
+
+_:genid61 a rdf:List ;
+	rdf:first "cone"^^xsd:string ;
+	rdf:rest _:genid60 .
+
+_:genid60 a rdf:List ;
+	rdf:first "flat"^^xsd:string ;
+	rdf:rest _:genid59 .
+
+_:genid59 a rdf:List ;
+	rdf:first "flat countersunk"^^xsd:string ;
+	rdf:rest _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first "oval"^^xsd:string ;
+	rdf:rest _:genid57 .
+
+_:genid57 a rdf:List ;
+	rdf:first "pan"^^xsd:string ;
+	rdf:rest _:genid56 .
+
+_:genid56 a rdf:List ;
+	rdf:first "truss"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:rivetHeadShape rdfs:comment "Defines the shape of the rivet that can be achieved with this capability. Gets values from enumerated list: “button”, “truss”, “oval”, “flat countersunk”, “pan”, “flat”, “cone”."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rivetType
+
+:rivetType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid63 .
+
+_:genid63 a rdfs:Datatype ;
+	owl:oneOf _:genid70 .
+
+_:genid70 a rdf:List ;
+	rdf:first "blind"^^xsd:string ;
+	rdf:rest _:genid69 .
+
+_:genid69 a rdf:List ;
+	rdf:first "compression"^^xsd:string ;
+	rdf:rest _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first "countersunk"^^xsd:string ;
+	rdf:rest _:genid67 .
+
+_:genid67 a rdf:List ;
+	rdf:first "semitubular"^^xsd:string ;
+	rdf:rest _:genid66 .
+
+_:genid66 a rdf:List ;
+	rdf:first "solid"^^xsd:string ;
+	rdf:rest _:genid65 .
+
+_:genid65 a rdf:List ;
+	rdf:first "split"^^xsd:string ;
+	rdf:rest _:genid64 .
+
+_:genid64 a rdf:List ;
+	rdf:first "tubular"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:rivetType rdfs:comment "Type of the rivet that can be riveted with this capability. Gets values from enumerated list: “solid”, “semitubular”, “tubular”, “split”, “compression”, “blind”."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rotationAngle
+
+:rotationAngle a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Rotation angle of a workspace."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rotation_x
+
+:rotation_x a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This property defines the rotation angles of an X-axis. Two values should be provided for this property, + and - values."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rotation_y
+
+:rotation_y a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This property defines the rotation angles of an Y-axis. Two values should be provided for this property, + and - values."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rotation_z
+
+:rotation_z a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This property defines the rotation angles of an Z-axis. Two values should be provided for this property, + and - values."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#rotations_max
+
+:rotations_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment """Maximum amount of rotations that the device can take."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#screwSize
+
+:screwSize a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :screwingHead_parameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Size of a screw for which the screwing head is meant for."^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#screwType
+
+:screwType a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :screwingHead_parameter ;
+	rdfs:range _:genid71 .
+
+_:genid71 a rdfs:Datatype ;
+	owl:oneOf _:genid80 .
+
+_:genid80 a rdf:List ;
+	rdf:first "cross"^^xsd:string ;
+	rdf:rest _:genid79 .
+
+_:genid79 a rdf:List ;
+	rdf:first "hex_bolt"^^xsd:string ;
+	rdf:rest _:genid78 .
+
+_:genid78 a rdf:List ;
+	rdf:first "hex_socket"^^xsd:string ;
+	rdf:rest _:genid77 .
+
+_:genid77 a rdf:List ;
+	rdf:first "phillips"^^xsd:string ;
+	rdf:rest _:genid76 .
+
+_:genid76 a rdf:List ;
+	rdf:first "pozidriv"^^xsd:string ;
+	rdf:rest _:genid75 .
+
+_:genid75 a rdf:List ;
+	rdf:first "robertson"^^xsd:string ;
+	rdf:rest _:genid74 .
+
+_:genid74 a rdf:List ;
+	rdf:first "security_T"^^xsd:string ;
+	rdf:rest _:genid73 .
+
+_:genid73 a rdf:List ;
+	rdf:first "slotted"^^xsd:string ;
+	rdf:rest _:genid72 .
+
+_:genid72 a rdf:List ;
+	rdf:first "torx"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:screwType rdfs:comment "Type of the screwing head for which the tool is meant for, e.g. \"torx\", \"phillips\" etc."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#screwingHeadSize
+
+:screwingHeadSize a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Size of the screwing head. In case of standard size, it may be unitless. Otherwise mm."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#screwingHead_effectiveLength
+
+:screwingHead_effectiveLength a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :screwingHead_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """This parameter indicates the effective length of the screwing head. It means the length of the tool outside the screw driver. This information can be used to define how deep inside a material the screw can be screwed."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#screwingHead_parameter
+
+:screwingHead_parameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment """Parameters relating to the screwing head capability."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spatialResolution_max
+
+:spatialResolution_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum spatial resolution (in maximum focus distance)."^^xsd:string , "Unit: mm/pixel"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spatialResolution_min
+
+:spatialResolution_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum spatial resolution (in minimum focus distance)."^^xsd:string , "Unit: mm/pixel"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#speed_x_max
+
+:speed_x_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum speed (velocity) in x-direction."^^xsd:string , "Unit: Meters per second (m/s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#speed_y_max
+
+:speed_y_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum speed (velocity) in y-direction."^^xsd:string , "Unit: Meters per second (m/s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#speed_z_max
+
+:speed_z_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :movingParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum speed (velocity) in z-direction."^^xsd:string , "Unit: Meters per second (m/s)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spindleConcentricity
+
+:spindleConcentricity a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment """Concentricity of the spindle movement."""^^xsd:string , "Unit: Millimeter (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spinningDirection
+
+:spinningDirection a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range _:genid81 .
+
+_:genid81 a rdfs:Datatype ;
+	owl:oneOf _:genid83 .
+
+_:genid83 a rdf:List ;
+	rdf:first "clockwise"^^xsd:string ;
+	rdf:rest _:genid82 .
+
+_:genid82 a rdf:List ;
+	rdf:first "counterclockwise"^^xsd:string ;
+	rdf:rest rdf:nil .
+
+:spinningDirection rdfs:comment """Directions into which the device can spin (rotate). Can get values: \"clockwise\" or \"counterclockwise\""""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spinningSpeed_max
+
+:spinningSpeed_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :spinningSpeed_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum spinning (rotation) speed (rpm)."^^xsd:string , "Unit: Rounds per minute (rpm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spinningSpeed_min
+
+:spinningSpeed_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :spinningSpeed_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Miminum spinning (rotation) speed (rpm)."^^xsd:string , "Unit: Rounds per minute (rpm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#spinningSpeed_parameter
+
+:spinningSpeed_parameter a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to spinning speed (rotation speed)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#strokePerFinger_max
+
+:strokePerFinger_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fingerGripperParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum movement range of a finger."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#strokePerFixing_max
+
+:strokePerFixing_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :fixing_parameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum stroke of the fixing elements in the fixture."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#stroke_max
+
+:stroke_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum stroke of the movement."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#suctionCapacity_max
+
+:suctionCapacity_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum suction capacity of the device (l/min)."^^xsd:string , "Unit: Liters per minute (l/m)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#surfaceAccuracy_max
+
+:surfaceAccuracy_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum surface accuracy (in maximum focus distance)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#surfaceAccuracy_min
+
+:surfaceAccuracy_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum surface accuracy (in minimum focus distance)."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#teethNumber
+
+:teethNumber a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :cutterParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "Number of teeth in the cutter tool."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#tolerance_LowerValue
+
+:tolerance_LowerValue a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Tolerance (lower value) relating to a specific capability."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#tolerance_UpperValue
+
+:tolerance_UpperValue a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Tolerance (upper value) relating to a specific capability."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolAngle
+
+:toolAngle a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Defines the angle of the tool in the tool holder."^^xsd:string , "Unit: Degrees."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolAngle_max
+
+:toolAngle_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Defines the maximum angle of the tool in the device. In case of radial riveting the tool angle changes during the process."^^xsd:string , "Unit: Degrees"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolAngle_min
+
+:toolAngle_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Defines the minimum angle of the tool in the device. In case of radial riveting the tool angle changes during the process."^^xsd:string , "Unit: Degrees."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_Parameters
+
+:toolEntry_Parameters a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment """Parameters for saving the inforamation about  max and min values for the tool entry inside the tool holder. 
+
+These should be moved to the interfae description!?"""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_current
+
+:toolEntry_current a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :toolEntry_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_max
+
+:toolEntry_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :toolEntry_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """The maximum depth the tool can enter inside the tool holder or machine."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_min
+
+:toolEntry_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :toolEntry_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#tool_effectiveLength
+
+:tool_effectiveLength a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "This parameter indicates the effective length of the tool, which means the length of the tool outside the holding element."^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#torque_Parameters
+
+:torque_Parameters a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:comment "Parameters relating to the torque of the capability."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#torque_default
+
+:torque_default a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :torque_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Default torque that can be applied."^^xsd:string , "Unit: Newton meter (Nm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#torque_max
+
+:torque_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :torque_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Maximum torque that can be applied."^^xsd:string , "Unit: Newton meter (Nm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#torque_min
+
+:torque_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :torque_Parameters ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Minimum torque that can be applied."^^xsd:string , "Unit: Newton meter (Nm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#translation_x
+
+:translation_x a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """This property defines the translation dimension along an X-axis. Two values should be provided for this property, + and - values."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#translation_y
+
+:translation_y a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """This property defines the translation dimension along an Y-axis. Two values should be provided for this property, + and - values."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#translation_z
+
+:translation_z a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment """This property defines the translation dimension along an Z-axis. Two values should be provided for this property, + and - values."""^^xsd:string , "Unit: Millimeters (mm)"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#trayCapacity
+
+:trayCapacity a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	rdfs:comment "This parameter indicates the amount of trays that can be put to the tray feeder."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#trayChanger_automatic
+
+:trayChanger_automatic a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment """This property is used to indicate if the tray feeder can automatically change trays."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#vacuumPressure_max
+
+:vacuumPressure_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Lowest operating pressure (highest vacuum) the gripper can operate with. Negative value expected."^^xsd:string , "Unit: bar"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#vawelength_max
+
+:vawelength_max a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#volume
+
+:volume a owl:DatatypeProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Volume of an entity"^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#wavelength_min
+
+:wavelength_min a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :CapabilityParameter ;
+	rdfs:range xsd:float .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#weight
+
+:weight a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Unit: Kilograms (kg)"^^xsd:string , "Weight of an entity."^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#width
+
+:width a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:float ;
+	rdfs:comment "Unit: Millimeters (mm)"^^xsd:string , "Width of an entity."^^xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://org.semanticweb.owlapi/error#Error3
+
+<http://org.semanticweb.owlapi/error#Error3> a owl:Class .
+# 
+# http://org.semanticweb.owlapi/error#Error4
+
+<http://org.semanticweb.owlapi/error#Error4> a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BlindRiveting
+
+pt:BlindRiveting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#BulkBoxFeeding
+
+pt:BulkBoxFeeding a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Drilling
+
+pt:Drilling a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#FingerGrasping
+
+pt:FingerGrasping a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Fixturing
+
+pt:Fixturing a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Hammering
+
+pt:Hammering a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ImpactRiveting
+
+pt:ImpactRiveting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Inserting
+
+pt:Inserting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Milling
+
+pt:Milling a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#MountingO-ring
+
+pt:MountingO-ring a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#OrbitalRiveting
+
+pt:OrbitalRiveting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Orienting
+
+pt:Orienting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlace
+
+pt:PickAndPlace a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#PickAndPlaceFlexible
+
+pt:PickAndPlaceFlexible a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Picking
+
+pt:Picking a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Placing
+
+pt:Placing a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Positioning
+
+pt:Positioning a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Pressing
+
+pt:Pressing a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#RadialRiveting
+
+pt:RadialRiveting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Screwing
+
+pt:Screwing a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Storing
+
+pt:Storing a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#ThreadRunning
+
+pt:ThreadRunning a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TighteningFromSide
+
+pt:TighteningFromSide a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportationBasedFeeding
+
+pt:TransportationBasedFeeding a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#Transporting
+
+pt:Transporting a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TransportingCollaborative
+
+pt:TransportingCollaborative a owl:Class ;
+	rdfs:comment """Process to transport items by utilizing collaborative movement. E.g. by a dual arm robot."""^^xsd:string .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TrayFeeding
+
+pt:TrayFeeding a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#TubeFeeding
+
+pt:TubeFeeding a owl:Class .
+# 
+# http://resourcedescription.tut.fi/ontology/processTaxonomyModel#VacuumGrasping
+
+pt:VacuumGrasping a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://resourcedescription.tut.fi/ontology/capabilityModel#ScrewingHeadFunction
+
+:ScrewingHeadFunction a owl:NamedIndividual .
+# 
+
+_:genid84 owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+_:genid85 owl:cardinality "1"^^xsd:nonNegativeInteger .
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+
+cc:hasMaterialType rdfs:comment """This property is used to indicate from which material the resource, possessing the given capability, is made from."""^^xsd:string .
+# 
+# Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
