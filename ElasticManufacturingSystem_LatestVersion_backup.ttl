@@ -75,16 +75,14 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasAllowedItemShapeAndSize_internal_max rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                          rdfs:range :ShapeAndSizeDefinition ;
-                                         rdfs:comment "This property is used to define the shape and maximun internal size of
-items that can be handled with the capability."^^xsd:string .
+                                         rdfs:comment "This property is used to define the shape and maximun internal size of items that can be handled with the capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_internal_min
 :hasAllowedItemShapeAndSize_internal_min rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                          rdfs:range :ShapeAndSizeDefinition ;
-                                         rdfs:comment "This property is used to define the shape and minimun internal size of
-items that can be handled with the capability."^^xsd:string .
+                                         rdfs:comment "This property is used to define the shape and minimun internal size of items that can be handled with the capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_max
@@ -104,24 +102,21 @@ items that can be handled with the capability."^^xsd:string .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedObjectSize
 :hasAllowedObjectSize rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                      rdfs:comment "This parameter is used to
- save the allowed size of the associated object, e.g. a tray of a tray feeder."^^xsd:string .
+                      rdfs:comment "This parameter is used to save the allowed size of the associated object, e.g. a tray of a tray feeder."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_max
 :hasFixturingShapeAndSpace_max rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                rdfs:range :ShapeAndSizeDefinition ;
-                               rdfs:comment "This parameter is used to save the information related to the maximum
-size and shape of the fixtured product. This property is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_max can be used."^^xsd:string .
+                               rdfs:comment "This parameter is used to save the information related to the maximum size and shape of the fixtured product. This property is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_max can be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_min
 :hasFixturingShapeAndSpace_min rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                rdfs:range :ShapeAndSizeDefinition ;
-                               rdfs:comment "This
- parameter is used to save the information related to the minimum size and shape of the fixtured product. This parameter is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_min can be used."^^xsd:string .
+                               rdfs:comment "Thi parameter is used to save the information related to the minimum size and shape of the fixtured product. This parameter is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_min can be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasForceDetail
@@ -142,8 +137,7 @@ size and shape of the fixtured product. This property is used if the shape is re
 :hasItemSize_max rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :CapabilityParametersAdditional ;
                  rdfs:range :ItemSize ;
-                 rdfs:comment "This prop
-erty is used to link the capabilities to the maximum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_max should be used."^^xsd:string .
+                 rdfs:comment "This property is used to link the capabilities to the maximum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_max should be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_min
@@ -188,8 +182,7 @@ erty is used to link the capabilities to the maximum item size they can handle. 
                           rdfs:subPropertyOf :CapabilityParametersAdditional ;
                           rdf:type owl:FunctionalProperty ;
                           rdfs:range :RotationalMovementRange ;
-                          rdfs:comment "This
- parameter is used to give details on the movement ranges of rotational capability."^^xsd:string .
+                          rdfs:comment "This parameter is used to give details on the movement ranges of rotational capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasShapeAndSize
@@ -230,8 +223,7 @@ erty is used to link the capabilities to the maximum item size they can handle. 
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                rdf:type owl:FunctionalProperty ;
                                rdfs:range :Workspace ;
-                               rdfs:comment "This
- property is used to link the moving capability to a certain workspace type and its dimensions."^^xsd:string .
+                               rdfs:comment "This property is used to link the moving capability to a certain workspace type and its dimensions."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#referToTheDocument
@@ -311,8 +303,7 @@ erty is used to link the capabilities to the maximum item size they can handle. 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParameter
 :CapabilityParameter rdf:type owl:DatatypeProperty ;
-                     rdfs:comment "This
-is a parent property for all the capability related datatype properties."^^xsd:string .
+                     rdfs:comment "This is a parent property for all the capability related datatype properties."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#DeviceID
@@ -466,9 +457,7 @@ is a parent property for all the capability related datatype properties."^^xsd:s
                                                  ]
                                       ]
                           ] ;
-               rdfs:comment """<p style=\"margin-top: 0\">
-      Type of the machine vision algorithm.
-    </p>"""^^xsd:string .
+               rdfs:comment """<p style=\"margin-top: 0\"> Type of the machine vision algorithm. </p>"""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#armOfForce
@@ -712,8 +701,7 @@ is a parent property for all the capability related datatype properties."^^xsd:s
                rdfs:subPropertyOf :CapabilityParameter ;
                rdf:type owl:FunctionalProperty ;
                rdfs:range xsd:float ;
-               rdfs:comment "This
- is the miminum expansion of the expanding gripper (minimum by which it can still hold items)."^^xsd:string ,
+               rdfs:comment "This is the miminum expansion of the expanding gripper (minimum by which it can still hold items)."^^xsd:string ,
                             "Unit: Millimeter (mm)"^^xsd:string .
 
 
@@ -797,8 +785,7 @@ is a parent property for all the capability related datatype properties."^^xsd:s
                    rdfs:subPropertyOf :fingerGripperParameter ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:range xsd:float ;
-                   rdfs:comment """Maximum opening of the fingers.
-In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
+                   rdfs:comment """Maximum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
                                 "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -807,8 +794,7 @@ In case of 3-finger gripper, this value defines the diameter, while in case of 2
                    rdfs:subPropertyOf :fingerGripperParameter ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:range xsd:float ;
-                   rdfs:comment """Minimum opening of the fingers.
-In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
+                   rdfs:comment """Minimum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
                                 "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -864,9 +850,7 @@ In case of 3-finger gripper, this value defines the diameter, while in case of 2
                     rdfs:subPropertyOf :fixing_parameter ;
                     rdf:type owl:FunctionalProperty ;
                     rdfs:range xsd:float ;
-                    rdfs:comment "Maximum opening of the fixture fixing elements. E.g. in case of a clamping type fixture, it is the maximum opening of the
-fixturing jaws
-."^^xsd:string ,
+                    rdfs:comment "Maximum opening of the fixture fixing elements. E.g. in case of a clamping type fixture, it is the maximum opening of the fixturing jaws."^^xsd:string ,
                                  "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -875,9 +859,7 @@ fixturing jaws
                     rdfs:subPropertyOf :fixing_parameter ;
                     rdf:type owl:FunctionalProperty ;
                     rdfs:range xsd:float ;
-                    rdfs:comment "Minimum opening of the fixture fixing elements. E.g in case of a clamping type fixture, it is the minimum opening of the
-fixturing jaws
-."^^xsd:string ,
+                    rdfs:comment "Minimum opening of the fixture fixing elements. E.g in case of a clamping type fixture, it is the minimum opening of the fixturing jaws."^^xsd:string ,
                                  "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -897,8 +879,7 @@ fixturing jaws
                                                    ]
                                         ]
                             ] ;
-                 rdfs:comment "This property is used to indicate the method on how the fixture works.
-It gets values from enumerated list."^^xsd:string .
+                 rdfs:comment "This property is used to indicate the method on how the fixture works. It gets values from enumerated list."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#focalLength_max
@@ -982,8 +963,7 @@ It gets values from enumerated list."^^xsd:string .
            rdfs:subPropertyOf :CapabilityParameter ;
            rdf:type owl:FunctionalProperty ;
            rdfs:range xsd:float ;
-           rdfs:comment "Minimum force that the capability can apply
-."^^xsd:string ,
+           rdfs:comment "Minimum force that the capability can apply."^^xsd:string ,
                         "Unit: Newton (N)"^^xsd:string .
 
 
@@ -1129,8 +1109,7 @@ It gets values from enumerated list."^^xsd:string .
                   rdfs:subPropertyOf :CapabilityParameter ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:range xsd:float ;
-                  rdfs:comment """Theoretical holding force of the device in a default pressure.
-."""^^xsd:string ,
+                  rdfs:comment """Theoretical holding force of the device in a default pressure."""^^xsd:string ,
                                "Unit: Newton (N)"^^xsd:string .
 
 
@@ -1138,8 +1117,7 @@ It gets values from enumerated list."^^xsd:string .
 :hole_diameter rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf :drillBitParameter ;
                rdfs:range xsd:float ;
-               rdfs:comment """Diameter of the drilled hole, i.e. drill bit diameter.
-In case of unibit type drill bit, two values for the diameter can be given."""^^xsd:string ,
+               rdfs:comment """Diameter of the drilled hole, i.e. drill bit diameter.In case of unibit type drill bit, two values for the diameter can be given."""^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1245,8 +1223,7 @@ In case of unibit type drill bit, two values for the diameter can be given."""^^
              rdfs:subPropertyOf :CapabilityParameter ;
              rdf:type owl:FunctionalProperty ;
              rdfs:range xsd:float ;
-             rdfs:comment "Maximum size of nut or bolt
- (the head that attaches with the tool)"^^xsd:string .
+             rdfs:comment "Maximum size of nut or bolt (the head that attaches with the tool)"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#nutSize_min
@@ -1333,8 +1310,7 @@ In case of unibit type drill bit, two values for the diameter can be given."""^^
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#radius_inner
 :radius_inner rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:float ;
-              rdfs:comment "Inner radius
- of a workspace"^^xsd:string ,
+              rdfs:comment "Inner radius of a workspace"^^xsd:string ,
                            "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1461,8 +1437,7 @@ In case of unibit type drill bit, two values for the diameter can be given."""^^
                rdfs:subPropertyOf :CapabilityParameter ;
                rdf:type owl:FunctionalProperty ;
                rdfs:range xsd:int ;
-               rdfs:comment "Max
-imum amount of rotations that the device can take."^^xsd:string .
+               rdfs:comment "Maximum amount of rotations that the device can take."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#screwSize
@@ -1514,8 +1489,7 @@ imum amount of rotations that the device can take."^^xsd:string .
                   rdfs:subPropertyOf :CapabilityParameter ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:range xsd:float ;
-                  rdfs:comment "Size of the screwing head
-. In case of standard size, it may be unitless. Otherwise mm."^^xsd:string .
+                  rdfs:comment "Size of the screwing head. In case of standard size, it may be unitless. Otherwise mm."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#screwingHead_effectiveLength
@@ -1523,16 +1497,14 @@ imum amount of rotations that the device can take."^^xsd:string .
                               rdfs:subPropertyOf :screwingHead_parameter ;
                               rdf:type owl:FunctionalProperty ;
                               rdfs:range xsd:float ;
-                              rdfs:comment "This parameter indicates the effective length of the screwing head.
-It means the length of the tool outside the screw driver. This information can be used to define how deep inside a material the screw can be screwed."^^xsd:string ,
+                              rdfs:comment "This parameter indicates the effective length of the screwing head.It means the length of the tool outside the screw driver. This information can be used to define how deep inside a material the screw can be screwed."^^xsd:string ,
                                            "Unit: Millimeters (mm)"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#screwingHead_parameter
 :screwingHead_parameter rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf :CapabilityParameter ;
-                        rdfs:comment "Para
-meters relating to the screwing head capability."^^xsd:string .
+                        rdfs:comment "Parameters relating to the screwing head capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#spatialResolution_max
@@ -1584,8 +1556,7 @@ meters relating to the screwing head capability."^^xsd:string .
 :spindleConcentricity rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf :CapabilityParameter ;
                       rdfs:range xsd:float ;
-                      rdfs:comment "Concentricity
- of the spindle movement."^^xsd:string ,
+                      rdfs:comment "Concentricity of the spindle movement."^^xsd:string ,
                                    "Unit: Millimeter (mm)"^^xsd:string .
 
 
@@ -1601,8 +1572,7 @@ meters relating to the screwing head capability."^^xsd:string .
                                                      ]
                                           ]
                               ] ;
-                   rdfs:comment "Directions into which the device can spin (rotate). Can get values:
-\"clockwise\" or \"counterclockwise\""^^xsd:string .
+                   rdfs:comment "Directions into which the device can spin (rotate). Can get values:\"clockwise\" or \"counterclockwise\""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#spinningSpeed_max
@@ -1734,9 +1704,7 @@ meters relating to the screwing head capability."^^xsd:string .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_Parameters
 :toolEntry_Parameters rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf :CapabilityParameter ;
-                      rdfs:comment """Parameters for saving the inforamation about  max and min values for the tool entry inside the tool holder.
-
-These should be moved to the interfae description!?"""^^xsd:string .
+                      rdfs:comment """Parameters for saving the inforamation about  max and min values for the tool entry inside the tool holder.These should be moved to the interfae description!?"""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_current
@@ -1751,8 +1719,7 @@ These should be moved to the interfae description!?"""^^xsd:string .
                rdfs:subPropertyOf :toolEntry_Parameters ;
                rdf:type owl:FunctionalProperty ;
                rdfs:range xsd:float ;
-               rdfs:comment "The
- maximum depth the tool can enter inside the tool holder or machine."^^xsd:string ,
+               rdfs:comment "The maximum depth the tool can enter inside the tool holder or machine."^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1808,25 +1775,21 @@ These should be moved to the interfae description!?"""^^xsd:string .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#translation_x
 :translation_x rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:float ;
-               rdfs:comment "This property defines the translation dimension along an X-axis. Two
-values
-should be provided for this property, + and - values."^^xsd:string ,
+               rdfs:comment "This property defines the translation dimension along an X-axis. Two values should be provided for this property, + and - values."^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#translation_y
 :translation_y rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:float ;
-               rdfs:comment "This property defines the translation dimension along an Y-axis. Two
-values should be provided for this property, + and - values."^^xsd:string ,
+               rdfs:comment "This property defines the translation dimension along an Y-axis. Two values should be provided for this property, + and - values."^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#translation_z
 :translation_z rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:float ;
-               rdfs:comment "This property defines the translation dimension along an Z-axis. Two values
-should be provided for this property, + and - values."^^xsd:string ,
+               rdfs:comment "This property defines the translation dimension along an Z-axis. Two values should be provided for this property, + and - values."^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1843,8 +1806,7 @@ should be provided for this property, + and - values."^^xsd:string ,
                        rdfs:subPropertyOf :CapabilityParameter ;
                        rdf:type owl:FunctionalProperty ;
                        rdfs:range xsd:boolean ;
-                       rdfs:comment "This property
- is used to indicate if the tray feeder can automatically change trays."^^xsd:string .
+                       rdfs:comment "This property is used to indicate if the tray feeder can automatically change trays."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#type
@@ -1982,11 +1944,7 @@ should be provided for this property, + and - values."^^xsd:string ,
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParameterAdditional
 :CapabilityParameterAdditional rdf:type owl:Class ;
                                rdfs:subClassOf :CapabilityDefinitionElement ;
-                               rdfs:comment """In this class are saved some additional parameters related to resources and their capabilities.
-Different parameter types, which are modelled through a separate class instead of datatype properties of a relevant capability class may be:
-1) Parameters, which affect the capability of the resource, but which can not be directly assigned to any capability, e.g. dimensions or weight of the resources.
-2) Parameter groups, which can relate to multiple different capabilities, e.g. ItemSize which can be used to indicate the min and max size of an item that can be handled with a certain capability, are implemented as a separate class to improve the reusability of the parameters.
-3) Parameter groups, which relate directly to certain capability, but which parameters depend on the nature of the capability. E.g. the workspace type of the movement capability determines the parameters of the workspace and can not thus modelled as datatype properties of the Moving capability directly."""^^xsd:string .
+                               rdfs:comment """In this class are save."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityResponse
@@ -2305,9 +2263,7 @@ Different parameter types, which are modelled through a separate class instead o
                                  :TrayHolding ,
                                  :TubeFeederBaseFunction ,
                                  :VacuumGripperFunction ;
-                rdfs:comment """Capability
- of a finger that is used in a finger gripper.
-Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
+                rdfs:comment """Capabilityof a finger that is used in a finger gripper.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#FingerGripperFunction
@@ -2373,8 +2329,7 @@ Note! It has been decided in ReCaM that the finger gripper is described as one u
                                         :TrayHolding ,
                                         :TubeFeederBaseFunction ,
                                         :VacuumGripperFunction ;
-                       rdfs:comment """Capability of a finger gripper without the fingers.
-Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
+                       rdfs:comment """Capability of a finger gripper without the fingers.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#First_pass_yield
@@ -2481,8 +2436,7 @@ Note! It has been decided in ReCaM that the finger gripper is described as one u
                                   owl:onProperty :handleLength ;
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
                                 ] ;
-                rdfs:comment "This is the capability of the hammer.
- Hammer can not do anything alone."^^xsd:string .
+                rdfs:comment "This is the capability of the hammer.Hammer can not do anything alone."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Health_and_Safety_Incidence_Rate
@@ -2519,8 +2473,7 @@ Note! It has been decided in ReCaM that the finger gripper is described as one u
                                    :TrayHolding ,
                                    :TubeFeederBaseFunction ,
                                    :VacuumGripperFunction ;
-                  rdfs:comment """Capability to hold items by gravity.
-For example belt conveyor has this capability."""^^xsd:string .
+                  rdfs:comment """Capability to hold items by gravity.For example belt conveyor has this capability."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Hole
@@ -2889,8 +2842,7 @@ For example belt conveyor has this capability."""^^xsd:string .
                                         :TrayHolding ,
                                         :TubeFeederBaseFunction ,
                                         :VacuumGripperFunction ;
-                       rdfs:comment "Capability
- of a milling cutter."^^xsd:string .
+                       rdfs:comment "Capability of a milling cutter."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MillingToolFunction
@@ -2917,9 +2869,7 @@ For example belt conveyor has this capability."""^^xsd:string .
                                       :TrayHolding ,
                                       :TubeFeederBaseFunction ,
                                       :VacuumGripperFunction ;
-                     rdfs:comment """Capability
- of a milling tool, including the tool holder and milling cutter.
-This capability has no parameters, as this capability is not used alone."""^^xsd:string ,
+                     rdfs:comment """Capability of a milling tool, including the tool holder and milling cutter. This capability has no parameters, as this capability is not used alone."""^^xsd:string ,
                                   "NOTE! When defining the capabilities of a milling machine, this capability should not be used. Instead, use the MillingCutterFunction and ToolHolding capabilities."^^xsd:string .
 
 
@@ -3010,8 +2960,7 @@ This capability has no parameters, as this capability is not used alone."""^^xsd
                          :TrayHolding ,
                          :TubeFeederBaseFunction ,
                          :VacuumGripperFunction ;
-        rdfs:comment """Capability to move items within a certain workspace.
-For example a robot and conveyor has this capability."""^^xsd:string .
+        rdfs:comment """Capability to move items within a certain workspace. For example a robot and conveyor has this capability."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MovingCollaborative
@@ -3094,8 +3043,7 @@ For example a robot and conveyor has this capability."""^^xsd:string .
                                       :TrayHolding ,
                                       :TubeFeederBaseFunction ,
                                       :VacuumGripperFunction ;
-                     rdfs:comment """Capability to move items within a certain workspace with collaborative movement.
-For example a dual arm robot has this capability."""^^xsd:string .
+                     rdfs:comment """Capability to move items within a certain workspace with collaborative movement. For example a dual arm robot has this capability."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MovingTool
@@ -3209,8 +3157,7 @@ For example a dual arm robot has this capability."""^^xsd:string .
                                  owl:onProperty :hasShapeAndSize_internal ;
                                  owl:cardinality "1"^^xsd:nonNegativeInteger
                                ] ;
-               rdfs:comment "Capabili
-ty of an ogiva-shaped tool, which can be used to e.g. expand an o-ring."^^xsd:string .
+               rdfs:comment "Capability of an ogiva-shaped tool, which can be used to e.g. expand an o-ring."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#OgivaToolsetFunction
@@ -3317,8 +3264,7 @@ ty of an ogiva-shaped tool, which can be used to e.g. expand an o-ring."^^xsd:st
                                     :TrayHolding ,
                                     :TubeFeederBaseFunction ,
                                     :VacuumGripperFunction ;
-                   rdfs:comment "Capability
- to store parts in a dedicated position and orientation on a tray. Feeding tray has this capability."^^xsd:string .
+                   rdfs:comment "Capability to store parts in a dedicated position and orientation on a tray. Feeding tray has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#PartStoringInTube
@@ -3343,8 +3289,7 @@ ty of an ogiva-shaped tool, which can be used to e.g. expand an o-ring."^^xsd:st
                                     :TrayHolding ,
                                     :TubeFeederBaseFunction ,
                                     :VacuumGripperFunction ;
-                   rdfs:comment "Capability
-of a feeding tube that is used in tube feeders. Tube refers to a magazine in which the parts are stacked on each other and can be provided to the feeder one by one."^^xsd:string .
+                   rdfs:comment "Capability of a feeding tube that is used in tube feeders. Tube refers to a magazine in which the parts are stacked on each other and can be provided to the feeder one by one."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#People
@@ -3551,8 +3496,7 @@ of a feeding tube that is used in tube feeders. Tube refers to a magazine in whi
                             :TrayHolding ,
                             :TubeFeederBaseFunction ,
                             :VacuumGripperFunction ;
-           rdfs:comment """Capability to release items which have been grasped.
-E.g. gripper has this capability."""^^xsd:string .
+           rdfs:comment """Capability to release items which have been grasped. E.g. gripper has this capability."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Resource_utilisation
@@ -3721,8 +3665,7 @@ E.g. gripper has this capability."""^^xsd:string .
                                            owl:onProperty :rotation_z ;
                                            owl:cardinality "2"^^xsd:nonNegativeInteger
                                          ] ;
-                         rdfs:comment "This class is for storing the information about the rotational movement
-ranges. Two values should be given to indicate the movement ranges to different +/- direction from the home position."^^xsd:string .
+                         rdfs:comment "This class is for storing the information about the rotational movement ranges. Two values should be given to indicate the movement ranges to different +/- direction from the home position."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Scrap_Rate
@@ -3835,8 +3778,7 @@ ranges. Two values should be given to indicate the movement ranges to different 
                                :TrayHolding ,
                                :TubeFeederBaseFunction ,
                                :VacuumGripperFunction ;
-              rdfs:comment """Capability to rotate (to spin) a tool.
-For example drill, screwdriver and milling machine has this capability."""^^xsd:string .
+              rdfs:comment """Capability to rotate (to spin) a tool. For example drill, screwdriver and milling machine has this capability."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Suppliers
@@ -3909,9 +3851,7 @@ For example drill, screwdriver and milling machine has this capability."""^^xsd:
              owl:disjointWith :TrayHolding ,
                               :TubeFeederBaseFunction ,
                               :VacuumGripperFunction ;
-             rdfs:comment """Capability to hold a tool.
-For example tool holder in a machining centre has this capability.
-The information related to the tool and tool holder interfaces is handled by the interface descriptions of the resources. Here only such parameters are included, which affect to the processing capability of the resource and resource combination."""^^xsd:string .
+             rdfs:comment """erface descriptions of the resources. Here only such parameters are included, which affect to the processing capability of the resource and resource combination."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#TrayHolding
@@ -3970,9 +3910,7 @@ The information related to the tool and tool holder interfaces is handled by the
                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                         ] ;
                         owl:disjointWith :VacuumGripperFunction ;
-                        rdfs:comment """Capability
- of a tube feeder base (only the feeder part, tube excluded).
-Tube feeder base is the module which holds the tube (magazine) and pushes one part at the time to the feeding position."""^^xsd:string .
+                        rdfs:comment """e time to the feeding position."""^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Twisting
@@ -3994,8 +3932,7 @@ Tube feeder base is the module which holds the tube (magazine) and pushes one pa
                             owl:onProperty :torque_min ;
                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
-          rdfs:comment "This is the manual capability of a human to twist (rotate) e.g. a
-screwdriver."^^xsd:string .
+          rdfs:comment "This is the manual capability of a human to twist (rotate) e.g. ascrewdriver."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#TwistingDriver
@@ -4009,8 +3946,7 @@ screwdriver."^^xsd:string .
                                   owl:onProperty :hasInputCapability ;
                                   owl:someValuesFrom :Twisting
                                 ] ;
-                rdfs:comment "This is the capability of twisting (rotating) a tool driver. Consists of
-the tool driver function itself and the twisting done by human."^^xsd:string .
+                rdfs:comment "This is the capability of twisting (rotating) a tool driver. Consists ofthe tool driver function itself and the twisting done by human."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Unscheduled_downtime
@@ -4030,8 +3966,7 @@ the tool driver function itself and the twisting done by human."^^xsd:string .
                                          owl:onProperty :vacuumPressure_max ;
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
-                       rdfs:comment "Capability
- of the ejector and vacuum gripper body."^^xsd:string .
+                       rdfs:comment "Capability of the ejector and vacuum gripper body."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Volume
@@ -4091,8 +4026,7 @@ the tool driver function itself and the twisting done by human."^^xsd:string .
                                     ] ;
                     owl:disjointWith :WorkspaceCylinder ,
                                      :WorkspacePolar ;
-                    rdfs:comment "This
- class is used to save the information of a cartesian workspace (box/cube)."^^xsd:string .
+                    rdfs:comment "This class is used to save the information of a cartesian workspace (box/cube)."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#WorkspaceCylinder
@@ -4141,8 +4075,7 @@ the tool driver function itself and the twisting done by human."^^xsd:string .
                                   owl:onProperty :rotationAngle ;
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
                                 ] ;
-                rdfs:comment "This
- class is used to save the information of a polar workspace."^^xsd:string .
+                rdfs:comment "This class is used to save the information of a polar workspace."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#WrenchFunction
@@ -4219,9 +4152,7 @@ the tool driver function itself and the twisting done by human."^^xsd:string .
                                                                       owl:onProperty :hole_diameter ;
                                                                       owl:maxCardinality "2"^^xsd:nonNegativeInteger
                                                                     ] ;
-                                                    rdfs:comment """rdfs:comment \"Capability
-to perform drilling operation.
-For example drill with attached drill bit, or milling machine with attached tool holder and drill bit, has this capability.\"^^xsd:string""" .
+                                                    rdfs:comment """rdfs:comment \"Capabilityto perform drilling operation.For example drill with attached drill bit, or milling machine with attached tool holder and drill bit, has this capability.\"^^xsd:string""" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest
@@ -4397,8 +4328,7 @@ For example drill with attached drill bit, or milling machine with attached tool
                                                                        owl:onProperty :fixturingMethod ;
                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                      ] ;
-                                                     rdfs:comment """t \"Capability to fix items, i.e. to hold them in a fixed position during processing or assembling.
-For example fixture has this capability.\"^^xsd:string""" .
+                                                     rdfs:comment """Capability to fix items, i.e. to hold them in a fixed position during processing or assembling.For example fixture has this capability"""^^xsd:string .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Inserting
@@ -4762,8 +4692,7 @@ For example fixture has this capability.\"^^xsd:string""" .
 :ScrewingHeadFunction rdfs:comment "Capability of a screwing head."^^xsd:string .
 
 
-cc:hasMaterialType rdfs:comment "This
- property is used to indicate from which material the resource, possessing the given capability, is made from."^^xsd:string .
+cc:hasMaterialType rdfs:comment "This property is used to indicate from which material the resource, possessing the given capability, is made from."^^xsd:string .
 
 
 #################################################################
