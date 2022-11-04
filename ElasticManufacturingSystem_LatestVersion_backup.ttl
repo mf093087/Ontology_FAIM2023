@@ -62,8 +62,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParametersAdditional
 :CapabilityParametersAdditional rdf:type owl:ObjectProperty ;
-                                rdfs:comment "This
- is a parent property for object properties which are used to relate the capabilities to additional capability parameters."^^xsd:string .
+                                rdfs:comment "This is a parent property for object properties which are used to relate the capabilities to additional capability parameters."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_exact
