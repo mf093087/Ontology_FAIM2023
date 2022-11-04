@@ -154,7 +154,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                         rdfs:range :LinearMovementRange .
 
 
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasProcessDescription
 :hasProcessDescription rdf:type owl:ObjectProperty ;
                        rdfs:domain :Process ;
@@ -457,7 +456,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                  ]
                                       ]
                           ] ;
-               rdfs:comment """<p style=\"margin-top: 0\"> Type of the machine vision algorithm. </p>"""^^xsd:string .
+               rdfs:comment "<p style=\"margin-top: 0\"> Type of the machine vision algorithm. </p>"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#armOfForce
@@ -785,7 +784,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                    rdfs:subPropertyOf :fingerGripperParameter ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:range xsd:float ;
-                   rdfs:comment """Maximum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
+                   rdfs:comment "Maximum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."^^xsd:string ,
                                 "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -794,7 +793,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                    rdfs:subPropertyOf :fingerGripperParameter ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:range xsd:float ;
-                   rdfs:comment """Minimum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."""^^xsd:string ,
+                   rdfs:comment "Minimum opening of the fingers. In case of 3-finger gripper, this value defines the diameter, while in case of 2-finger gripper it defines the distance between the fingers."^^xsd:string ,
                                 "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1109,7 +1108,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                   rdfs:subPropertyOf :CapabilityParameter ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:range xsd:float ;
-                  rdfs:comment """Theoretical holding force of the device in a default pressure."""^^xsd:string ,
+                  rdfs:comment "Theoretical holding force of the device in a default pressure."^^xsd:string ,
                                "Unit: Newton (N)"^^xsd:string .
 
 
@@ -1117,7 +1116,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hole_diameter rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf :drillBitParameter ;
                rdfs:range xsd:float ;
-               rdfs:comment """Diameter of the drilled hole, i.e. drill bit diameter.In case of unibit type drill bit, two values for the diameter can be given."""^^xsd:string ,
+               rdfs:comment "Diameter of the drilled hole, i.e. drill bit diameter.In case of unibit type drill bit, two values for the diameter can be given."^^xsd:string ,
                             "Unit: Millimeters (mm)"^^xsd:string .
 
 
@@ -1704,7 +1703,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_Parameters
 :toolEntry_Parameters rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf :CapabilityParameter ;
-                      rdfs:comment """Parameters for saving the inforamation about  max and min values for the tool entry inside the tool holder.These should be moved to the interfae description!?"""^^xsd:string .
+                      rdfs:comment "Parameters for saving the inforamation about  max and min values for the tool entry inside the tool holder.These should be moved to the interfae description!?"^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#toolEntry_current
@@ -1944,7 +1943,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParameterAdditional
 :CapabilityParameterAdditional rdf:type owl:Class ;
                                rdfs:subClassOf :CapabilityDefinitionElement ;
-                               rdfs:comment """In this class are save."""^^xsd:string .
+                               rdfs:comment "In this class are save."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityResponse
@@ -2263,7 +2262,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                  :TrayHolding ,
                                  :TubeFeederBaseFunction ,
                                  :VacuumGripperFunction ;
-                rdfs:comment """Capabilityof a finger that is used in a finger gripper.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
+                rdfs:comment "Capabilityof a finger that is used in a finger gripper.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#FingerGripperFunction
@@ -2329,7 +2328,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                         :TrayHolding ,
                                         :TubeFeederBaseFunction ,
                                         :VacuumGripperFunction ;
-                       rdfs:comment """Capability of a finger gripper without the fingers.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."""^^xsd:string .
+                       rdfs:comment "Capability of a finger gripper without the fingers.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#First_pass_yield
@@ -2473,7 +2472,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                    :TrayHolding ,
                                    :TubeFeederBaseFunction ,
                                    :VacuumGripperFunction ;
-                  rdfs:comment """Capability to hold items by gravity.For example belt conveyor has this capability."""^^xsd:string .
+                  rdfs:comment "Capability to hold items by gravity.For example belt conveyor has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Hole
@@ -2869,7 +2868,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                       :TrayHolding ,
                                       :TubeFeederBaseFunction ,
                                       :VacuumGripperFunction ;
-                     rdfs:comment """Capability of a milling tool, including the tool holder and milling cutter. This capability has no parameters, as this capability is not used alone."""^^xsd:string ,
+                     rdfs:comment "Capability of a milling tool, including the tool holder and milling cutter. This capability has no parameters, as this capability is not used alone."^^xsd:string ,
                                   "NOTE! When defining the capabilities of a milling machine, this capability should not be used. Instead, use the MillingCutterFunction and ToolHolding capabilities."^^xsd:string .
 
 
@@ -2960,7 +2959,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                          :TrayHolding ,
                          :TubeFeederBaseFunction ,
                          :VacuumGripperFunction ;
-        rdfs:comment """Capability to move items within a certain workspace. For example a robot and conveyor has this capability."""^^xsd:string .
+        rdfs:comment "Capability to move items within a certain workspace. For example a robot and conveyor has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MovingCollaborative
@@ -3043,7 +3042,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                       :TrayHolding ,
                                       :TubeFeederBaseFunction ,
                                       :VacuumGripperFunction ;
-                     rdfs:comment """Capability to move items within a certain workspace with collaborative movement. For example a dual arm robot has this capability."""^^xsd:string .
+                     rdfs:comment "Capability to move items within a certain workspace with collaborative movement. For example a dual arm robot has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MovingTool
@@ -3496,7 +3495,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                             :TrayHolding ,
                             :TubeFeederBaseFunction ,
                             :VacuumGripperFunction ;
-           rdfs:comment """Capability to release items which have been grasped. E.g. gripper has this capability."""^^xsd:string .
+           rdfs:comment "Capability to release items which have been grasped. E.g. gripper has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Resource_utilisation
@@ -3778,7 +3777,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                :TrayHolding ,
                                :TubeFeederBaseFunction ,
                                :VacuumGripperFunction ;
-              rdfs:comment """Capability to rotate (to spin) a tool. For example drill, screwdriver and milling machine has this capability."""^^xsd:string .
+              rdfs:comment "Capability to rotate (to spin) a tool. For example drill, screwdriver and milling machine has this capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Suppliers
@@ -3851,7 +3850,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
              owl:disjointWith :TrayHolding ,
                               :TubeFeederBaseFunction ,
                               :VacuumGripperFunction ;
-             rdfs:comment """erface descriptions of the resources. Here only such parameters are included, which affect to the processing capability of the resource and resource combination."""^^xsd:string .
+             rdfs:comment "erface descriptions of the resources. Here only such parameters are included, which affect to the processing capability of the resource and resource combination."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#TrayHolding
@@ -3910,7 +3909,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                         ] ;
                         owl:disjointWith :VacuumGripperFunction ;
-                        rdfs:comment """e time to the feeding position."""^^xsd:string .
+                        rdfs:comment "e time to the feeding position."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Twisting
@@ -4152,7 +4151,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                       owl:onProperty :hole_diameter ;
                                                                       owl:maxCardinality "2"^^xsd:nonNegativeInteger
                                                                     ] ;
-                                                    rdfs:comment """rdfs:comment \"Capabilityto perform drilling operation.For example drill with attached drill bit, or milling machine with attached tool holder and drill bit, has this capability.\"^^xsd:string""" .
+                                                    rdfs:comment "rdfs:comment \"Capabilityto perform drilling operation.For example drill with attached drill bit, or milling machine with attached tool holder and drill bit, has this capability.\"^^xsd:string" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest
@@ -4328,7 +4327,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                        owl:onProperty :fixturingMethod ;
                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                      ] ;
-                                                     rdfs:comment """Capability to fix items, i.e. to hold them in a fixed position during processing or assembling.For example fixture has this capability"""^^xsd:string .
+                                                     rdfs:comment "Capability to fix items, i.e. to hold them in a fixed position during processing or assembling.For example fixture has this capability"^^xsd:string .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Inserting
@@ -4509,15 +4508,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Place
 <http://www.co-ode.org/ontologies/ont.owl#Place> rdf:type owl:Class ;
                                                  rdfs:subClassOf :CombinedCapability ,
-                                                                 [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( :MagneticGrasping
-                                                                                 <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
-                                                                                 [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty :hasInputCapability ;
-                                                                                   owl:someValuesFrom :ExpansionGrasping
-                                                                                 ]
-                                                                               )
-                                                                 ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty :hasInputCapability ;
                                                                    owl:someValuesFrom :Moving
@@ -4525,6 +4515,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty :hasInputCapability ;
                                                                    owl:someValuesFrom :Releasing
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasInputCapability ;
+                                                                   owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty :accuracy ;
