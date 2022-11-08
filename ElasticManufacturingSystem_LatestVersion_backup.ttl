@@ -4388,6 +4388,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking
 <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> rdf:type owl:Class ;
                                                               rdfs:subClassOf :CombinedCapability ,
+                                                                              <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> ,
                                                                               [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Accuracy> ;
                                                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -4504,6 +4505,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Drilling
 <http://www.co-ode.org/ontologies/ont.owl#Drilling> rdf:type owl:Class ;
                                                     rdfs:subClassOf :CombinedCapability ,
+                                                                    <http://www.co-ode.org/ontologies/ont.owl/Process#Drilling> ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasInputCapability ;
                                                                       owl:someValuesFrom :DrillBitFunction
@@ -4565,7 +4567,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating
 <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> ,
+                                                                                    <http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> ;
                                                                     owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
 
 
@@ -4586,7 +4589,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Feeding
 <http://www.co-ode.org/ontologies/ont.owl#Feeding> rdf:type owl:Class ;
-                                                   rdfs:subClassOf :CombinedCapability .
+                                                   rdfs:subClassOf :CombinedCapability ,
+                                                                   <http://www.co-ode.org/ontologies/ont.owl/Process#Feeding> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#FingerGrasping
@@ -4687,6 +4691,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Fixturing
 <http://www.co-ode.org/ontologies/ont.owl#Fixturing> rdf:type owl:Class ;
                                                      rdfs:subClassOf :SimpleCapability ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#OWLClass_9e429f09_ca6d_4a2b_b43b_ec70a26b20d4> ,
                                                                      [ rdf:type owl:Restriction ;
                                                                        owl:onProperty :hasAllowedItemShapeAndSize_max ;
                                                                        owl:allValuesFrom :ShapeAndSizeDefinition
@@ -4780,7 +4785,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#GraspingCapability
 <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> rdf:type owl:Class ;
-                                                              rdfs:subClassOf :CombinedCapability .
+                                                              rdfs:subClassOf :CombinedCapability ,
+                                                                              <http://www.co-ode.org/ontologies/ont.owl/Process#Grasping> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Grinding
@@ -4821,6 +4827,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Inserting
 <http://www.co-ode.org/ontologies/ont.owl#Inserting> rdf:type owl:Class ;
                                                      rdfs:subClassOf :CombinedCapability ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> ,
                                                                      [ rdf:type owl:Restriction ;
                                                                        owl:onProperty :hasInputCapability ;
                                                                        owl:someValuesFrom :ForceApplying
@@ -4954,12 +4961,14 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability
 <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :CombinedCapability .
+                                                               rdfs:subClassOf :CombinedCapability ,
+                                                                               <http://www.co-ode.org/ontologies/ont.owl#Metrology> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Milling
 <http://www.co-ode.org/ontologies/ont.owl#Milling> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
+                                                                   <http://www.co-ode.org/ontologies/ont.owl/Process#Milling> ,
                                                                    [ rdf:type owl:Class ;
                                                                      owl:unionOf ( :MovingTool
                                                                                    [ rdf:type owl:Restriction ;
@@ -5151,7 +5160,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability
 <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf :CombinedCapability .
+                                                                  rdfs:subClassOf :CombinedCapability ,
+                                                                                  <http://www.co-ode.org/ontologies/ont.owl/Process#PickAndPlace> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Place
@@ -5205,7 +5215,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Pressing
 <http://www.co-ode.org/ontologies/ont.owl#Pressing> rdf:type owl:Class ;
-                                                    rdfs:subClassOf :CombinedCapability ,
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing> ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasInputCapability ;
                                                                       owl:someValuesFrom :FrameFunction
@@ -5695,7 +5705,7 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Inserting
 <http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> rdf:type owl:Class ;
-                                                             rdfs:subClassOf :Process ,
+                                                             rdfs:subClassOf :ElasticResponse ,
                                                                              [ rdf:type owl:Restriction ;
                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -5779,8 +5789,7 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Pressing
 <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> ,
-                                                                            <http://www.co-ode.org/ontologies/ont.owl#Forming> ,
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialConserving> ,
                                                                             [ rdf:type owl:Restriction ;
                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> ;
                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
