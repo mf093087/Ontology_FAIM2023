@@ -154,12 +154,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                         rdfs:range :LinearMovementRange .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasProcessDescription
-:hasProcessDescription rdf:type owl:ObjectProperty ;
-                       rdfs:domain :Process ;
-                       rdfs:range :ProcessDescription .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_max
 :hasRivetSize_max rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :CapabilityParametersAdditional ;
@@ -227,8 +221,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#referToTheDocument
 :referToTheDocument rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Task ;
-                    rdfs:range :TaskDocument .
+                    rdfs:domain :Task .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#refersToCapability
@@ -260,6 +253,11 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                   rdfs:range :Capacity .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#hasProcessRequirement
+<http://www.co-ode.org/ontologies/ont.owl#hasProcessRequirement> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:range :ProcessRequirement .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hasProductFeature
 <http://www.co-ode.org/ontologies/ont.owl#hasProductFeature> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#ProductParameter> ;
@@ -277,12 +275,17 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#isProcessOf
 <http://www.co-ode.org/ontologies/ont.owl#isProcessOf> rdf:type owl:ObjectProperty ;
                                                        owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#requiredProcess> ;
-                                                       rdfs:domain :Process ;
                                                        rdfs:range :Product .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isTheCapabilityOf
 <http://www.co-ode.org/ontologies/ont.owl#isTheCapabilityOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredCapability
+<http://www.co-ode.org/ontologies/ont.owl#requiredCapability> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain :Process ;
+                                                              rdfs:range :SimpleCapability .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredElasticResponse
@@ -293,7 +296,14 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredProcess
 <http://www.co-ode.org/ontologies/ont.owl#requiredProcess> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain :Product .
+                                                           rdfs:domain :Product ;
+                                                           rdfs:range :Process .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredProduct
+<http://www.co-ode.org/ontologies/ont.owl#requiredProduct> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain :Task ;
+                                                           rdfs:range :Product .
 
 
 #################################################################
@@ -394,6 +404,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#TaskPriority
 :TaskPriority rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> ;
               rdfs:range rdfs:Literal .
 
 
@@ -1868,12 +1879,264 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                               rdfs:subPropertyOf :MetrologyParameter .
 
 
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Accuracy
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Accuracy> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedDrillingDepth
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedDrillingDepth> rdf:type owl:DatatypeProperty ;
+                                                                           rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_max
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_max> rdf:type owl:DatatypeProperty ;
+                                                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_min
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_min> rdf:type owl:DatatypeProperty ;
+                                                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf :CapabilityParameter .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#OperationID
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#OperationID> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#processParameters> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#ProductName
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#ProductName> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#processParameters> ;
+                                                                  rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredFeedingType
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredFeedingType> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredMarkingType
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredMarkingType> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#ComCapabilityID
 <http://www.co-ode.org/ontologies/ont.owl#ComCapabilityID> rdf:type owl:DatatypeProperty .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#CustomerName
+<http://www.co-ode.org/ontologies/ont.owl#CustomerName> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> ;
+                                                        rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_159c6676_3565_4759_88ed_499790c7f261
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_159c6676_3565_4759_88ed_499790c7f261> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredSpeed_z"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredForce_max"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:range rdfs:Literal ;
+                                                                                                rdfs:label "requiredProcessParameter"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_269bca05_d2af_4ad5_b483_378ebfc68a4e
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_269bca05_d2af_4ad5_b483_378ebfc68a4e> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredFixturingForce_min"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_3597ca71_6abd_4bfd_b5a3_d56cc3f3abd7
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_3597ca71_6abd_4bfd_b5a3_d56cc3f3abd7> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredCycleTime"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_3bedee94_1e81_489b_8584_4b2614139d23
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_3bedee94_1e81_489b_8584_4b2614139d23> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredForce_exact"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_53ea03ed_91cd_492a_b1a6_ff14cb1fa330
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_53ea03ed_91cd_492a_b1a6_ff14cb1fa330> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredFixturingForce_max"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_7af972d8_22c2_4d0e_b90d_4a57811ad678
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_7af972d8_22c2_4d0e_b90d_4a57811ad678> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredDOF"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredForce_min"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_b754535d_6d3d_4e58_8c89_7b5e16cdbb2c
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_b754535d_6d3d_4e58_8c89_7b5e16cdbb2c> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "allowedGraspingForce"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_be82c185_3750_450f_bc2a_62c7a5e79219
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_be82c185_3750_450f_bc2a_62c7a5e79219> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredSpeed_x"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredAccuracy"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_ed4f7d47_5d95_4a31_8da7_42bc3272f6d5
+<http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_ed4f7d47_5d95_4a31_8da7_42bc3272f6d5> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                                                rdfs:label "requiredSpeed_y"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ProcessDesription
+<http://www.co-ode.org/ontologies/ont.owl#ProcessDesription> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#processParameters> ;
+                                                             rdfs:range rdfs:Literal .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#SimCapabilityID
 <http://www.co-ode.org/ontologies/ont.owl#SimCapabilityID> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TaskDocuments
+<http://www.co-ode.org/ontologies/ont.owl#TaskDocuments> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> ;
+                                                         rdfs:domain :Task ;
+                                                         rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TaskID
+<http://www.co-ode.org/ontologies/ont.owl#TaskID> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> ;
+                                                  rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TaskInformation
+<http://www.co-ode.org/ontologies/ont.owl#TaskInformation> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#capabilityMatchingRequired
+<http://www.co-ode.org/ontologies/ont.owl#capabilityMatchingRequired> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#processParameters
+<http://www.co-ode.org/ontologies/ont.owl#processParameters> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#processSequence
+<http://www.co-ode.org/ontologies/ont.owl#processSequence> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#processParameters> ;
+                                                           rdfs:domain :Process ;
+                                                           rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredFeedRate
+<http://www.co-ode.org/ontologies/ont.owl#requiredFeedRate> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredGraspingType
+<http://www.co-ode.org/ontologies/ont.owl#requiredGraspingType> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredPayload
+<http://www.co-ode.org/ontologies/ont.owl#requiredPayload> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredProductNumbers
+<http://www.co-ode.org/ontologies/ont.owl#requiredProductNumbers> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                  rdfs:domain :Task ;
+                                                                  rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#requiredReachbility
+<http://www.co-ode.org/ontologies/ont.owl#requiredReachbility> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#allowedTorque
+<http://www.co-ode.org/ontologies/ont.owl/Process#allowedTorque> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredLateralOffset
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredLateralOffset> rdf:type owl:DatatypeProperty ;
+                                                                         rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> ;
+                                                                         rdfs:range rdfs:Literal .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredMeasurement_frequency
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredMeasurement_frequency> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredPlanar_offset
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredPlanar_offset> rdf:type owl:DatatypeProperty ;
+                                                                         rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadial_offset
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadial_offset> rdf:type owl:DatatypeProperty ;
+                                                                         rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadius
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadius> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredRange
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredRange> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredResolution
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredResolution> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#requiredSimplified_uncertainty
+<http://www.co-ode.org/ontologies/ont.owl/Process#requiredSimplified_uncertainty> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
 
 
 #################################################################
@@ -2711,8 +2974,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :Simplified_uncertainty ;
-                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                       ] .
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:comment "Simplified uncertainty only available when the brand is 'Nikon'" .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Measurement_Device
@@ -2727,13 +2991,23 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                       owl:cardinality "1"^^xsd:nonNegativeInteger
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty :Range ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty :Stability_required ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:boolean
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty :Range ;
-                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                      owl:onProperty <http://resourcedescription.tut.fi/ontology/capabilityModel#3_DOF_capability> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://resourcedescription.tut.fi/ontology/capabilityModel#6_DOF_capability> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :Simplified_uncertainty ;
@@ -2846,7 +3120,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MillingToolFunction
 :MillingToolFunction rdf:type owl:Class ;
-                     rdfs:subClassOf :CombinedCapability ,
+                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasInputCapability ;
                                        owl:someValuesFrom :MillingCutterFunction
@@ -3318,22 +3592,27 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Process
 :Process rdf:type owl:Class ;
-         rdfs:subClassOf :ProcessTaxnomy .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProcessDescription
-:ProcessDescription rdf:type owl:Class ;
-                    rdfs:subClassOf :ProcessTaxnomy ;
-                    owl:disjointWith :ProcessRequirement .
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#OperationID> ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#ProductName> ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#capabilityMatchingRequired> ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#processSequence> ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProcessRequirement
 :ProcessRequirement rdf:type owl:Class ;
-                    rdfs:subClassOf :ProcessTaxnomy .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProcessTaxnomy
-:ProcessTaxnomy rdf:type owl:Class .
+                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Processing
@@ -3343,8 +3622,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Product
 :Product rdf:type owl:Class ;
-         rdfs:subClassOf :ProductTaxnomy ,
-                         [ rdf:type owl:Restriction ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasProductFeature> ;
                            owl:someValuesFrom :ProductFeatures
                          ] ,
@@ -3356,17 +3634,13 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProductFeatures
 :ProductFeatures rdf:type owl:Class ;
-                 rdfs:subClassOf :ProductTaxnomy ;
+                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> ;
                  owl:disjointWith :ProductRequirement .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProductRequirement
 :ProductRequirement rdf:type owl:Class ;
-                    rdfs:subClassOf :ProductTaxnomy .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProductTaxnomy
-:ProductTaxnomy rdf:type owl:Class .
+                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Production_attainment
@@ -3710,7 +3984,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ShapeAndSizeDefinition
 :ShapeAndSizeDefinition rdf:type owl:Class ;
-                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        rdfs:subClassOf :CapabilityParameterAdditional ,
+                                        [ rdf:type owl:Restriction ;
                                           owl:onProperty :mass ;
                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                         ] ;
@@ -3797,28 +4072,22 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Task
 :Task rdf:type owl:Class ;
-      rdfs:subClassOf :TaskTaxnomy ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :referToTheDocument ;
-                        owl:someValuesFrom :TaskDocument
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> ;
+                        owl:someValuesFrom owl:rational
                       ] ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty :ProductInformation ;
-                        owl:someValuesFrom rdfs:Literal
+                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#CustomerName> ;
+                        owl:allValuesFrom rdfs:Literal
                       ] ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty :TaskPriority ;
-                        owl:someValuesFrom rdfs:Literal
+                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#TaskID> ;
+                        owl:allValuesFrom rdfs:Literal
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
                       ] .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#TaskDocument
-:TaskDocument rdf:type owl:Class ;
-              rdfs:subClassOf :TaskTaxnomy .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#TaskTaxnomy
-:TaskTaxnomy rdf:type owl:Class .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Third_parties
@@ -3915,6 +4184,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Twisting
 :Twisting rdf:type owl:Class ;
           rdfs:subClassOf :SimpleCapability ,
+                          <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :spinningSpeed_max ;
                             owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -3950,8 +4220,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Unscheduled_downtime
 :Unscheduled_downtime rdf:type owl:Class ;
-                      rdfs:subClassOf :Machine_downtime ,
-                                      :Set-up_time .
+                      rdfs:subClassOf :Set-up_time .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#VacuumGripperFunction
@@ -4100,12 +4369,132 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                      rdfs:subClassOf :People .
 
 
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> rdf:type owl:Class ;
+                                                              rdfs:subClassOf :CombinedCapability ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Accuracy> ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution> ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring
+<http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ArcWelding
+<http://www.co-ode.org/ontologies/ont.owl#ArcWelding> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Assembly
+<http://www.co-ode.org/ontologies/ont.owl#Assembly> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Process .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bending
+<http://www.co-ode.org/ontologies/ont.owl#Bending> rdf:type owl:Class ;
+                                                   owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#BlindRiveting
+<http://www.co-ode.org/ontologies/ont.owl#BlindRiveting> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Boring
+<http://www.co-ode.org/ontologies/ont.owl#Boring> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeeding
+<http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeeding> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Feeding> ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :hasInputCapability ;
+                                                                            owl:someValuesFrom :LocatingVisual
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :hasInputCapability ;
+                                                                            owl:someValuesFrom :PartStoringInBulk
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :payload ;
+                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Casting
+<http://www.co-ode.org/ontologies/ont.owl#Casting> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialAdding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Clamping
+<http://www.co-ode.org/ontologies/ont.owl#Clamping> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Clinching
+<http://www.co-ode.org/ontologies/ont.owl#Clinching> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Clipping
+<http://www.co-ode.org/ontologies/ont.owl#Clipping> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Coating
+<http://www.co-ode.org/ontologies/ont.owl#Coating> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#SurfaceFinishing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ColdWelding
+<http://www.co-ode.org/ontologies/ont.owl#ColdWelding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Welding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ContinuousManufacturing
+<http://www.co-ode.org/ontologies/ont.owl#ContinuousManufacturing> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Manufacturing> ;
+                                                                   owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Crimping
+<http://www.co-ode.org/ontologies/ont.owl#Crimping> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#DeformingFixating
+<http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#DipSoldering
+<http://www.co-ode.org/ontologies/ont.owl#DipSoldering> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing
+<http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Manufacturing> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Drilling
 <http://www.co-ode.org/ontologies/ont.owl#Drilling> rdf:type owl:Class ;
                                                     rdfs:subClassOf :CombinedCapability ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasInputCapability ;
                                                                       owl:someValuesFrom :DrillBitFunction
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasInputCapability ;
+                                                                      owl:someValuesFrom :ForceApplying
                                                                     ] ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasInputCapability ;
@@ -4120,14 +4509,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                       owl:someValuesFrom :ToolHolding
                                                                     ] ,
                                                                     [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :hasSuitableMaterial ;
-                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :hole_diameter ;
-                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :bottomShape ;
                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                     ] ,
@@ -4140,23 +4521,18 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                     ] ,
                                                                     [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :tolerance_LowerValue ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :tolerance_UpperValue ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                      owl:onProperty :hole_diameter ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                     ] ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hole_diameter ;
                                                                       owl:maxCardinality "2"^^xsd:nonNegativeInteger
-                                                                    ] ;
-                                                    rdfs:comment "rdfs:comment \"Capabilityto perform drilling operation.For example drill with attached drill bit, or milling machine with attached tool holder and drill bit, has this capability.\"^^xsd:string" .
+                                                                    ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest
 <http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf :CombinedCapability ,
+                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> ,
                                                                                             [ rdf:type owl:Restriction ;
                                                                                               owl:onProperty :hasInputCapability ;
                                                                                               owl:someValuesFrom :Measurement_Accessory
@@ -4171,9 +4547,35 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                             ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating
+<http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> ;
+                                                                    owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ElectroStagWelding
+<http://www.co-ode.org/ontologies/ont.owl#ElectroStagWelding> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ElectronBeamWelding
+<http://www.co-ode.org/ontologies/ont.owl#ElectronBeamWelding> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Fastening
+<http://www.co-ode.org/ontologies/ont.owl#Fastening> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Feeding
+<http://www.co-ode.org/ontologies/ont.owl#Feeding> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :CombinedCapability .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#FingerGrasping
 <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping> rdf:type owl:Class ;
-                                                          rdfs:subClassOf :CombinedCapability ,
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
                                                                           [ rdf:type owl:Restriction ;
                                                                             owl:onProperty :hasInputCapability ;
                                                                             owl:someValuesFrom :FingerFunction
@@ -4330,6 +4732,76 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                      rdfs:comment "Capability to fix items, i.e. to hold them in a fixed position during processing or assembling.For example fixture has this capability"^^xsd:string .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#FlashButtWelding
+<http://www.co-ode.org/ontologies/ont.owl#FlashButtWelding> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Folding
+<http://www.co-ode.org/ontologies/ont.owl#Folding> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Forming
+<http://www.co-ode.org/ontologies/ont.owl#Forming> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialConserving> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#FrictionWelding
+<http://www.co-ode.org/ontologies/ont.owl#FrictionWelding> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering
+<http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Gluing
+<http://www.co-ode.org/ontologies/ont.owl#Gluing> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#GraspingCapability
+<http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> rdf:type owl:Class ;
+                                                              rdfs:subClassOf :CombinedCapability .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Grinding
+<http://www.co-ode.org/ontologies/ont.owl#Grinding> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Grooving
+<http://www.co-ode.org/ontologies/ont.owl#Grooving> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Hammering
+<http://www.co-ode.org/ontologies/ont.owl#Hammering> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding
+<http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#HeatTreatment
+<http://www.co-ode.org/ontologies/ont.owl#HeatTreatment> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ImpactRiveting
+<http://www.co-ode.org/ontologies/ont.owl#ImpactRiveting> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#InductionSoldering
+<http://www.co-ode.org/ontologies/ont.owl#InductionSoldering> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Inserting
 <http://www.co-ode.org/ontologies/ont.owl#Inserting> rdf:type owl:Class ;
                                                      rdfs:subClassOf :CombinedCapability ,
@@ -4355,9 +4827,131 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                      ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Inspection
+<http://www.co-ode.org/ontologies/ont.owl#Inspection> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#IronSoldering
+<http://www.co-ode.org/ontologies/ont.owl#IronSoldering> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Joining
+<http://www.co-ode.org/ontologies/ont.owl#Joining> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Assembly> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#LaserAdding
+<http://www.co-ode.org/ontologies/ont.owl#LaserAdding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialAdding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#LaserCutting
+<http://www.co-ode.org/ontologies/ont.owl#LaserCutting> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#LaserWelding
+<http://www.co-ode.org/ontologies/ont.owl#LaserWelding> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Logistic
+<http://www.co-ode.org/ontologies/ont.owl#Logistic> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Process .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Machining
+<http://www.co-ode.org/ontologies/ont.owl#Machining> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MachiningCapability
+<http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :CombinedCapability .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ManualAssembly
+<http://www.co-ode.org/ontologies/ont.owl#ManualAssembly> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Manufacturing
+<http://www.co-ode.org/ontologies/ont.owl#Manufacturing> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Process .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MaterialAdding
+<http://www.co-ode.org/ontologies/ont.owl#MaterialAdding> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MaterialConserving
+<http://www.co-ode.org/ontologies/ont.owl#MaterialConserving> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving
+<http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Measurement
+<http://www.co-ode.org/ontologies/ont.owl#Measurement> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MetalWelding
+<http://www.co-ode.org/ontologies/ont.owl#MetalWelding> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Welding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Metrology
+<http://www.co-ode.org/ontologies/ont.owl#Metrology> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Process ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredLateralOffset> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredMeasurement_frequency> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredPlanar_offset> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadial_offset> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadius> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRange> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability
+<http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :CombinedCapability .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Milling
 <http://www.co-ode.org/ontologies/ont.owl#Milling> rdf:type owl:Class ;
-                                                   rdfs:subClassOf :CombinedCapability ,
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
+                                                                   [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( :MovingTool
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :hasInputCapability ;
+                                                                                     owl:someValuesFrom :Moving
+                                                                                   ]
+                                                                                 )
+                                                                   ] ,
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty :hasInputCapability ;
                                                                      owl:someValuesFrom :MillingToolFunction
@@ -4371,35 +4965,15 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Fixturing>
                                                                    ] ,
                                                                    [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :cuttingEdgeAngle ;
+                                                                     owl:onProperty :cutterType ;
+                                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :accuracy ;
                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                    ] ,
                                                                    [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :cuttingEdgeLength ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :insertShape ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :noseRadius ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :repeatability ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :spinningSpeed_max ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :spinningSpeed_min ;
-                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                   ] ,
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty :teethNumber ;
+                                                                     owl:onProperty :cutterVersion ;
                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                    ] ,
                                                                    [ rdf:type owl:Restriction ;
@@ -4408,9 +4982,73 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                    ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Moulding
+<http://www.co-ode.org/ontologies/ont.owl#Moulding> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialAdding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#MountingO-ring
+<http://www.co-ode.org/ontologies/ont.owl#MountingO-ring> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Nailing
+<http://www.co-ode.org/ontologies/ont.owl#Nailing> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing
+<http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> ;
+                                                                    owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Normal_task
+<http://www.co-ode.org/ontologies/ont.owl#Normal_task> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Task .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_8f0c20c5_0e56_4cc0_999a_fb7c238c0f65
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_8f0c20c5_0e56_4cc0_999a_fb7c238c0f65> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Process ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_b754535d_6d3d_4e58_8c89_7b5e16cdbb2c> ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ] ;
+                                                                                         rdfs:label "Grasping"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_9e429f09_ca6d_4a2b_b43b_ec70a26b20d4
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_9e429f09_ca6d_4a2b_b43b_ec70a26b20d4> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Process ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08> ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ] ;
+                                                                                         rdfs:label "Fixturing"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OrbitalRiveting
+<http://www.co-ode.org/ontologies/ont.owl#OrbitalRiveting> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#PercussionWelding
+<http://www.co-ode.org/ontologies/ont.owl#PercussionWelding> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Pick
 <http://www.co-ode.org/ontologies/ont.owl#Pick> rdf:type owl:Class ;
-                                                rdfs:subClassOf :CombinedCapability ,
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability> ,
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty :hasInputCapability ;
                                                                   owl:someValuesFrom :Moving
@@ -4445,15 +5083,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#PickAndPlace
 <http://www.co-ode.org/ontologies/ont.owl#PickAndPlace> rdf:type owl:Class ;
-                                                        rdfs:subClassOf :CombinedCapability ,
-                                                                        [ rdf:type owl:Class ;
-                                                                          owl:unionOf ( :MagneticGrasping
-                                                                                        <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty :hasInputCapability ;
-                                                                                          owl:someValuesFrom :ExpansionGrasping
-                                                                                        ]
-                                                                                      )
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability> ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasInputCapability ;
+                                                                          owl:someValuesFrom :ForceApplying
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasInputCapability ;
@@ -4465,7 +5098,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasInputCapability ;
-                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability>
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasWorkspaceTypeAndDimensions ;
@@ -4505,9 +5138,14 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                         ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability
+<http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf :CombinedCapability .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Place
 <http://www.co-ode.org/ontologies/ont.owl#Place> rdf:type owl:Class ;
-                                                 rdfs:subClassOf :CombinedCapability ,
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability> ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty :hasInputCapability ;
                                                                    owl:someValuesFrom :Moving
@@ -4530,9 +5168,106 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                  ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#PlasmaArcWelding
+<http://www.co-ode.org/ontologies/ont.owl#PlasmaArcWelding> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating
+<http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#PlasticWelding
+<http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Welding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#PressToolFunction
+<http://www.co-ode.org/ontologies/ont.owl#PressToolFunction> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :SimpleCapability ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :hasShapeAndSize ;
+                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                             ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pressing
+<http://www.co-ode.org/ontologies/ont.owl#Pressing> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :CombinedCapability ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasInputCapability ;
+                                                                      owl:someValuesFrom :FrameFunction
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasInputCapability ;
+                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasInputCapability ;
+                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#PressToolFunction>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :accuracy ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :force_max ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :force_min ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :repeatability ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ProjectionWelding
+<http://www.co-ode.org/ontologies/ont.owl#ProjectionWelding> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Punching
+<http://www.co-ode.org/ontologies/ont.owl#Punching> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#RadialRiveting
+<http://www.co-ode.org/ontologies/ont.owl#RadialRiveting> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Requirement
+<http://www.co-ode.org/ontologies/ont.owl#Requirement> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering
+<http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding
+<http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Riveting
+<http://www.co-ode.org/ontologies/ont.owl#Riveting> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Rush_order_task
+<http://www.co-ode.org/ontologies/ont.owl#Rush_order_task> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Task .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Screwing
 <http://www.co-ode.org/ontologies/ont.owl#Screwing> rdf:type owl:Class ;
-                                                    rdfs:subClassOf :CombinedCapability ,
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> ,
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty :hasInputCapability ;
                                                                       owl:someValuesFrom :Moving
@@ -4571,14 +5306,242 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                     ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#SeamWelding
+<http://www.co-ode.org/ontologies/ont.owl#SeamWelding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sewing
+<http://www.co-ode.org/ontologies/ont.owl#Sewing> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing
+<http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ShieldedMetalArcWelding
+<http://www.co-ode.org/ontologies/ont.owl#ShieldedMetalArcWelding> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Shrinking
+<http://www.co-ode.org/ontologies/ont.owl#Shrinking> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Single_probed_point_measurement
 <http://www.co-ode.org/ontologies/ont.owl#Single_probed_point_measurement> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf :CombinedCapability .
+                                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Snapping
+<http://www.co-ode.org/ontologies/ont.owl#Snapping> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Soldering
+<http://www.co-ode.org/ontologies/ont.owl#Soldering> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#SpotWelding
+<http://www.co-ode.org/ontologies/ont.owl#SpotWelding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#SpringFastening
+<http://www.co-ode.org/ontologies/ont.owl#SpringFastening> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Stapling
+<http://www.co-ode.org/ontologies/ont.owl#Stapling> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#StudWelding
+<http://www.co-ode.org/ontologies/ont.owl#StudWelding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#SurfaceFinishing
+<http://www.co-ode.org/ontologies/ont.owl#SurfaceFinishing> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Surface_measurement
 <http://www.co-ode.org/ontologies/ont.owl#Surface_measurement> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :CombinedCapability .
+                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Taping
+<http://www.co-ode.org/ontologies/ont.owl#Taping> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ThermalCuring
+<http://www.co-ode.org/ontologies/ont.owl#ThermalCuring> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ThreadRunning
+<http://www.co-ode.org/ontologies/ont.owl#ThreadRunning> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Threading
+<http://www.co-ode.org/ontologies/ont.owl#Threading> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide
+<http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TorchSoldering
+<http://www.co-ode.org/ontologies/ont.owl#TorchSoldering> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Transporting
+<http://www.co-ode.org/ontologies/ont.owl#Transporting> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :CombinedCapability ,
+                                                                        [ rdf:type owl:Class ;
+                                                                          owl:unionOf ( :MagneticGrasping
+                                                                                        <http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :hasInputCapability ;
+                                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+                                                                                        ]
+                                                                                      )
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasInputCapability ;
+                                                                          owl:someValuesFrom :Moving
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :dof ;
+                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :payload ;
+                                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :repeatability ;
+                                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :acceleration_x_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :acceleration_y_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :acceleration_z_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :dof ;
+                                                                          owl:maxCardinality "6"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :speed_x_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :speed_y_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :speed_z_max ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ] ;
+                                                        rdfs:comment """Capability to transport items from one place to another.
+For example robot attached with a gripper, or conveyor alone have this capability.""" .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TrayFeeding
+<http://www.co-ode.org/ontologies/ont.owl#TrayFeeding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Feeding> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasInputCapability ;
+                                                                         owl:someValuesFrom :PartStoringInTray
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasInputCapability ;
+                                                                         owl:someValuesFrom :TrayHolding
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :LocatingVisual
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :PartStoringInBulk
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :LocatingVisual
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
+                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :PartStoringInBulk
+                                                                       ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TubeFeeding
+<http://www.co-ode.org/ontologies/ont.owl#TubeFeeding> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Feeding> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasInputCapability ;
+                                                                         owl:someValuesFrom :PartStoringInTube
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasInputCapability ;
+                                                                         owl:someValuesFrom :TubeFeederBaseFunction
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :feedRate_max ;
+                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :payload ;
+                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :repeatability ;
+                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                       ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#TungstenArcWelding
+<http://www.co-ode.org/ontologies/ont.owl#TungstenArcWelding> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Turning
+<http://www.co-ode.org/ontologies/ont.owl#Turning> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#UV-curing
+<http://www.co-ode.org/ontologies/ont.owl#UV-curing> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#UltrasonicWelding
+<http://www.co-ode.org/ontologies/ont.owl#UltrasonicWelding> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#VacuumCupFunction
@@ -4616,7 +5579,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping
 <http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping> rdf:type owl:Class ;
-                                                          rdfs:subClassOf :CombinedCapability ,
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
                                                                           [ rdf:type owl:Restriction ;
                                                                             owl:onProperty :hasInputCapability ;
                                                                             owl:someValuesFrom :VacuumGripperFunction
@@ -4660,9 +5623,181 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                          ] .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Wedging
+<http://www.co-ode.org/ontologies/ont.owl#Wedging> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Welding
+<http://www.co-ode.org/ontologies/ont.owl#Welding> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#6DOF_‘frame’_measurement
 <http://www.co-ode.org/ontologies/ont.owl#6DOF_‘frame’_measurement> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf :CombinedCapability .
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Drilling
+<http://www.co-ode.org/ontologies/ont.owl/Process#Drilling> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedDrillingDepth> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_max> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#AllowedHoleDiameter_min> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Feeding
+<http://www.co-ode.org/ontologies/ont.owl/Process#Feeding> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Logistic> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredFeedingType> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#requiredFeedRate> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Grasping
+<http://www.co-ode.org/ontologies/ont.owl/Process#Grasping> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_b754535d_6d3d_4e58_8c89_7b5e16cdbb2c> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking
+<http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> ,
+                                                                              <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Inserting
+<http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Process ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> ;
+                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08> ;
+                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                             ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Labelling
+<http://www.co-ode.org/ontologies/ont.owl/Process#Labelling> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> ,
+                                                                             <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking
+<http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> ,
+                                                                                <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Marking
+<http://www.co-ode.org/ontologies/ont.owl/Process#Marking> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredMarkingType> ;
+                                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredResolution> ;
+                                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Milling
+<http://www.co-ode.org/ontologies/ont.owl/Process#Milling> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#allowedTorque> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#PickAndPlace
+<http://www.co-ode.org/ontologies/ont.owl/Process#PickAndPlace> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
+                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#requiredGraspingType> ;
+                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#requiredReachbility> ;
+                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_b754535d_6d3d_4e58_8c89_7b5e16cdbb2c> ;
+                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#requiredPayload> ;
+                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Pressing
+<http://www.co-ode.org/ontologies/ont.owl/Process#Pressing> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> ,
+                                                                            <http://www.co-ode.org/ontologies/ont.owl#Forming> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_3bedee94_1e81_489b_8584_4b2614139d23> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08> ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#Printing
+<http://www.co-ode.org/ontologies/ont.owl/Process#Printing> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> ,
+                                                                            <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking
+<http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Marking> .
 
 
 #################################################################
@@ -4866,38 +6001,173 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MillingToolFunction
-                :OgivaToolsetFunction
-                :RatchetWrenchFunction
-                :TwistingDriver
-                <http://www.co-ode.org/ontologies/ont.owl#Drilling>
+  owl:members ( :Twisting
+                <http://www.co-ode.org/ontologies/ont.owl#Bending>
+                <http://www.co-ode.org/ontologies/ont.owl#Clinching>
+                <http://www.co-ode.org/ontologies/ont.owl#Crimping>
+                <http://www.co-ode.org/ontologies/ont.owl#Folding>
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MillingToolFunction
-                :OgivaToolsetFunction
-                :RatchetWrenchFunction
-                :TwistingDriver
-                <http://www.co-ode.org/ontologies/ont.owl#Drilling>
-                <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring>
+                <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating>
+                <http://www.co-ode.org/ontologies/ont.owl#Fastening>
+                <http://www.co-ode.org/ontologies/ont.owl#Soldering>
+                <http://www.co-ode.org/ontologies/ont.owl#Welding>
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MillingToolFunction
-                :OgivaToolsetFunction
-                :RatchetWrenchFunction
-                :TwistingDriver
-                <http://www.co-ode.org/ontologies/ont.owl#Drilling>
-                <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
-                <http://www.co-ode.org/ontologies/ont.owl#Inserting>
-                <http://www.co-ode.org/ontologies/ont.owl#Milling>
-                <http://www.co-ode.org/ontologies/ont.owl#Pick>
-                <http://www.co-ode.org/ontologies/ont.owl#PickAndPlace>
-                <http://www.co-ode.org/ontologies/ont.owl#Place>
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#ArcWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#LaserWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Assembly>
+                <http://www.co-ode.org/ontologies/ont.owl#Logistic>
+                <http://www.co-ode.org/ontologies/ont.owl#Manufacturing>
+                <http://www.co-ode.org/ontologies/ont.owl#Metrology>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#BlindRiveting>
+                <http://www.co-ode.org/ontologies/ont.owl#ImpactRiveting>
+                <http://www.co-ode.org/ontologies/ont.owl#OrbitalRiveting>
+                <http://www.co-ode.org/ontologies/ont.owl#RadialRiveting>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Casting>
+                <http://www.co-ode.org/ontologies/ont.owl#LaserAdding>
+                <http://www.co-ode.org/ontologies/ont.owl#Moulding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Clamping>
+                <http://www.co-ode.org/ontologies/ont.owl#Nailing>
+                <http://www.co-ode.org/ontologies/ont.owl#Riveting>
+                <http://www.co-ode.org/ontologies/ont.owl#Screwing>
+                <http://www.co-ode.org/ontologies/ont.owl#Sewing>
+                <http://www.co-ode.org/ontologies/ont.owl#SpringFastening>
+                <http://www.co-ode.org/ontologies/ont.owl#Stapling>
+                <http://www.co-ode.org/ontologies/ont.owl#Taping>
+                <http://www.co-ode.org/ontologies/ont.owl#ThreadRunning>
+                <http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Clipping>
+                <http://www.co-ode.org/ontologies/ont.owl#Hammering>
+                <http://www.co-ode.org/ontologies/ont.owl#MountingO-ring>
+                <http://www.co-ode.org/ontologies/ont.owl#Shrinking>
+                <http://www.co-ode.org/ontologies/ont.owl#Snapping>
+                <http://www.co-ode.org/ontologies/ont.owl#Wedging>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#ColdWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#MetalWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#DipSoldering>
+                <http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering>
+                <http://www.co-ode.org/ontologies/ont.owl#InductionSoldering>
+                <http://www.co-ode.org/ontologies/ont.owl#IronSoldering>
+                <http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering>
+                <http://www.co-ode.org/ontologies/ont.owl#TorchSoldering>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#ElectroStagWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#ElectronBeamWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#PlasmaArcWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#ShieldedMetalArcWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#TungstenArcWelding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#FlashButtWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#PercussionWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#ProjectionWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#SeamWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#SpotWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#StudWelding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#FrictionWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding>
+                <http://www.co-ode.org/ontologies/ont.owl#UltrasonicWelding>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Gluing>
+                <http://www.co-ode.org/ontologies/ont.owl#ThermalCuring>
+                <http://www.co-ode.org/ontologies/ont.owl#UV-curing>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Grinding>
+                <http://www.co-ode.org/ontologies/ont.owl#LaserCutting>
+                <http://www.co-ode.org/ontologies/ont.owl#Machining>
+                <http://www.co-ode.org/ontologies/ont.owl#Punching>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#HeatTreatment>
+                <http://www.co-ode.org/ontologies/ont.owl#SurfaceFinishing>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#Marking>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#MaterialAdding>
+                <http://www.co-ode.org/ontologies/ont.owl#MaterialConserving>
+                <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#Labelling>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#Printing>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking>
               )
 ] .
 

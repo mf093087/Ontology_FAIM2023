@@ -15,14 +15,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/OneDrive - The University of Nottingham/ESR1/work/Knowledge graph/goingmeta-main_updated/goingmeta-main/session5",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OneDrive - The University of Nottingham/ESR1/work/Knowledge graph/goingmeta-main_updated/goingmeta-main/session5&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OneDrive - The University of Nottingham\ESR1\work\Knowledge graph\goingmeta-main_updated\goingmeta-main\session5" />
@@ -33,6 +33,9 @@
       <module name="Ontology_FAIM2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Knowledge graph/Project/Building knowledge graph/data/optimised" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -52,6 +55,9 @@
       <module name="Ontology_FAIM2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Knowledge graph/Project/Building knowledge graph" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -105,10 +111,25 @@
           <line>206</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../Knowledge graph/Rotate-learn-main/Rotate-learn-main/codes/run.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook://D:/OneDrive - The University of Nottingham/ESR1/work/Knowledge graph/goingmeta-main_updated/goingmeta-main/session5/Ontology_Driven_KGManufacturing_creation.ipynb</url>
           <line>47</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook://D:/OneDrive - The University of Nottingham/ESR1/work/Knowledge graph/goingmeta-main_updated/goingmeta-main/session5/Ontology_Driven_KGManufacturing_creation.ipynb</url>
+          <line>54</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook://D:/OneDrive - The University of Nottingham/ESR1/work/Knowledge graph/goingmeta-main_updated/goingmeta-main/session5/Ontology_Driven_KGManufacturing_creation.ipynb</url>
+          <line>74</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
