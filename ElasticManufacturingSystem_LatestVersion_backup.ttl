@@ -1899,6 +1899,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                               rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
 
 
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Location
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Location> rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring
 <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring> rdf:type owl:DatatypeProperty ;
                                                               rdfs:subPropertyOf :CapabilityParameter .
@@ -1918,6 +1922,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution
 <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution> rdf:type owl:DatatypeProperty ;
                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Makring> .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskStatus
+<http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskStatus> rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType
@@ -2317,6 +2325,14 @@ owl:cardinality rdf:type owl:AnnotationProperty .
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty :DeviceID ;
                            owl:allValuesFrom xsd:int
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :name ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Location> ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
                          ] .
 
 
@@ -4073,16 +4089,16 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Task
 :Task rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> ;
-                        owl:someValuesFrom owl:rational
-                      ] ,
-                      [ rdf:type owl:Restriction ;
                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#CustomerName> ;
                         owl:allValuesFrom rdfs:Literal
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#TaskID> ;
                         owl:allValuesFrom rdfs:Literal
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskStatus> ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> ;
@@ -5003,11 +5019,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                     owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#ShapingManufacturing> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Normal_task
-<http://www.co-ode.org/ontologies/ont.owl#Normal_task> rdf:type owl:Class ;
-                                                       rdfs:subClassOf :Task .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_8f0c20c5_0e56_4cc0_999a_fb7c238c0f65
 <http://www.co-ode.org/ontologies/ont.owl#OWLClass_8f0c20c5_0e56_4cc0_999a_fb7c238c0f65> rdf:type owl:Class ;
                                                                                          rdfs:subClassOf :Process ,
@@ -5257,11 +5268,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Riveting
 <http://www.co-ode.org/ontologies/ont.owl#Riveting> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Rush_order_task
-<http://www.co-ode.org/ontologies/ont.owl#Rush_order_task> rdf:type owl:Class ;
-                                                           rdfs:subClassOf :Task .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Screwing
@@ -5720,16 +5726,16 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> ,
                                                                            [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredMarkingType> ;
-                                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                           ] ,
-                                                                           [ rdf:type owl:Restriction ;
                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
                                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                            ] ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredResolution> ;
                                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredMarkingType> ;
+                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                            ] .
 
 
