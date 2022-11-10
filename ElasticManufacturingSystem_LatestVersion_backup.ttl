@@ -128,6 +128,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasInputCapability
 :hasInputCapability rdf:type owl:ObjectProperty ;
+                    owl:inverseOf <http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability> ;
                     rdfs:domain :CombinedCapability ;
                     rdfs:range :Capability ;
                     rdfs:comment "This property is used to indicate from which capabilities a certain combined capability is composed of."^^xsd:string .
@@ -228,6 +229,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :refersToCapability rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ;
                     rdfs:range :Capability .
+
+
+###  http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability
+<http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ElasticResponseOf
@@ -4396,7 +4401,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability
 <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf :CombinedCapability ,
+                                                                        rdfs:subClassOf :SimpleCapability ,
                                                                                         <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> ,
                                                                                         [ rdf:type owl:Restriction ;
                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Accuracy> ;
