@@ -4483,21 +4483,21 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeeding
-<http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeeding> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom :LocatingVisual
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom :PartStoringInBulk
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :payload ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] .
+###  http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeedingCapability
+<http://www.co-ode.org/ontologies/ont.owl#BulkBoxFeedingCapability> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom :LocatingVisual
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom :PartStoringInBulk
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :payload ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Casting
@@ -4647,89 +4647,89 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                              <http://www.co-ode.org/ontologies/ont.owl/Process#Feeding> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#FingerGrasping
-<http://www.co-ode.org/ontologies/ont.owl#FingerGrasping> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom :FingerFunction
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom :FingerGripperFunction
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasAllowedItemShapeAndSize_max ;
-                                                                            owl:maxCardinality "4"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasAllowedItemShapeAndSize_min ;
-                                                                            owl:maxCardinality "4"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerType ;
-                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :graspingType ;
-                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :accuracy ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerClosingTime_min ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerNumber ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerOpeningTime_min ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerOpening_max ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerOpening_min ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :forceControl ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :graspingForce_max ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :graspingForce_min ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :payload ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :positionControl ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :repeatability ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :fingerType ;
-                                                                            owl:maxCardinality "2"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :graspingType ;
-                                                                            owl:maxCardinality "2"^^xsd:nonNegativeInteger
-                                                                          ] .
+###  http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability
+<http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom :FingerFunction
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom :FingerGripperFunction
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasAllowedItemShapeAndSize_max ;
+                                                                                      owl:maxCardinality "4"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasAllowedItemShapeAndSize_min ;
+                                                                                      owl:maxCardinality "4"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerType ;
+                                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :graspingType ;
+                                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :accuracy ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerClosingTime_min ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerNumber ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerOpeningTime_min ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerOpening_max ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerOpening_min ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :forceControl ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :graspingForce_max ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :graspingForce_min ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :payload ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :positionControl ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :repeatability ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :fingerType ;
+                                                                                      owl:maxCardinality "2"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :graspingType ;
+                                                                                      owl:maxCardinality "2"^^xsd:nonNegativeInteger
+                                                                                    ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#FingerGripper
@@ -4737,7 +4737,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                          rdfs:subClassOf :Gripper ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasCapability> ;
-                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability>
                                                                          ] ;
                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#VacuumGripper> .
 
@@ -4896,7 +4896,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                ] ,
                                                                                [ rdf:type owl:Restriction ;
                                                                                  owl:onProperty :hasInputCapability ;
-                                                                                 owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+                                                                                 owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability>
                                                                                ] ,
                                                                                [ rdf:type owl:Restriction ;
                                                                                  owl:onProperty :repeatability ;
@@ -5287,46 +5287,46 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Screwing
-<http://www.co-ode.org/ontologies/ont.owl#Screwing> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> ,
-                                                                    <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :hasInputCapability ;
-                                                                      owl:someValuesFrom :Moving
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :hasInputCapability ;
-                                                                      owl:someValuesFrom :SpinningTool
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :screwSize ;
-                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :screwType ;
-                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :screwingHead_effectiveLength ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :spinningSpeed_max ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :spinningSpeed_min ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :torque_max ;
-                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty :torque_min ;
-                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                    ] .
+###  http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability
+<http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> ,
+                                                                              <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :hasInputCapability ;
+                                                                                owl:someValuesFrom :Moving
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :hasInputCapability ;
+                                                                                owl:someValuesFrom :SpinningTool
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :screwSize ;
+                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :screwType ;
+                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :screwingHead_effectiveLength ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :spinningSpeed_max ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :spinningSpeed_min ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :torque_max ;
+                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty :torque_min ;
+                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                              ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#SeamWelding
@@ -5434,10 +5434,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                         rdfs:subClassOf :CombinedCapability ,
                                                                         [ rdf:type owl:Class ;
                                                                           owl:unionOf ( :MagneticGrasping
-                                                                                        <http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping>
+                                                                                        <http://www.co-ode.org/ontologies/ont.owl#VacuumGraspingCapability>
                                                                                         [ rdf:type owl:Restriction ;
                                                                                           owl:onProperty :hasInputCapability ;
-                                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGrasping>
+                                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability>
                                                                                         ]
                                                                                       )
                                                                         ] ,
@@ -5489,62 +5489,62 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 For example robot attached with a gripper, or conveyor alone have this capability.""" .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#TrayFeeding
-<http://www.co-ode.org/ontologies/ont.owl#TrayFeeding> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasInputCapability ;
-                                                                         owl:someValuesFrom :PartStoringInTray
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasInputCapability ;
-                                                                         owl:someValuesFrom :TrayHolding
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
-                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                         owl:onClass :LocatingVisual
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
-                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                         owl:onClass :PartStoringInBulk
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
-                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                         owl:onClass :LocatingVisual
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
-                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                         owl:onClass :PartStoringInBulk
-                                                                       ] .
+###  http://www.co-ode.org/ontologies/ont.owl#TrayFeedingCapability
+<http://www.co-ode.org/ontologies/ont.owl#TrayFeedingCapability> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasInputCapability ;
+                                                                                   owl:someValuesFrom :PartStoringInTray
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasInputCapability ;
+                                                                                   owl:someValuesFrom :TrayHolding
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass :LocatingVisual
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass :PartStoringInBulk
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass :LocatingVisual
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
+                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                   owl:onClass :PartStoringInBulk
+                                                                                 ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#TubeFeeding
-<http://www.co-ode.org/ontologies/ont.owl#TubeFeeding> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasInputCapability ;
-                                                                         owl:someValuesFrom :PartStoringInTube
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :hasInputCapability ;
-                                                                         owl:someValuesFrom :TubeFeederBaseFunction
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :feedRate_max ;
-                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :payload ;
-                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty :repeatability ;
-                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                       ] .
+###  http://www.co-ode.org/ontologies/ont.owl#TubeFeedingCapability
+<http://www.co-ode.org/ontologies/ont.owl#TubeFeedingCapability> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#FeedingCapability> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasInputCapability ;
+                                                                                   owl:someValuesFrom :PartStoringInTube
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :hasInputCapability ;
+                                                                                   owl:someValuesFrom :TubeFeederBaseFunction
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :feedRate_max ;
+                                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :payload ;
+                                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty :repeatability ;
+                                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                 ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#TungstenArcWelding
@@ -5600,41 +5600,41 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                                              ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping
-<http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom :VacuumGripperFunction
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasInputCapability ;
-                                                                            owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VacuumCupFunction>
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :hasItemSize_min ;
-                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :cupNumber ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :holdingForce_max ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :lateralForce_max ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :payload ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] ,
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :volume ;
-                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                          ] .
+###  http://www.co-ode.org/ontologies/ont.owl#VacuumGraspingCapability
+<http://www.co-ode.org/ontologies/ont.owl#VacuumGraspingCapability> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#GraspingCapability> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom :VacuumGripperFunction
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasInputCapability ;
+                                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VacuumCupFunction>
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasItemSize_min ;
+                                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :cupNumber ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :holdingForce_max ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :lateralForce_max ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :payload ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :volume ;
+                                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                    ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#VacuumGripper
@@ -5642,7 +5642,7 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                          rdfs:subClassOf :Gripper ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasCapability> ;
-                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VacuumGrasping>
+                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VacuumGraspingCapability>
                                                                          ] .
 
 
@@ -5704,10 +5704,10 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                                             ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking
-<http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
-                                                                              <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+###  http://www.co-ode.org/ontologies/ont.owl/Process#InkMarkingCapability
+<http://www.co-ode.org/ontologies/ont.owl/Process#InkMarkingCapability> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
+                                                                                        <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Inserting
@@ -5727,16 +5727,16 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                                              ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl/Process#Labelling
-<http://www.co-ode.org/ontologies/ont.owl/Process#Labelling> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
-                                                                             <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+###  http://www.co-ode.org/ontologies/ont.owl/Process#LabellingCapability
+<http://www.co-ode.org/ontologies/ont.owl/Process#LabellingCapability> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
+                                                                                       <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking
-<http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
-                                                                                <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+###  http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarkingCapability
+<http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarkingCapability> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
+                                                                                          <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Marking
@@ -5811,15 +5811,15 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                                             ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl/Process#Printing
-<http://www.co-ode.org/ontologies/ont.owl/Process#Printing> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
-                                                                            <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
+###  http://www.co-ode.org/ontologies/ont.owl/Process#PrintingCapability
+<http://www.co-ode.org/ontologies/ont.owl/Process#PrintingCapability> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
+                                                                                      <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking
-<http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> .
+###  http://www.co-ode.org/ontologies/ont.owl/Process#StampMarkingCapability
+<http://www.co-ode.org/ontologies/ont.owl/Process#StampMarkingCapability> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> .
 
 
 #################################################################
@@ -6080,7 +6080,7 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
   owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Clamping>
                 <http://www.co-ode.org/ontologies/ont.owl#Nailing>
                 <http://www.co-ode.org/ontologies/ont.owl#Riveting>
-                <http://www.co-ode.org/ontologies/ont.owl#Screwing>
+                <http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability>
                 <http://www.co-ode.org/ontologies/ont.owl#Sewing>
                 <http://www.co-ode.org/ontologies/ont.owl#SpringFastening>
                 <http://www.co-ode.org/ontologies/ont.owl#Stapling>
@@ -6185,11 +6185,11 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl/Process#InkMarking>
-                <http://www.co-ode.org/ontologies/ont.owl/Process#Labelling>
-                <http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarking>
-                <http://www.co-ode.org/ontologies/ont.owl/Process#Printing>
-                <http://www.co-ode.org/ontologies/ont.owl/Process#StampMarking>
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl/Process#InkMarkingCapability>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#LabellingCapability>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#LaserMarkingCapability>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#PrintingCapability>
+                <http://www.co-ode.org/ontologies/ont.owl/Process#StampMarkingCapability>
               )
 ] .
 
