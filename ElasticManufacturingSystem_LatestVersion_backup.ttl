@@ -5129,7 +5129,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                   ] ,
                                                                                   [ rdf:type owl:Restriction ;
                                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability> ;
-                                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#PickAndPlaceCapability>
+                                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#PressingCapability>
                                                                                   ] ,
                                                                                   [ rdf:type owl:Restriction ;
                                                                                     owl:onProperty :hasWorkspaceTypeAndDimensions ;
