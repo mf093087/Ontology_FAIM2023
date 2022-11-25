@@ -67,35 +67,30 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_exact
 :hasAllowedItemShapeAndSize_exact rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                                  rdfs:range :ShapeAndSizeDefinition .
+                                  rdfs:subPropertyOf :CapabilityParametersAdditional .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_internal_max
 :hasAllowedItemShapeAndSize_internal_max rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                                         rdfs:range :ShapeAndSizeDefinition ;
                                          rdfs:comment "This property is used to define the shape and maximun internal size of items that can be handled with the capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_internal_min
 :hasAllowedItemShapeAndSize_internal_min rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                                         rdfs:range :ShapeAndSizeDefinition ;
                                          rdfs:comment "This property is used to define the shape and minimun internal size of items that can be handled with the capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_max
 :hasAllowedItemShapeAndSize_max rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                                rdfs:range :ShapeAndSizeDefinition ;
                                 rdfs:comment "This property is used to define the shape and maximun size of items that can be handled with the capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasAllowedItemShapeAndSize_min
 :hasAllowedItemShapeAndSize_min rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                                rdfs:range :ShapeAndSizeDefinition ;
                                 rdfs:comment "This property is used to define the shape and minimum  size of items that can be handled with the capability."^^xsd:string .
 
 
@@ -108,21 +103,18 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_max
 :hasFixturingShapeAndSpace_max rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                               rdfs:range :ShapeAndSizeDefinition ;
                                rdfs:comment "This parameter is used to save the information related to the maximum size and shape of the fixtured product. This property is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_max can be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasFixturingShapeAndSpace_min
 :hasFixturingShapeAndSpace_min rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                               rdfs:range :ShapeAndSizeDefinition ;
                                rdfs:comment "Thi parameter is used to save the information related to the minimum size and shape of the fixtured product. This parameter is used if the shape is relevant. Otherwise the bounding box type parameter hasItemSize_min can be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasForceDetail
 :hasForceDetail rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                rdfs:range :ForceDetail ;
                 rdfs:comment "This parameter is used to refer to the min and max force values and direction of the force."^^xsd:string .
 
 
@@ -130,36 +122,31 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasInputCapability rdf:type owl:ObjectProperty ;
                     owl:inverseOf <http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability> ;
                     rdfs:domain :CombinedCapability ;
-                    rdfs:range :Capability ;
                     rdfs:comment "This property is used to indicate from which capabilities a certain combined capability is composed of."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_max
 :hasItemSize_max rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                 rdfs:range :ItemSize ;
                  rdfs:comment "This property is used to link the capabilities to the maximum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_max should be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasItemSize_min
 :hasItemSize_min rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                 rdfs:range :ItemSize ;
                  rdfs:comment "This property is used to link the capabilities to the minimum item size they can handle. If the shape is critical, then another parameter called hasAllowedItemShapeAndSize_min should be used."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasLinearMovementRange
 :hasLinearMovementRange rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                        rdf:type owl:FunctionalProperty ;
-                        rdfs:range :LinearMovementRange .
+                        rdf:type owl:FunctionalProperty .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasRivetSize_max
 :hasRivetSize_max rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :CapabilityParametersAdditional ;
                   rdf:type owl:FunctionalProperty ;
-                  rdfs:range :ItemSize ;
                   rdfs:comment "1111This property is used to link to the definition of a maximum rivet size that can be handled with the capability. Can be used to define both the length and diameter."^^xsd:string .
 
 
@@ -167,7 +154,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasRivetSize_min rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :CapabilityParametersAdditional ;
                   rdf:type owl:FunctionalProperty ;
-                  rdfs:range :ItemSize ;
                   rdfs:comment "This property is used to link to the definition of a minimum rivet size that can be handled with the capability. Can be used to define both the length and diameter."^^xsd:string .
 
 
@@ -175,14 +161,12 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasRotationMovementRange rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf :CapabilityParametersAdditional ;
                           rdf:type owl:FunctionalProperty ;
-                          rdfs:range :RotationalMovementRange ;
                           rdfs:comment "This parameter is used to give details on the movement ranges of rotational capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#hasShapeAndSize
 :hasShapeAndSize rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :CapabilityParametersAdditional ;
-                 rdfs:range :ShapeAndSizeDefinition ;
                  rdfs:comment "This property is used to associate an object to a shape definition, i.e. to present the shape and size of the object, which is critical for determining the match between product requirements. It can be used e.g. to define the shape of a tool."^^xsd:string .
 
 
@@ -208,7 +192,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasToolShapeAndSize rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :CapabilityParametersAdditional ;
                      rdf:type owl:FunctionalProperty ;
-                     rdfs:range :ShapeAndSizeDefinition ;
                      rdfs:comment "This property indicates the shape and size of the tool used to accomplish this capability."^^xsd:string .
 
 
@@ -216,19 +199,16 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :hasWorkspaceTypeAndDimensions rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :CapabilityParametersAdditional ;
                                rdf:type owl:FunctionalProperty ;
-                               rdfs:range :Workspace ;
                                rdfs:comment "This property is used to link the moving capability to a certain workspace type and its dimensions."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#referToTheDocument
-:referToTheDocument rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Task .
+:referToTheDocument rdf:type owl:ObjectProperty .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#refersToCapability
 :refersToCapability rdf:type owl:ObjectProperty ,
-                             owl:FunctionalProperty ;
-                    rdfs:range :Capability .
+                             owl:FunctionalProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability
@@ -253,28 +233,23 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasCapacityInformation
-<http://www.co-ode.org/ontologies/ont.owl#hasCapacityInformation> rdf:type owl:ObjectProperty ;
-                                                                  rdfs:domain :Task ;
-                                                                  rdfs:range :Capacity .
+<http://www.co-ode.org/ontologies/ont.owl#hasCapacityInformation> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasProcessRequirement
-<http://www.co-ode.org/ontologies/ont.owl#hasProcessRequirement> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:range :ProcessRequirement .
+<http://www.co-ode.org/ontologies/ont.owl#hasProcessRequirement> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasProductFeature
 <http://www.co-ode.org/ontologies/ont.owl#hasProductFeature> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#ProductParameter> ;
-                                                             rdfs:domain :Product ;
-                                                             rdfs:range :ProductFeatures .
+                                                             rdfs:domain :Product .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasProductRequirement
 <http://www.co-ode.org/ontologies/ont.owl#hasProductRequirement> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#ProductParameter> ;
-                                                                 rdfs:domain :Product ;
-                                                                 rdfs:range :ProductRequirement .
+                                                                 rdfs:domain :Product .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isProcessOf
@@ -294,8 +269,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredElasticResponse
-<http://www.co-ode.org/ontologies/ont.owl#requiredElasticResponse> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:domain :Task .
+<http://www.co-ode.org/ontologies/ont.owl#requiredElasticResponse> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredProcess
@@ -306,7 +280,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredProduct
 <http://www.co-ode.org/ontologies/ont.owl#requiredProduct> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain :Task ;
                                                            rdfs:range :Product .
 
 
@@ -1952,26 +1925,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                           rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_253561c7_90a7_4aba_ab6c_a83371300984> .
 
 
-###  http://www.co-ode.org/ontologies/ont.ow/Process#DeviceRunningStatus
-<http://www.co-ode.org/ontologies/ont.ow/Process#DeviceRunningStatus> rdf:type owl:DatatypeProperty ;
-                                                                      rdfs:subPropertyOf :DeviceParameters .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#DueDate
-<http://www.co-ode.org/ontologies/ont.ow/Process#DueDate> rdf:type owl:DatatypeProperty ;
-                                                          rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DeviceCost
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DeviceCost> rdf:type owl:DatatypeProperty ;
-                                                                               rdfs:subPropertyOf :DeviceParameters .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ReconfigurationTask
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ReconfigurationTask> rdf:type owl:DatatypeProperty ;
-                                                                                        rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#ComCapabilityID
 <http://www.co-ode.org/ontologies/ont.owl#ComCapabilityID> rdf:type owl:DatatypeProperty .
 
@@ -2073,7 +2026,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#TaskDocuments
 <http://www.co-ode.org/ontologies/ont.owl#TaskDocuments> rdf:type owl:DatatypeProperty ;
                                                          rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#TaskInformation> ;
-                                                         rdfs:domain :Task ;
                                                          rdfs:range rdfs:Literal .
 
 
@@ -2121,7 +2073,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#requiredProductNumbers
 <http://www.co-ode.org/ontologies/ont.owl#requiredProductNumbers> rdf:type owl:DatatypeProperty ;
                                                                   rdfs:subPropertyOf owl:topDataProperty ;
-                                                                  rdfs:domain :Task ;
                                                                   rdfs:range rdfs:Literal .
 
 
@@ -2180,110 +2131,13 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Asset_utilisation
-:Asset_utilisation rdf:type owl:Class ;
-                   rdfs:subClassOf :Capacity_utilisation ,
-                                   <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives> .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#BasicResourceInformation
-:BasicResourceInformation rdf:type owl:Class ;
-                          rdfs:subClassOf :CapabilityParameterAdditional ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :dimension_x ;
-                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :dimension_y ;
-                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :dimension_z ;
-                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :mass ;
-                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :diameter ;
-                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                          ] ;
-                          rdfs:comment "This class is meant for storing some basic resource information which is needed for combined capability calculation and capability matching, but which is not directly logically related to any capability."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#BoxShape
-:BoxShape rdf:type owl:Class ;
-          rdfs:subClassOf :ShapeAndSize ,
-                          :ShapeAndSizeDefinition ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :dimension_x ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :dimension_y ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :dimension_z ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ;
-          rdfs:comment "This class is used to define the dimensional parameters for a box shaped object."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Capability
-:Capability rdf:type owl:Class ;
-            rdfs:subClassOf :CapabilityDefinitionElement ;
-            rdfs:comment "Capability class is a parent class for the specific capability classes, which define the functionalities of resources. Capabilities can be simple or combined capabilities, but they are all saved as sub-classes of the Capability without separating them into different classes. This is because combined capabilities may be aggregated from lower level combined capabilities."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityDefinitionElement
-:CapabilityDefinitionElement rdf:type owl:Class .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#CapabilityParameterAdditional
-:CapabilityParameterAdditional rdf:type owl:Class ;
-                               rdfs:subClassOf :CapabilityDefinitionElement ;
-                               rdfs:comment "In this class are save."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Capacity
-:Capacity rdf:type owl:Class .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Capacity_utilisation
-:Capacity_utilisation rdf:type owl:Class ;
-                      rdfs:subClassOf :Capacity .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Changeover_Time
-:Changeover_Time rdf:type owl:Class ;
-                 rdfs:subClassOf :Control_units .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#CombinedCapability
 :CombinedCapability rdf:type owl:Class ;
-                    rdfs:subClassOf :Capability ,
-                                    [ rdf:type owl:Restriction ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#ComCapabilityID> ;
                                       owl:allValuesFrom rdfs:Literal
                                     ] ;
                     rdfs:comment "This is the parent class for all the combined capabilities."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ConeShape
-:ConeShape rdf:type owl:Class ;
-           rdfs:subClassOf :ShapeAndSize ,
-                           :ShapeAndSizeDefinition ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :diameter ;
-                             owl:cardinality "2"^^xsd:nonNegativeInteger
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :dimension_z ;
-                             owl:cardinality "1"^^xsd:nonNegativeInteger
-                           ] ;
-           rdfs:comment "This class is used to define the dimensional parameters for a cone shaped object."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ControlDevices
@@ -2291,57 +2145,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                 rdfs:subClassOf :Devices .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Control_units
-:Control_units rdf:type owl:Class ;
-               rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Coordinate
-:Coordinate rdf:type owl:Class ;
-            rdfs:subClassOf :ProductFeatures .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Customer_returns
-:Customer_returns rdf:type owl:Class ;
-                  rdfs:subClassOf :On_time_delivery .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Cycle_time
-:Cycle_time rdf:type owl:Class ;
-            rdfs:subClassOf :Machine_utilisation .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#CylinderShape
-:CylinderShape rdf:type owl:Class ;
-               rdfs:subClassOf :ShapeAndSize ,
-                               :ShapeAndSizeDefinition ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :diameter ;
-                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :dimension_z ;
-                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                               ] ;
-               rdfs:comment "This class is used to define the dimensional parameters for a cylinder shaped object."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Demand_Forecasting
-:Demand_Forecasting rdf:type owl:Class ;
-                    rdfs:subClassOf :Material_Utilisation .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Devices
 :Devices rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Process#DeviceRunningStatus> ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DeviceCost> ;
-                           owl:someValuesFrom owl:rational
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty :DeviceID ;
                            owl:allValuesFrom xsd:int
                          ] ,
@@ -2353,16 +2159,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                            owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Location> ;
                            owl:cardinality "1"^^xsd:nonNegativeInteger
                          ] .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Direct_Material_Usage_Variance
-:Direct_Material_Usage_Variance rdf:type owl:Class ;
-                                rdfs:subClassOf :Material_Utilisation .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Downtime_To_Opearting_Time
-:Downtime_To_Opearting_Time rdf:type owl:Class ;
-                            rdfs:subClassOf :Set-up_time .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#DrillBitFunction
@@ -2405,7 +2201,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                    :ForceApplying ,
                                    :HoldingByGravity ,
                                    :MillingCutterFunction ,
-                                   :MillingToolFunction ,
                                    :Moving ,
                                    :MovingCollaborative ,
                                    :MovingTool ,
@@ -2421,32 +2216,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                   rdfs:comment "Capability of a drill bit."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Employee_turnover
-:Employee_turnover rdf:type owl:Class ;
-                   rdfs:subClassOf :People ;
-                   owl:disjointWith :profit_per_employee .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Energy_Cost_Per_Unit
-:Energy_Cost_Per_Unit rdf:type owl:Class ;
-                      rdfs:subClassOf :Control_units .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ExpandingRingWithGripper
 :ExpandingRingWithGripper rdf:type owl:Class ;
                           rdfs:subClassOf :SimpleCapability ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
-                                            owl:allValuesFrom :CylinderShape
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :hasAllowedItemShapeAndSize_internal_min ;
-                                            owl:allValuesFrom :CylinderShape
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty :hasShapeAndSize_internal ;
-                                            owl:allValuesFrom :CylinderShape
-                                          ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty :hasAllowedItemShapeAndSize_internal_max ;
                                             owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -2469,10 +2241,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ExpansionGrasping
 :ExpansionGrasping rdf:type owl:Class ;
                    rdfs:subClassOf :SimpleCapability ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasShapeAndSize ;
-                                     owl:someValuesFrom :ShapeAndSizeDefinition
-                                   ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :graspingType ;
                                      owl:hasValue "Internal grasping"^^xsd:string
@@ -2543,7 +2311,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                  :ForceApplying ,
                                  :HoldingByGravity ,
                                  :MillingCutterFunction ,
-                                 :MillingToolFunction ,
                                  :Moving ,
                                  :MovingCollaborative ,
                                  :MovingTool ,
@@ -2609,7 +2376,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                        owl:disjointWith :ForceApplying ,
                                         :HoldingByGravity ,
                                         :MillingCutterFunction ,
-                                        :MillingToolFunction ,
                                         :Moving ,
                                         :MovingCollaborative ,
                                         :MovingTool ,
@@ -2625,30 +2391,15 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                        rdfs:comment "Capability of a finger gripper without the fingers.Note! It has been decided in ReCaM that the finger gripper is described as one unit, including the fingers. Therefore, this capability is not used in ReCaM."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#First_pass_yield
-:First_pass_yield rdf:type owl:Class ;
-                  rdfs:subClassOf :Machine_utilisation .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#FixationDetail
-:FixationDetail rdf:type owl:Class ;
-                rdfs:subClassOf :NonGeometricFeature .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ForceApplying
 :ForceApplying rdf:type owl:Class ;
                rdfs:subClassOf :SimpleCapability ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasForceDetail ;
-                                 owl:allValuesFrom :ForceDetail
-                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :hasForceDetail ;
                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
                                ] ;
                owl:disjointWith :HoldingByGravity ,
                                 :MillingCutterFunction ,
-                                :MillingToolFunction ,
                                 :Moving ,
                                 :MovingCollaborative ,
                                 :MovingTool ,
@@ -2662,28 +2413,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                 :TubeFeederBaseFunction ,
                                 :VacuumGripperFunction ;
                rdfs:comment "Capability to apply force to certain directions."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ForceDetail
-:ForceDetail rdf:type owl:Class ;
-             rdfs:subClassOf :CapabilityParameterAdditional ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :forceDirection ;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :force_max ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :force_min ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :force_resolution ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ;
-             rdfs:comment "This class is used to store instances related to force directions and minimum and maximum force values. It is used by the ForceApplying capability."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#FrameFunction
@@ -2712,11 +2441,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                rdfs:comment "Capability to act as a frame in different processes. This capability is used to hold the resource (e.g. in case of riveting or pressing) in relation to the product and to provide the counter force to the applied process force."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#GeometricFeature
-:GeometricFeature rdf:type owl:Class ;
-                  rdfs:subClassOf :ProductFeatures .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Gripper
 :Gripper rdf:type owl:Class ;
          rdfs:subClassOf :Devices .
@@ -2730,11 +2454,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
                                 ] ;
                 rdfs:comment "This is the capability of the hammer.Hammer can not do anything alone."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Health_and_Safety_Incidence_Rate
-:Health_and_Safety_Incidence_Rate rdf:type owl:Class ;
-                                  rdfs:subClassOf :Revenue_per_employee .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#HoldingByGravity
@@ -2753,7 +2472,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                     owl:cardinality "1"^^xsd:nonNegativeInteger
                                   ] ;
                   owl:disjointWith :MillingCutterFunction ,
-                                   :MillingToolFunction ,
                                    :Moving ,
                                    :MovingCollaborative ,
                                    :MovingTool ,
@@ -2767,76 +2485,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                    :TubeFeederBaseFunction ,
                                    :VacuumGripperFunction ;
                   rdfs:comment "Capability to hold items by gravity.For example belt conveyor has this capability."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Hole
-:Hole rdf:type owl:Class ;
-      rdfs:subClassOf :GeometricFeature ;
-      owl:disjointWith :Protrusion .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Inventory_accuracy
-:Inventory_accuracy rdf:type owl:Class ;
-                    rdfs:subClassOf :On_time_delivery .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Inventory_turnover
-:Inventory_turnover rdf:type owl:Class ;
-                    rdfs:subClassOf :On_time_delivery .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ItemSize
-:ItemSize rdf:type owl:Class ;
-          rdfs:subClassOf :CapabilityParameterAdditional ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :height ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :weight ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :diameter ;
-                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :length ;
-                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :width ;
-                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                          ] ;
-          rdfs:comment "This class is used to store the dimensional information of items. Can be used to define the max and min item size that can be handled with a certain capability."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Labour_as_percentage_cost
-:Labour_as_percentage_cost rdf:type owl:Class ;
-                           rdfs:subClassOf :Revenue_per_employee .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Lead_time
-:Lead_time rdf:type owl:Class ;
-           rdfs:subClassOf :Machine_utilisation .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#LinearMovementRange
-:LinearMovementRange rdf:type owl:Class ;
-                     rdfs:subClassOf :MovementRange ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :translation_x ;
-                                       owl:cardinality "2"^^xsd:nonNegativeInteger
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :translation_y ;
-                                       owl:cardinality "2"^^xsd:nonNegativeInteger
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :translation_z ;
-                                       owl:cardinality "2"^^xsd:nonNegativeInteger
-                                     ] ;
-                     rdfs:comment "This class is for storing the information about the linear movement ranges. Two values should be given to indicate the movement ranges to different +/- direction from the home position."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#LocatingVisual
@@ -2909,16 +2557,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                 rdfs:comment "Capability to visually detect the orientation and position of the parts, e.g. based on machine vision. This is the capability of the whole camera system, including e.g. lenses, flash and image prosessing. (This capabiility could be further divided into lower level capabilities (VisualSensing, ObjectRecognition and ImageProcessing) but it is out of scope in ReCaM.)"^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Machine_downtime
-:Machine_downtime rdf:type owl:Class ;
-                  rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Machine_utilisation
-:Machine_utilisation rdf:type owl:Class ;
-                     rdfs:subClassOf :Asset_utilisation .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#MagneticGrasping
 :MagneticGrasping rdf:type owl:Class ;
                   rdfs:subClassOf :SimpleCapability ,
@@ -2937,55 +2575,10 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                   rdfs:comment "Capability to grasp items by magnet. E.g. screw driver head/tool tip may have this capability."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Maintenance
-:Maintenance rdf:type owl:Class ;
-             rdfs:subClassOf :Lead_time .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ManualToolDriverFunction
 :ManualToolDriverFunction rdf:type owl:Class ;
                           rdfs:subClassOf :SimpleCapability ;
                           rdfs:comment "This is a capability of a manual driver tool, e.g. a screwdriver, without the tool tip (e.g. a screwing head). This capability doesn't have any parameters."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Manufacturing_Lead_Time
-:Manufacturing_Lead_Time rdf:type owl:Class ;
-                         rdfs:subClassOf :Capacity .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Manufacturing_cost_per_unit
-:Manufacturing_cost_per_unit rdf:type owl:Class ;
-                             rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Material
-:Material rdf:type owl:Class ;
-          rdfs:subClassOf :NonGeometricFeature .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Material_Utilisation
-:Material_Utilisation rdf:type owl:Class ;
-                      rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Material_Yield_Variance
-:Material_Yield_Variance rdf:type owl:Class ;
-                         rdfs:subClassOf :Material_Utilisation .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Mean_Time_Between_Failure
-:Mean_Time_Between_Failure rdf:type owl:Class ;
-                           rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Mean_Time_to_Failure
-:Mean_Time_to_Failure rdf:type owl:Class ;
-                      rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Mean_Time_to_Repair
-:Mean_Time_to_Repair rdf:type owl:Class ;
-                     rdfs:subClassOf :Set-up_time .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Measurement_Accessory
@@ -3133,8 +2726,7 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                          owl:onProperty :teethNumber ;
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
-                       owl:disjointWith :MillingToolFunction ,
-                                        :Moving ,
+                       owl:disjointWith :Moving ,
                                         :MovingCollaborative ,
                                         :MovingTool ,
                                         :PartStoringInTray ,
@@ -3149,55 +2741,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                        rdfs:comment "Capability of a milling cutter."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#MillingToolFunction
-:MillingToolFunction rdf:type owl:Class ;
-                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasInputCapability ;
-                                       owl:someValuesFrom :MillingCutterFunction
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasInputCapability ;
-                                       owl:someValuesFrom :ToolHolding
-                                     ] ;
-                     owl:disjointWith :Moving ,
-                                      :MovingCollaborative ,
-                                      :MovingTool ,
-                                      :OgivaToolsetFunction ,
-                                      :PartStoringInTray ,
-                                      :PartStoringInTube ,
-                                      :Releasing ,
-                                      :ScrewingHeadFunction ,
-                                      :SpinningTool ,
-                                      :ToolHolding ,
-                                      :TrayHolding ,
-                                      :TubeFeederBaseFunction ,
-                                      :VacuumGripperFunction ;
-                     rdfs:comment "Capability of a milling tool, including the tool holder and milling cutter. This capability has no parameters, as this capability is not used alone."^^xsd:string ,
-                                  "NOTE! When defining the capabilities of a milling machine, this capability should not be used. Instead, use the MillingCutterFunction and ToolHolding capabilities."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#MovementRange
-:MovementRange rdf:type owl:Class ;
-               rdfs:subClassOf :CapabilityParameterAdditional ;
-               rdfs:comment "This class is used to store the dimensional information of movement ranges. Linear and rotational movement ranges are saved in separate classes."^^xsd:string .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Moving
 :Moving rdf:type owl:Class ;
         rdfs:subClassOf :SimpleCapability ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasLinearMovementRange ;
-                          owl:allValuesFrom :LinearMovementRange
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasRotationMovementRange ;
-                          owl:allValuesFrom :RotationalMovementRange
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasWorkspaceTypeAndDimensions ;
-                          owl:allValuesFrom :Workspace
-                        ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasWorkspaceTypeAndDimensions ;
                           owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -3271,18 +2817,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 :MovingCollaborative rdf:type owl:Class ;
                      rdfs:subClassOf :SimpleCapability ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasLinearMovementRange ;
-                                       owl:allValuesFrom :LinearMovementRange
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasRotationMovementRange ;
-                                       owl:allValuesFrom :RotationalMovementRange
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasWorkspaceTypeAndDimensions ;
-                                       owl:allValuesFrom :Workspace
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasWorkspaceTypeAndDimensions ;
                                        owl:cardinality "1"^^xsd:nonNegativeInteger
                                      ] ,
@@ -3355,10 +2889,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :SimpleCapability ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :hasWorkspaceTypeAndDimensions ;
-                              owl:allValuesFrom :Workspace
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasWorkspaceTypeAndDimensions ;
                               owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -3417,42 +2947,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
             rdfs:comment "Capability of a machine to move the tool within the machine, e.g. milling machine has this capability."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Non-compliance_Events_Per_Year
-:Non-compliance_Events_Per_Year rdf:type owl:Class ;
-                                rdfs:subClassOf :On_time_delivery .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#NonGeometricFeature
-:NonGeometricFeature rdf:type owl:Class ;
-                     rdfs:subClassOf :ProductFeatures .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Number_of_units_produced
-:Number_of_units_produced rdf:type owl:Class ;
-                          rdfs:subClassOf :Cycle_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#OEE
-:OEE rdf:type owl:Class ;
-     rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#OSE
-:OSE rdf:type owl:Class ;
-     rdfs:subClassOf :Revenue_per_employee .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#OgivaFunction
 :OgivaFunction rdf:type owl:Class ;
                rdfs:subClassOf :SimpleCapability ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasShapeAndSize ;
-                                 owl:allValuesFrom :ConeShape
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasShapeAndSize_internal ;
-                                 owl:allValuesFrom :CylinderShape
-                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :hasShapeAndSize ;
                                  owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -3462,25 +2959,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                  owl:cardinality "1"^^xsd:nonNegativeInteger
                                ] ;
                rdfs:comment "Capability of an ogiva-shaped tool, which can be used to e.g. expand an o-ring."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#OgivaToolsetFunction
-:OgivaToolsetFunction rdf:type owl:Class ;
-                      rdfs:subClassOf :CombinedCapability ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasInputCapability ;
-                                        owl:someValuesFrom :OgivaFunction
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasInputCapability ;
-                                        owl:someValuesFrom :RingMountingToolFunction
-                                      ] ;
-                      rdfs:comment "Capability to expand a flexible ring, e.g. o-ring, with ogiva shaped tool. Includes the ogiva and the tool that pushes the o-ring from the ogiva."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#On_time_delivery
-:On_time_delivery rdf:type owl:Class ;
-                  rdfs:subClassOf :Capacity .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#OrbitalPowerheadFunction
@@ -3503,16 +2981,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                             owl:cardinality "1"^^xsd:nonNegativeInteger
                                           ] ;
                           rdfs:comment "Capability to act as an orbital powerhead e.g. in orbital riveting or orbital forming process."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Orientation
-:Orientation rdf:type owl:Class ;
-             rdfs:subClassOf :ProductFeatures .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Outsourcing
-:Outsourcing rdf:type owl:Class ;
-             rdfs:subClassOf :Resource_utilisation .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#PartStoringInBulk
@@ -3596,31 +3064,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                    rdfs:comment "Capability of a feeding tube that is used in tube feeders. Tube refers to a magazine in which the parts are stacked on each other and can be provided to the feeder one by one."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#People
-:People rdf:type owl:Class ;
-        rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Percentage_Planned_Maintenance
-:Percentage_Planned_Maintenance rdf:type owl:Class ;
-                                rdfs:subClassOf :Set-up_time .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Performance
-:Performance rdf:type owl:Class ;
-             rdfs:subClassOf :CapabilityParameterAdditional ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :cycleTime_average ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ;
-             rdfs:comment "This class contains information related to the performance of the resource."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Plant_Downtime
-:Plant_Downtime rdf:type owl:Class ;
-                rdfs:subClassOf :Cycle_time .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Process
 :Process rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -3645,47 +3088,8 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                          ] .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProcessRequirement
-:ProcessRequirement rdf:type owl:Class ;
-                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Processing
-:Processing rdf:type owl:Class ;
-            rdfs:subClassOf :Lead_time .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Product
-:Product rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasProductFeature> ;
-                           owl:someValuesFrom :ProductFeatures
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasProductRequirement> ;
-                           owl:someValuesFrom :ProductRequirement
-                         ] .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProductFeatures
-:ProductFeatures rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> ;
-                 owl:disjointWith :ProductRequirement .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ProductRequirement
-:ProductRequirement rdf:type owl:Class ;
-                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Requirement> .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Production_attainment
-:Production_attainment rdf:type owl:Class ;
-                       rdfs:subClassOf :Revenue_per_employee .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Protrusion
-:Protrusion rdf:type owl:Class ;
-            rdfs:subClassOf :GeometricFeature .
+:Product rdf:type owl:Class .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Pulling
@@ -3712,25 +3116,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
          rdfs:comment "This capability refers to the ability to pull items. E.g. blind riveting machine is able to form the rivets by pulling it towards itself from the rivet mandrel."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#PyramidShape
-:PyramidShape rdf:type owl:Class ;
-              rdfs:subClassOf :ShapeAndSize ,
-                              :ShapeAndSizeDefinition ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :dimension_x ;
-                                owl:cardinality "2"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :dimension_y ;
-                                owl:cardinality "2"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :dimension_z ;
-                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                              ] ;
-              rdfs:comment "This class is used to define the dimensional parameters for a pyramid shaped object."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#RadialPowerheadFunction
@@ -3769,32 +3154,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                  rdfs:comment "This is the capability of a ratchet (wrench) without the socket."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#RatchetWrenchFunction
-:RatchetWrenchFunction rdf:type owl:Class ;
-                       rdfs:subClassOf :CombinedCapability ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasInputCapability ;
-                                         owl:someValuesFrom :RatchetFunction
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasInputCapability ;
-                                         owl:hasValue :ScrewingHeadFunction
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :screwType ;
-                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :armOfForce ;
-                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :screwSize ;
-                                         owl:cardinality "1"^^xsd:nonNegativeInteger
-                                       ] ;
-                       rdfs:comment "This is a capability of a ratchet wrench with the attached socket."^^xsd:string .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#Releasing
 :Releasing rdf:type owl:Class ;
            rdfs:subClassOf :SimpleCapability ;
@@ -3805,16 +3164,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                             :TubeFeederBaseFunction ,
                             :VacuumGripperFunction ;
            rdfs:comment "Capability to release items which have been grasped. E.g. gripper has this capability."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Resource_utilisation
-:Resource_utilisation rdf:type owl:Class ;
-                      rdfs:subClassOf :Revenue_per_employee .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Revenue_per_employee
-:Revenue_per_employee rdf:type owl:Class ;
-                      rdfs:subClassOf :Capacity .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#RingMountingToolFunction
@@ -3958,29 +3307,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                  rdfs:comment "This is the capability to act as a rollset during riveting process. In impact riveting, it is the capability of the tool below the workpiece. This tool does the actual forming of the rivet, while the rivet is being pushed with another tool from another side of the product."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#RotationalMovementRange
-:RotationalMovementRange rdf:type owl:Class ;
-                         rdfs:subClassOf :MovementRange ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :rotation_x ;
-                                           owl:cardinality "2"^^xsd:nonNegativeInteger
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :rotation_y ;
-                                           owl:cardinality "2"^^xsd:nonNegativeInteger
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :rotation_z ;
-                                           owl:cardinality "2"^^xsd:nonNegativeInteger
-                                         ] ;
-                         rdfs:comment "This class is for storing the information about the rotational movement ranges. Two values should be given to indicate the movement ranges to different +/- direction from the home position."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Scrap_Rate
-:Scrap_Rate rdf:type owl:Class ;
-            rdfs:subClassOf :Material_Utilisation .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ScrewingHeadFunction
 :ScrewingHeadFunction rdf:type owl:Class ;
                       rdfs:subClassOf :SimpleCapability ,
@@ -4007,50 +3333,13 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                        :VacuumGripperFunction .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Set-up_time
-:Set-up_time rdf:type owl:Class ;
-             rdfs:subClassOf :Capacity .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ShapeAndSize
-:ShapeAndSize rdf:type owl:Class ;
-              rdfs:subClassOf :ProductFeatures .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#ShapeAndSizeDefinition
-:ShapeAndSizeDefinition rdf:type owl:Class ;
-                        rdfs:subClassOf :CapabilityParameterAdditional ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty :mass ;
-                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                        ] ;
-                        rdfs:comment "This class includes the different shape definitions that can be used to describe e.g. allowable shapes and sizes of objects that can be handled, or the shape of a mould or adapter on a high level. The sub-classes (ConeShape, BoxShape, CylinderShape, PyramidShape and SphereShape) define the dimensional parameters for different shapes."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Shipping
-:Shipping rdf:type owl:Class ;
-          rdfs:subClassOf :Lead_time .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#SimpleCapability
 :SimpleCapability rdf:type owl:Class ;
-                  rdfs:subClassOf :Capability ,
-                                  [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#SimCapabilityID> ;
                                     owl:allValuesFrom rdfs:Literal
                                   ] ;
                   rdfs:comment "This is the parent class for all the simple capabilities."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#SphereShape
-:SphereShape rdf:type owl:Class ;
-             rdfs:subClassOf :ShapeAndSize ,
-                             :ShapeAndSizeDefinition ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :diameter ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ;
-             rdfs:comment "This class is used to define the dimensional parameters for a sphere shaped object."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#SpinningTool
@@ -4091,64 +3380,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
               rdfs:comment "Capability to rotate (to spin) a tool. For example drill, screwdriver and milling machine has this capability."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Suppliers
-:Suppliers rdf:type owl:Class ;
-           rdfs:subClassOf :Outsourcing .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#SurfaceTreatment
-:SurfaceTreatment rdf:type owl:Class ;
-                  rdfs:subClassOf :NonGeometricFeature .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Take_time
-:Take_time rdf:type owl:Class ;
-           rdfs:subClassOf :Control_units .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Task
-:Task rdf:type owl:Class ;
-      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Process#DueDate> ;
-                        owl:someValuesFrom rdfs:Literal
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ReconfigurationTask> ;
-                        owl:someValuesFrom xsd:boolean
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#CustomerName> ;
-                        owl:allValuesFrom rdfs:Literal
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#TaskID> ;
-                        owl:allValuesFrom rdfs:Literal
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskStatus> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#TaskType> ;
-                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                      ] .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Third_parties
-:Third_parties rdf:type owl:Class ;
-               rdfs:subClassOf :Outsourcing .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Time_To_Production
-:Time_To_Production rdf:type owl:Class ;
-                    rdfs:subClassOf :Revenue_per_employee .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Tolerance
-:Tolerance rdf:type owl:Class ;
-           rdfs:subClassOf :NonGeometricFeature .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#ToolHolding
 :ToolHolding rdf:type owl:Class ;
              rdfs:subClassOf :SimpleCapability ,
@@ -4169,10 +3400,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#TrayHolding
 :TrayHolding rdf:type owl:Class ;
              rdfs:subClassOf :SimpleCapability ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasAllowedObjectSize ;
-                               owl:allValuesFrom :ItemSize
-                             ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasAllowedObjectSize ;
                                owl:minCardinality "1"^^xsd:nonNegativeInteger
@@ -4225,48 +3452,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                         rdfs:comment "e time to the feeding position."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Twisting
-:Twisting rdf:type owl:Class ;
-          rdfs:subClassOf :SimpleCapability ,
-                          <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :spinningSpeed_max ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :spinningSpeed_min ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :torque_max ;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :torque_min ;
-                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                          ] ;
-          rdfs:comment "This is the manual capability of a human to twist (rotate) e.g. ascrewdriver."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#TwistingDriver
-:TwistingDriver rdf:type owl:Class ;
-                rdfs:subClassOf :CombinedCapability ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasInputCapability ;
-                                  owl:someValuesFrom :ManualToolDriverFunction
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasInputCapability ;
-                                  owl:someValuesFrom :Twisting
-                                ] ;
-                rdfs:comment "This is the capability of twisting (rotating) a tool driver. Consists ofthe tool driver function itself and the twisting done by human."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Unscheduled_downtime
-:Unscheduled_downtime rdf:type owl:Class ;
-                      rdfs:subClassOf :Set-up_time .
-
-
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#VacuumGripperFunction
 :VacuumGripperFunction rdf:type owl:Class ;
                        rdfs:subClassOf :SimpleCapability ,
@@ -4279,115 +3464,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                          owl:cardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
                        rdfs:comment "Capability of the ejector and vacuum gripper body."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Volume
-:Volume rdf:type owl:Class ;
-        rdfs:subClassOf :ProductRequirement .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#Workspace
-:Workspace rdf:type owl:Class ;
-           rdfs:subClassOf :CapabilityParameterAdditional ;
-           rdfs:comment "This class is used to save the information about the workspace of the moving capability. The sub-classes (WorkspaceArticulated, WorkspaceCartesian, WorkspacePolar) define the dimensional parameters of the specific workspace type."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#WorkspaceArticulated
-:WorkspaceArticulated rdf:type owl:Class ;
-                      rdfs:subClassOf :Workspace ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :height_bottom ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :height_top ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :radius_inner ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :radius_outer ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :rotationAngle ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ;
-                      owl:disjointWith :WorkspaceCartesian ,
-                                       :WorkspaceCylinder ,
-                                       :WorkspacePolar ;
-                      rdfs:comment "This class is used to save the information of an articulated workspace. The definition is simpliified."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#WorkspaceCartesian
-:WorkspaceCartesian rdf:type owl:Class ;
-                    rdfs:subClassOf :Workspace ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :dimension_x ;
-                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :dimension_y ;
-                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :dimension_z ;
-                                      owl:cardinality "1"^^xsd:nonNegativeInteger
-                                    ] ;
-                    owl:disjointWith :WorkspaceCylinder ,
-                                     :WorkspacePolar ;
-                    rdfs:comment "This class is used to save the information of a cartesian workspace (box/cube)."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#WorkspaceCylinder
-:WorkspaceCylinder rdf:type owl:Class ;
-                   rdfs:subClassOf :Workspace ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :dimension_z ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :radius_inner ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :radius_outer ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :rotationAngle ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ;
-                   owl:disjointWith :WorkspacePolar ;
-                   rdfs:comment "This class is used to save the information of a cylindrical workspace."^^xsd:string .
-
-
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#WorkspacePolar
-:WorkspacePolar rdf:type owl:Class ;
-                rdfs:subClassOf :Workspace ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :height_bottom ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :height_top ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :radius_inner ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :radius_outer ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :rotationAngle ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ;
-                rdfs:comment "This class is used to save the information of a polar workspace."^^xsd:string .
 
 
 ###  http://resourcedescription.tut.fi/ontology/capabilityModel#WrenchFunction
@@ -4408,11 +3484,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                 rdfs:comment "This is a capability of a wrench type tool, e.g. open ended wrench or monkey wrench."^^xsd:string .
 
 
-###  http://resourcedescription.tut.fi/ontology/capabilityModel#profit_per_employee
-:profit_per_employee rdf:type owl:Class ;
-                     rdfs:subClassOf :People .
-
-
 ###  http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability
 <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> rdf:type owl:Class ;
                                                                         rdfs:subClassOf :SimpleCapability ,
@@ -4425,32 +3496,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#Resolution> ;
                                                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                                         ] .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Configuration
-<http://www.co-ode.org/ontologies/ont.ow/Process#Configuration> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ReconfigurationInformation> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Constraints
-<http://www.co-ode.org/ontologies/ont.ow/Process#Constraints> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Cost
-<http://www.co-ode.org/ontologies/ont.ow/Process#Cost> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Demand
-<http://www.co-ode.org/ontologies/ont.ow/Process#Demand> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#EnablingTechnology
-<http://www.co-ode.org/ontologies/ont.ow/Process#EnablingTechnology> rdf:type owl:Class ;
-                                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Layout> ,
-                                                                                     <http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.ow/Process#Fixturing
@@ -4471,22 +3516,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                               owl:onDataRange owl:rational
                                                                             ] .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Layout
-<http://www.co-ode.org/ontologies/ont.ow/Process#Layout> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ReconfigurationInformation> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Objectives
-<http://www.co-ode.org/ontologies/ont.ow/Process#Objectives> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Layout> ,
-                                                                             <http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Parallel
-<http://www.co-ode.org/ontologies/ont.ow/Process#Parallel> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ProcessRelationships> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.ow/Process#PlaceCapability
@@ -4514,147 +3543,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                   ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.ow/Process#PositionInformation
-<http://www.co-ode.org/ontologies/ont.ow/Process#PositionInformation> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Layout> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#ProcessRelationships
-<http://www.co-ode.org/ontologies/ont.ow/Process#ProcessRelationships> rdf:type owl:Class ;
-                                                                       rdfs:subClassOf :Process .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#ReconfigurationInformation
-<http://www.co-ode.org/ontologies/ont.ow/Process#ReconfigurationInformation> rdf:type owl:Class .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Recycling
-<http://www.co-ode.org/ontologies/ont.ow/Process#Recycling> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ProcessRelationships> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling
-<http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ReconfigurationInformation> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#SchedulingType
-<http://www.co-ode.org/ontologies/ont.ow/Process#SchedulingType> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Sequence
-<http://www.co-ode.org/ontologies/ont.ow/Process#Sequence> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#ProcessRelationships> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Process#Time
-<http://www.co-ode.org/ontologies/ont.ow/Process#Time> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Availability
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Availability> rdf:type owl:Class ;
-                                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Capacity
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Capacity> rdf:type owl:Class ;
-                                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Configuration> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraints
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraints> rdf:type owl:Class ;
-                                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Layout> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> rdf:type owl:Class ;
-                                                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Configuration> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DeviceInformation
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DeviceInformation> rdf:type owl:Class ;
-                                                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#EnablingTechnology
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#EnablingTechnology> rdf:type owl:Class ;
-                                                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Configuration> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Functionality
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Functionality> rdf:type owl:Class ;
-                                                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Investment
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Investment> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#MachineConfigurations
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#MachineConfigurations> rdf:type owl:Class ;
-                                                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#NumberOfProductTypes
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#NumberOfProductTypes> rdf:type owl:Class ;
-                                                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> ;
-                                                                                         owl:disjointWith <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Quality> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Process#Configuration> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#OperationClusterSetups
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#OperationClusterSetups> rdf:type owl:Class ;
-                                                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ProductRequirement
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ProductRequirement> rdf:type owl:Class ;
-                                                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Product_design_requirement
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Product_design_requirement> rdf:type owl:Class ;
-                                                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ProductRequirement> ;
-                                                                                               owl:disjointWith <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Production_capacity> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Production_capacity
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Production_capacity> rdf:type owl:Class ;
-                                                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#ProductRequirement> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Quality
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Quality> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#DecisionVariable> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Space
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Space> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Constraint> .
-
-
-###  http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#WorkLoad
-<http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#WorkLoad> rdf:type owl:Class ;
-                                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Objectives> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring
-<http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#ArcWelding
 <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
@@ -4663,11 +3551,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Assembly
 <http://www.co-ode.org/ontologies/ont.owl#Assembly> rdf:type owl:Class ;
                                                     rdfs:subClassOf :Process .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Bending
-<http://www.co-ode.org/ontologies/ont.owl#Bending> rdf:type owl:Class ;
-                                                   owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#BlindRiveting
@@ -4707,16 +3590,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Clinching
-<http://www.co-ode.org/ontologies/ont.owl#Clinching> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Clipping
-<http://www.co-ode.org/ontologies/ont.owl#Clipping> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Coating
 <http://www.co-ode.org/ontologies/ont.owl#Coating> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#SurfaceFinishing> .
@@ -4733,24 +3606,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                    owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Crimping
-<http://www.co-ode.org/ontologies/ont.owl#Crimping> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#DeformingFixating
-<http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#DipSoldering
-<http://www.co-ode.org/ontologies/ont.owl#DipSoldering> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing
 <http://www.co-ode.org/ontologies/ont.owl#DiscreteManufacturing> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Manufacturing> .
+                                                                 rdfs:subClassOf :Process .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#DrillingCapability
@@ -4797,30 +3655,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                 owl:onProperty :hole_diameter ;
                                                                                 owl:maxCardinality "2"^^xsd:nonNegativeInteger
                                                                               ] .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest
-<http://www.co-ode.org/ontologies/ont.owl#ERS_point_measurement_using_nest> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> ,
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty :hasInputCapability ;
-                                                                                              owl:someValuesFrom :Measurement_Accessory
-                                                                                            ] ,
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty :hasInputCapability ;
-                                                                                              owl:someValuesFrom :Measurement_Device
-                                                                                            ] ,
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty :hasInputCapability ;
-                                                                                              owl:someValuesFrom :Measurement_Target
-                                                                                            ] .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating
-<http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> ,
-                                                                                    <http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> ;
-                                                                    owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ElectroStagWelding
@@ -4944,24 +3778,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                rdfs:subClassOf :SimpleCapability ,
                                                                                <http://www.co-ode.org/ontologies/ont.ow/Process#Fixturing> ,
                                                                                [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasAllowedItemShapeAndSize_max ;
-                                                                                 owl:allValuesFrom :ShapeAndSizeDefinition
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasAllowedItemShapeAndSize_min ;
-                                                                                 owl:allValuesFrom :ShapeAndSizeDefinition
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasItemSize_max ;
-                                                                                 owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass :ShapeAndSizeDefinition
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasItemSize_min ;
-                                                                                 owl:maxQualifiedCardinality "4"^^xsd:nonNegativeInteger ;
-                                                                                 owl:onClass :ShapeAndSizeDefinition
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
                                                                                  owl:onProperty :accuracy ;
                                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
                                                                                ] ,
@@ -5009,11 +3825,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Folding
-<http://www.co-ode.org/ontologies/ont.owl#Folding> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Forming
 <http://www.co-ode.org/ontologies/ont.owl#Forming> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialConserving> .
@@ -5022,16 +3833,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#FrictionWelding
 <http://www.co-ode.org/ontologies/ont.owl#FrictionWelding> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering
-<http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Gluing
-<http://www.co-ode.org/ontologies/ont.owl#Gluing> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#GraspingCapability
@@ -5050,11 +3851,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Hammering
-<http://www.co-ode.org/ontologies/ont.owl#Hammering> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding
 <http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding> rdf:type owl:Class ;
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> .
@@ -5070,50 +3866,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#InductionSoldering
-<http://www.co-ode.org/ontologies/ont.owl#InductionSoldering> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#InsertingCapability
-<http://www.co-ode.org/ontologies/ont.owl#InsertingCapability> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :CombinedCapability ,
-                                                                               <http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasInputCapability ;
-                                                                                 owl:someValuesFrom :ForceApplying
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasInputCapability ;
-                                                                                 owl:someValuesFrom :Moving
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasInputCapability ;
-                                                                                 owl:someValuesFrom :Releasing
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :hasInputCapability ;
-                                                                                 owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability>
-                                                                               ] ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty :repeatability ;
-                                                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                               ] .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Inspection
 <http://www.co-ode.org/ontologies/ont.owl#Inspection> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#IronSoldering
-<http://www.co-ode.org/ontologies/ont.owl#IronSoldering> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Joining
-<http://www.co-ode.org/ontologies/ont.owl#Joining> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Assembly> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#LaserAdding
@@ -5131,19 +3886,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Logistic
-<http://www.co-ode.org/ontologies/ont.owl#Logistic> rdf:type owl:Class ;
-                                                    rdfs:subClassOf :Process .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Machining
 <http://www.co-ode.org/ontologies/ont.owl#Machining> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialRemoving> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#MachiningCapability
-<http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :CombinedCapability .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ManualAssembly
@@ -5181,91 +3926,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Welding> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Metrology
-<http://www.co-ode.org/ontologies/ont.owl#Metrology> rdf:type owl:Class ;
-                                                     rdfs:subClassOf :Process ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredLateralOffset> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredMeasurement_frequency> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredPlanar_offset> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadial_offset> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRadius> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] ,
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl/Process#requiredRange> ;
-                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                     ] .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability
-<http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> rdf:type owl:Class ;
-                                                               rdfs:subClassOf :CombinedCapability ,
-                                                                               <http://www.co-ode.org/ontologies/ont.owl#Metrology> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#MillingCapability
-<http://www.co-ode.org/ontologies/ont.owl#MillingCapability> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
-                                                                             <http://www.co-ode.org/ontologies/ont.owl/Process#Milling> ,
-                                                                             [ rdf:type owl:Class ;
-                                                                               owl:unionOf ( :MovingTool
-                                                                                             [ rdf:type owl:Restriction ;
-                                                                                               owl:onProperty :hasInputCapability ;
-                                                                                               owl:someValuesFrom :Moving
-                                                                                             ]
-                                                                                           )
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasInputCapability ;
-                                                                               owl:someValuesFrom :MillingToolFunction
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasInputCapability ;
-                                                                               owl:someValuesFrom :SpinningTool
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :hasInputCapability ;
-                                                                               owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FixturingCapability>
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :cutterType ;
-                                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :accuracy ;
-                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :cutterVersion ;
-                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :torque_max ;
-                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Moulding
 <http://www.co-ode.org/ontologies/ont.owl#Moulding> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MaterialAdding> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#MountingO-ring
-<http://www.co-ode.org/ontologies/ont.owl#MountingO-ring> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nailing
@@ -5322,10 +3985,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                                                   [ rdf:type owl:Restriction ;
                                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Process#isInputCapability> ;
                                                                                     owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#PressingCapability>
-                                                                                  ] ,
-                                                                                  [ rdf:type owl:Restriction ;
-                                                                                    owl:onProperty :hasWorkspaceTypeAndDimensions ;
-                                                                                    owl:allValuesFrom :Workspace
                                                                                   ] ,
                                                                                   [ rdf:type owl:Restriction ;
                                                                                     owl:onProperty :hasWorkspaceTypeAndDimensions ;
@@ -5401,11 +4060,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating
-<http://www.co-ode.org/ontologies/ont.owl#PlasticDeformingFixating> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#PlasticWelding
 <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Welding> .
@@ -5469,15 +4123,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riveting> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Requirement
-<http://www.co-ode.org/ontologies/ont.owl#Requirement> rdf:type owl:Class .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering
-<http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding
 <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetalWelding> .
@@ -5486,48 +4131,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#Riveting
 <http://www.co-ode.org/ontologies/ont.owl#Riveting> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability
-<http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> ,
-                                                                              <http://www.co-ode.org/ontologies/ont.owl#MachiningCapability> ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :hasInputCapability ;
-                                                                                owl:someValuesFrom :Moving
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :hasInputCapability ;
-                                                                                owl:someValuesFrom :SpinningTool
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :screwSize ;
-                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :screwType ;
-                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :screwingHead_effectiveLength ;
-                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :spinningSpeed_max ;
-                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :spinningSpeed_min ;
-                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :torque_max ;
-                                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] ,
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty :torque_min ;
-                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                              ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#SeamWelding
@@ -5548,26 +4151,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#ShieldedMetalArcWelding
 <http://www.co-ode.org/ontologies/ont.owl#ShieldedMetalArcWelding> rdf:type owl:Class ;
                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ArcWelding> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Shrinking
-<http://www.co-ode.org/ontologies/ont.owl#Shrinking> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Single_probed_point_measurement
-<http://www.co-ode.org/ontologies/ont.owl#Single_probed_point_measurement> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Snapping
-<http://www.co-ode.org/ontologies/ont.owl#Snapping> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Soldering
-<http://www.co-ode.org/ontologies/ont.owl#Soldering> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Joining> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#SpotWelding
@@ -5595,19 +4178,9 @@ owl:cardinality rdf:type owl:AnnotationProperty .
                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Surface_measurement
-<http://www.co-ode.org/ontologies/ont.owl#Surface_measurement> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Taping
 <http://www.co-ode.org/ontologies/ont.owl#Taping> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#ThermalCuring
-<http://www.co-ode.org/ontologies/ont.owl#ThermalCuring> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ThreadRunning
@@ -5623,71 +4196,6 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 ###  http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide
 <http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide> rdf:type owl:Class ;
                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fastening> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#TorchSoldering
-<http://www.co-ode.org/ontologies/ont.owl#TorchSoldering> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Soldering> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Transporting
-<http://www.co-ode.org/ontologies/ont.owl#Transporting> rdf:type owl:Class ;
-                                                        rdfs:subClassOf :CombinedCapability ,
-                                                                        [ rdf:type owl:Class ;
-                                                                          owl:unionOf ( :MagneticGrasping
-                                                                                        <http://www.co-ode.org/ontologies/ont.owl#VacuumGraspingCapability>
-                                                                                        [ rdf:type owl:Restriction ;
-                                                                                          owl:onProperty :hasInputCapability ;
-                                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#FingerGraspingCapability>
-                                                                                        ]
-                                                                                      )
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :hasInputCapability ;
-                                                                          owl:someValuesFrom :Moving
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :dof ;
-                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :payload ;
-                                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :repeatability ;
-                                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :acceleration_x_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :acceleration_y_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :acceleration_z_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :dof ;
-                                                                          owl:maxCardinality "6"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :speed_x_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :speed_y_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ,
-                                                                        [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty :speed_z_max ;
-                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                        ] ;
-                                                        rdfs:comment """Capability to transport items from one place to another.
-For example robot attached with a gripper, or conveyor alone have this capability.""" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#TrayFeedingCapability
@@ -5756,11 +4264,6 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 ###  http://www.co-ode.org/ontologies/ont.owl#Turning
 <http://www.co-ode.org/ontologies/ont.owl#Turning> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Machining> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#UV-curing
-<http://www.co-ode.org/ontologies/ont.owl#UV-curing> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#UltrasonicWelding
@@ -5847,19 +4350,9 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
                                                                          ] .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Wedging
-<http://www.co-ode.org/ontologies/ont.owl#Wedging> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ElasticDeformingFixating> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Welding
 <http://www.co-ode.org/ontologies/ont.owl#Welding> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Non-ShapingManufacturing> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#6DOF_‘frame’_measurement
-<http://www.co-ode.org/ontologies/ont.owl#6DOF_‘frame’_measurement> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#MetrologyCapability> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Drilling
@@ -5881,7 +4374,7 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#Feeding
 <http://www.co-ode.org/ontologies/ont.owl/Process#Feeding> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Logistic> ,
+                                                           rdfs:subClassOf :Process ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#requiredFeedingType> ;
                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
@@ -5909,23 +4402,6 @@ For example robot attached with a gripper, or conveyor alone have this capabilit
 <http://www.co-ode.org/ontologies/ont.owl/Process#InkMarkingCapability> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.ow/Capabilityl#MarkingCapability> ,
                                                                                         <http://www.co-ode.org/ontologies/ont.owl/Process#Marking> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl/Process#Inserting
-<http://www.co-ode.org/ontologies/ont.owl/Process#Inserting> rdf:type owl:Class ;
-                                                             rdfs:subClassOf :Process ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_e87886a6_045b_48a8_a080_3e6a3e652e91> ;
-                                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_192882e8_b864_4c96_a710_4143cecd1a80> ;
-                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] ,
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#OWLDataProperty_95e8d151_d801_40e7_8170_6d1856a0fb08> ;
-                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                             ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl/Process#LabellingCapability
@@ -6052,43 +4528,6 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BoxShape
-                :ConeShape
-                :CylinderShape
-                :PyramidShape
-                :SphereShape
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Capacity
-                <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Functionality>
-                <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Investment>
-                <http://www.co-ode.org/ontologies/ont.ow/Recibfugyratuib/Selection#Space>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Capacity_utilisation
-                :Manufacturing_Lead_Time
-                :On_time_delivery
-                :Revenue_per_employee
-                :Set-up_time
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Changeover_Time
-                :Energy_Cost_Per_Unit
-                :Take_time
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :ControlDevices
                 :Gripper
                 :MetrologySystems
@@ -6098,205 +4537,9 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Control_units
-                :Downtime_To_Opearting_Time
-                :Machine_downtime
-                :Manufacturing_cost_per_unit
-                :Material_Utilisation
-                :Mean_Time_Between_Failure
-                :Mean_Time_to_Failure
-                :Mean_Time_to_Repair
-                :OEE
-                :People
-                :Percentage_Planned_Maintenance
-                :Unscheduled_downtime
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Coordinate
-                :GeometricFeature
-                :NonGeometricFeature
-                :Orientation
-                :ShapeAndSize
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Customer_returns
-                :Inventory_accuracy
-                :Inventory_turnover
-                :Non-compliance_Events_Per_Year
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Cycle_time
-                :First_pass_yield
-                :Lead_time
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Demand_Forecasting
-                :Direct_Material_Usage_Variance
-                :Material_Yield_Variance
-                :Scrap_Rate
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DrillBitFunction
-                :ExpandingRingWithGripper
-                :ExpansionGrasping
-                :FingerFunction
-                :FingerGripperFunction
-                :ForceApplying
-                :FrameFunction
-                :HammerFunction
-                :HoldingByGravity
-                :LocatingVisual
-                :MagneticGrasping
-                :ManualToolDriverFunction
-                :Measurement_Accessory
-                :Measurement_Device
-                :Measurement_Target
-                :MillingCutterFunction
-                :Moving
-                :MovingCollaborative
-                :MovingTool
-                :OgivaFunction
-                :OrbitalPowerheadFunction
-                :PartStoringInBulk
-                :PartStoringInTray
-                :PartStoringInTube
-                :Pulling
-                :RadialPowerheadFunction
-                :RatchetFunction
-                :Releasing
-                :RingMountingToolFunction
-                :RivetHolding
-                :RivetingToolFunction
-                :RollsetFunction
-                :ScrewingHeadFunction
-                :SpinningTool
-                :ToolHolding
-                :TrayHolding
-                :TubeFeederBaseFunction
-                :Twisting
-                :VacuumGripperFunction
-                :WrenchFunction
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :FixationDetail
-                :Material
-                :SurfaceTreatment
-                :Tolerance
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Health_and_Safety_Incidence_Rate
-                :Labour_as_percentage_cost
-                :OSE
-                :Production_attainment
-                :Resource_utilisation
-                :Time_To_Production
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Maintenance
-                :Processing
-                :Shipping
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Twisting
-                <http://www.co-ode.org/ontologies/ont.owl#Bending>
-                <http://www.co-ode.org/ontologies/ont.owl#Clinching>
-                <http://www.co-ode.org/ontologies/ont.owl#Crimping>
-                <http://www.co-ode.org/ontologies/ont.owl#Folding>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.ow/Process#Configuration>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Layout>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Scheduling>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.ow/Process#Constraints>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#EnablingTechnology>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Objectives>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#SchedulingType>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.ow/Process#Cost>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Demand>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Time>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.ow/Process#EnablingTechnology>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Objectives>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#PositionInformation>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.ow/Process#Parallel>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Recycling>
-                <http://www.co-ode.org/ontologies/ont.ow/Process#Sequence>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#AdhesiveCuring>
-                <http://www.co-ode.org/ontologies/ont.owl#DeformingFixating>
-                <http://www.co-ode.org/ontologies/ont.owl#Fastening>
-                <http://www.co-ode.org/ontologies/ont.owl#Soldering>
-                <http://www.co-ode.org/ontologies/ont.owl#Welding>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( <http://www.co-ode.org/ontologies/ont.owl#ArcWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#LaserWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#ResistanceWelding>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Assembly>
-                <http://www.co-ode.org/ontologies/ont.owl#Logistic>
-                <http://www.co-ode.org/ontologies/ont.owl#Manufacturing>
-                <http://www.co-ode.org/ontologies/ont.owl#Metrology>
               )
 ] .
 
@@ -6319,47 +4562,9 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Clamping>
-                <http://www.co-ode.org/ontologies/ont.owl#Nailing>
-                <http://www.co-ode.org/ontologies/ont.owl#Riveting>
-                <http://www.co-ode.org/ontologies/ont.owl#ScrewingCapability>
-                <http://www.co-ode.org/ontologies/ont.owl#Sewing>
-                <http://www.co-ode.org/ontologies/ont.owl#SpringFastening>
-                <http://www.co-ode.org/ontologies/ont.owl#Stapling>
-                <http://www.co-ode.org/ontologies/ont.owl#Taping>
-                <http://www.co-ode.org/ontologies/ont.owl#ThreadRunning>
-                <http://www.co-ode.org/ontologies/ont.owl#TighteningFromSide>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Clipping>
-                <http://www.co-ode.org/ontologies/ont.owl#Hammering>
-                <http://www.co-ode.org/ontologies/ont.owl#MountingO-ring>
-                <http://www.co-ode.org/ontologies/ont.owl#Shrinking>
-                <http://www.co-ode.org/ontologies/ont.owl#Snapping>
-                <http://www.co-ode.org/ontologies/ont.owl#Wedging>
-                <http://www.co-ode.org/ontologies/ont.owl/Process#Pressing>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( <http://www.co-ode.org/ontologies/ont.owl#ColdWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#MetalWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#PlasticWelding>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#DipSoldering>
-                <http://www.co-ode.org/ontologies/ont.owl#FurnaceSoldering>
-                <http://www.co-ode.org/ontologies/ont.owl#InductionSoldering>
-                <http://www.co-ode.org/ontologies/ont.owl#IronSoldering>
-                <http://www.co-ode.org/ontologies/ont.owl#ResistanceSoldering>
-                <http://www.co-ode.org/ontologies/ont.owl#TorchSoldering>
               )
 ] .
 
@@ -6389,14 +4594,6 @@ cc:hasMaterialType rdfs:comment "This property is used to indicate from which ma
   owl:members ( <http://www.co-ode.org/ontologies/ont.owl#FrictionWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#HeaedAirWelding>
                 <http://www.co-ode.org/ontologies/ont.owl#UltrasonicWelding>
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Gluing>
-                <http://www.co-ode.org/ontologies/ont.owl#ThermalCuring>
-                <http://www.co-ode.org/ontologies/ont.owl#UV-curing>
               )
 ] .
 
